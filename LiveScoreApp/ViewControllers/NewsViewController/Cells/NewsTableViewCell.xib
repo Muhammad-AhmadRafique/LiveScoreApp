@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="324" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="LiveScoreApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poN-cf-W7E" customClass="CellCardBackgroundShadowedView" customModule="LiveScoreApp" customModuleProvider="target">
+                        <rect key="frame" x="20" y="8" width="280" height="305"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ks8-zE-xG0">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="297"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footbal" translatesAutoresizingMaskIntoConstraints="NO" id="FxM-MP-bwk">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="zXa-R1-o2L"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-GR-ag7">
+                                        <rect key="frame" x="16" y="178" width="248" height="119"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="President of the colombian football federation and his son were arrested" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnq-Ga-MZJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="xbE-a2-99N"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71 year old jesurun and his son were arrested in Miami on charges of resisting security after the Copa America final." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbO-db-mIz">
+                                                <rect key="frame" x="0.0" y="46" width="248" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 hours ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lru-po-U0F">
+                                                <rect key="frame" x="0.0" y="99" width="248" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="GLr-yT-Pya"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FxM-MP-bwk" secondAttribute="trailing" id="1kg-7b-YfP"/>
+                                    <constraint firstAttribute="trailing" secondItem="HlK-GR-ag7" secondAttribute="trailing" constant="16" id="MyQ-fb-bmp"/>
+                                    <constraint firstItem="HlK-GR-ag7" firstAttribute="leading" secondItem="Ks8-zE-xG0" secondAttribute="leading" constant="16" id="tNE-wj-f4j"/>
+                                    <constraint firstItem="FxM-MP-bwk" firstAttribute="leading" secondItem="Ks8-zE-xG0" secondAttribute="leading" id="tWh-xb-6iZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ks8-zE-xG0" secondAttribute="bottom" constant="8" id="0kv-fm-fAG"/>
+                            <constraint firstAttribute="trailing" secondItem="Ks8-zE-xG0" secondAttribute="trailing" id="QMi-rj-TAX"/>
+                            <constraint firstItem="Ks8-zE-xG0" firstAttribute="top" secondItem="poN-cf-W7E" secondAttribute="top" id="fwX-qg-LYO"/>
+                            <constraint firstItem="Ks8-zE-xG0" firstAttribute="leading" secondItem="poN-cf-W7E" secondAttribute="leading" id="nW4-MN-vYH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="poN-cf-W7E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="MXY-eV-0Nz"/>
+                    <constraint firstAttribute="trailing" secondItem="poN-cf-W7E" secondAttribute="trailing" constant="20" id="NNW-Zd-0aq"/>
+                    <constraint firstItem="poN-cf-W7E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="n3p-p0-aac"/>
+                    <constraint firstAttribute="bottom" secondItem="poN-cf-W7E" secondAttribute="bottom" constant="8" id="xpL-wF-G4w"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="Lru-po-U0F" id="LUf-J0-rLd"/>
+                <outlet property="detailLabel" destination="rbO-db-mIz" id="djV-VX-8Jp"/>
+                <outlet property="headingLabel" destination="tnq-Ga-MZJ" id="cg6-b4-oMP"/>
+                <outlet property="newsImage" destination="FxM-MP-bwk" id="dcY-Tu-zeO"/>
+            </connections>
+            <point key="canvasLocation" x="51.908396946564885" y="97.535211267605632"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="footbal" width="1536" height="1536"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

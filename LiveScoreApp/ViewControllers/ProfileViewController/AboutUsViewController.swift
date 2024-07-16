@@ -1,20 +1,20 @@
 //
-//  ViewController.swift
+//  AboutUsViewController.swift
 //  LiveScoreApp
 //
-//  Created by Ahmad Rafiq on 03/07/2024.
+//  Created by Ahmad Rafiq on 16/07/2024.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AboutUsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        
     }
+    
 
 
 }
-
