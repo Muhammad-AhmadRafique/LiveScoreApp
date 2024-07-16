@@ -225,7 +225,7 @@ your selected categories.</string>
                                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWV-8X-6BV">
                                                         <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="666"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Slc-xj-nRu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="197" height="666"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="666"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>
                                                         <blurEffect style="light"/>
@@ -253,7 +253,7 @@ your selected categories.</string>
                                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-X9-PIT">
                                                         <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="666"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PWh-MI-w7d">
-                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="666"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="666"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>
                                                         <blurEffect style="light"/>
@@ -438,7 +438,7 @@ your selected categories.</string>
                                                                 </connections>
                                                             </button>
                                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclaimation_mark" translatesAutoresizingMaskIntoConstraints="NO" id="aaD-yG-oVg">
-                                                                <rect key="frame" x="0.0" y="1.6666666666666572" width="6" height="28.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="1.6666666666666572" width="6" height="28.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="6" id="PMR-um-mh7"/>
                                                                 </constraints>
@@ -1033,11 +1033,11 @@ your selected categories.</string>
             </objects>
             <point key="canvasLocation" x="-1063" y="104"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--News-->
         <scene sceneID="0TE-3l-9gX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d3x-hm-j3z" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tabbar_dashBoard_unselected" id="tcG-Tt-7Y0"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="tcG-Tt-7Y0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cCJ-Nn-H6P">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1060,11 +1060,11 @@ your selected categories.</string>
             </objects>
             <point key="canvasLocation" x="-3559" y="1075"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Live-->
         <scene sceneID="yNN-jh-Gfh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NdP-Pw-o6a" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="airplayvideo" catalog="system" id="NAQ-de-B8P"/>
+                    <tabBarItem key="tabBarItem" title="Live" image="airplayvideo" catalog="system" id="NAQ-de-B8P"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Xd-Wz-bka">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1087,11 +1087,11 @@ your selected categories.</string>
             </objects>
             <point key="canvasLocation" x="-2375" y="1075"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Favorites-->
         <scene sceneID="HMk-kT-Zv4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pN3-9N-Y6I" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="forum_tab_bar_icon" id="xWU-83-D2A"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.square.fill" catalog="system" id="xWU-83-D2A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jn2-Qb-pJq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1138,7 +1138,7 @@ your selected categories.</string>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dp-border" translatesAutoresizingMaskIntoConstraints="NO" id="PDH-VK-Hcr">
-                                        <rect key="frame" x="133.66666666666666" y="25.333333333333343" width="125.99999999999997" height="125.99999999999997"/>
+                                        <rect key="frame" x="133.66666666666666" y="25.333333333333343" width="125.99999999999997" height="126"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="126" id="ndk-z9-vA2"/>
                                             <constraint firstAttribute="width" constant="126" id="zNL-mF-xSN"/>
@@ -1662,11 +1662,11 @@ your selected categories.</string>
             </objects>
             <point key="canvasLocation" x="1089" y="1838"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="qh7-QP-ugj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5qh-zt-SUh" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tabbar_profile_unselected" id="Bb0-gh-Lhn"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="Bb0-gh-Lhn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AW0-Lq-c7g">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1762,11 +1762,11 @@ your selected categories.</string>
             </objects>
             <point key="canvasLocation" x="-1063.768115942029" y="1836.6847826086957"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Leagues-->
         <scene sceneID="waZ-0i-Yqs">
             <objects>
                 <navigationController id="hN8-fY-thH" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="add_new_tab_bar_icon" selectedImage="add_new_tab_bar_icon" id="Pvy-Tz-BpU"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" image="chart.xyaxis.line" catalog="system" id="Pvy-Tz-BpU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Th-LO-MML">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1782,19 +1782,20 @@ your selected categories.</string>
     </scenes>
     <resources>
         <image name="add_category_timeline_button" width="135" height="44.666667938232422"/>
-        <image name="add_new_tab_bar_icon" width="29.666666030883789" height="32.666667938232422"/>
         <image name="airplayvideo" catalog="system" width="128" height="102"/>
         <image name="album_comingsoon" width="414" height="610.66668701171875"/>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="circle_placeholder" width="109" height="109"/>
         <image name="compare_image_icon" width="186.33332824707031" height="233.33332824707031"/>
         <image name="dp-border" width="126.33333587646484" height="126.33333587646484"/>
         <image name="exclaimation_mark" width="6" height="28.666666030883789"/>
         <image name="forum_comingsoon" width="414" height="567"/>
-        <image name="forum_tab_bar_icon" width="25" height="27"/>
         <image name="media_icon" width="19" height="16"/>
         <image name="new_post_audio_image" width="186.33332824707031" height="233.33332824707031"/>
         <image name="new_post_video_image" width="186.33332824707031" height="233.33332824707031"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="no_post_icon" width="348.33334350585938" height="338.33334350585938"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="profile_about_button_icon" width="13" height="16"/>
         <image name="profile_compaigns_button_icon" width="19.333333969116211" height="18.666666030883789"/>
         <image name="profile_favorite_icon" width="17.666666030883789" height="17"/>
@@ -1804,9 +1805,8 @@ your selected categories.</string>
         <image name="search_icon" width="17.333333969116211" height="17.333333969116211"/>
         <image name="setting_icon_white" width="14.666666984558105" height="14.666666984558105"/>
         <image name="single_image_icon" width="186.33332824707031" height="233.33332824707031"/>
+        <image name="star.square.fill" catalog="system" width="128" height="114"/>
         <image name="stars_full" width="32" height="30.333333969116211"/>
         <image name="stickyheader_black_transparent_imageview" width="414" height="70.666664123535156"/>
-        <image name="tabbar_dashBoard_unselected" width="25" height="27"/>
-        <image name="tabbar_profile_unselected" width="25" height="24"/>
     </resources>
 </document>
