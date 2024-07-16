@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -122,11 +123,11 @@
             </objects>
             <point key="canvasLocation" x="-2375" y="1075"/>
         </scene>
-        <!--Favorites-->
+        <!--Leagues-->
         <scene sceneID="HMk-kT-Zv4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pN3-9N-Y6I" customClass="CustomNavigationController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.square.fill" catalog="system" id="xWU-83-D2A"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" image="chart.xyaxis.line" catalog="system" id="xWU-83-D2A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jn2-Qb-pJq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -221,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPm-Pz-kZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="1849"/>
+            <point key="canvasLocation" x="62" y="1850"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ix8-VG-O43">
@@ -235,38 +236,86 @@
                         <sections>
                             <tableViewSection id="kHW-CZ-UjP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="QG7-sX-D1V">
-                                        <rect key="frame" x="0.0" y="18" width="393" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="QG7-sX-D1V">
+                                        <rect key="frame" x="0.0" y="18" width="393" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QG7-sX-D1V" id="x8Y-73-iOY">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-E9-Ded">
-                                                    <rect key="frame" x="20" y="20" width="353" height="170"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footbal" translatesAutoresizingMaskIntoConstraints="NO" id="NvU-XF-Snf" customClass="RoundedImageView" customModule="LiveScoreApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="170"/>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball" translatesAutoresizingMaskIntoConstraints="NO" id="q1z-y8-Y1u" customClass="RoundedImageView" customModule="LiveScoreApp" customModuleProvider="target">
-                                                            <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="170"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="170" id="caE-2K-QMZ"/>
-                                                    </constraints>
-                                                </stackView>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Stu-VL-W8B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
+                                                    <color key="backgroundColor" red="0.77647060160000003" green="0.77254903320000001" blue="0.75294119120000003" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xyG-MV-xTa">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileImageCollectionCell" id="gDb-Jp-UVQ" customClass="ProfileImageCollectionCell" customModule="LiveScoreApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="-5.666666666666667" width="391" height="261"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gsS-ee-7nn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="391" height="261"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="60d-Nf-vhj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="391" height="245"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="60d-Nf-vhj" secondAttribute="bottom" constant="16" id="IXN-Dx-jQp"/>
+                                                                    <constraint firstItem="60d-Nf-vhj" firstAttribute="top" secondItem="gsS-ee-7nn" secondAttribute="top" id="ObK-K5-Ijv"/>
+                                                                    <constraint firstItem="60d-Nf-vhj" firstAttribute="leading" secondItem="gsS-ee-7nn" secondAttribute="leading" id="UDn-Ya-A2T"/>
+                                                                    <constraint firstItem="60d-Nf-vhj" firstAttribute="top" secondItem="gsS-ee-7nn" secondAttribute="top" id="WS8-oS-EJQ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="60d-Nf-vhj" secondAttribute="trailing" id="cS3-XI-ezb"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="60d-Nf-vhj" secondAttribute="trailing" id="hFM-zD-Cgj"/>
+                                                                    <constraint firstItem="60d-Nf-vhj" firstAttribute="leading" secondItem="gsS-ee-7nn" secondAttribute="leading" id="iaQ-wO-VFz"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="customSize" width="391" height="261"/>
+                                                            <connections>
+                                                                <outlet property="imgView" destination="60d-Nf-vhj" id="Ids-6K-auy"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="DbT-pd-uoT" id="zuS-Pp-wNU"/>
+                                                        <outlet property="delegate" destination="DbT-pd-uoT" id="dbE-sC-gfz"/>
+                                                    </connections>
+                                                </collectionView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="n0j-fO-yMm">
+                                                    <rect key="frame" x="147.66666666666666" y="224.33333333333334" width="98" height="25.666666666666657"/>
+                                                    <color key="tintColor" name="black"/>
+                                                    <color key="pageIndicatorTintColor" name="black"/>
+                                                </pageControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="vWb-E9-Ded" firstAttribute="top" secondItem="x8Y-73-iOY" secondAttribute="top" constant="20" id="2wk-eN-hri"/>
-                                                <constraint firstAttribute="trailing" secondItem="vWb-E9-Ded" secondAttribute="trailing" constant="20" id="Lga-hG-kCk"/>
-                                                <constraint firstItem="vWb-E9-Ded" firstAttribute="leading" secondItem="x8Y-73-iOY" secondAttribute="leading" constant="20" id="sZe-F3-mSn"/>
+                                                <constraint firstItem="n0j-fO-yMm" firstAttribute="centerX" secondItem="x8Y-73-iOY" secondAttribute="centerX" id="1rC-DY-Se1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Stu-VL-W8B" secondAttribute="bottom" id="9Gq-1d-kTy"/>
+                                                <constraint firstItem="Stu-VL-W8B" firstAttribute="top" secondItem="x8Y-73-iOY" secondAttribute="top" id="OgW-sy-DRl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Stu-VL-W8B" secondAttribute="trailing" id="WGM-Yk-X81"/>
+                                                <constraint firstItem="Stu-VL-W8B" firstAttribute="leading" secondItem="x8Y-73-iOY" secondAttribute="leading" id="ZL9-TZ-hYV"/>
+                                                <constraint firstAttribute="bottom" secondItem="n0j-fO-yMm" secondAttribute="bottom" id="xHd-sE-LX2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="8" id="94D-Bh-lPY">
+                                        <rect key="frame" x="0.0" y="268" width="393" height="8"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="94D-Bh-lPY" id="HLl-3s-wMT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="8"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="1500" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="XAn-yF-SnG">
-                                        <rect key="frame" x="0.0" y="218" width="393" height="60"/>
+                                        <rect key="frame" x="0.0" y="276" width="393" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XAn-yF-SnG" id="sF3-qB-5JM">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -309,7 +358,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="aV0-jR-9FF">
-                                        <rect key="frame" x="0.0" y="278" width="393" height="60"/>
+                                        <rect key="frame" x="0.0" y="336" width="393" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aV0-jR-9FF" id="s8w-sw-MCB">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -334,7 +383,7 @@
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="91i-NX-kfV">
                                                             <rect key="frame" x="333" y="21" width="20" height="18.666666666666671"/>
-                                                            <color key="tintColor" name="black"/>
+                                                            <color key="tintColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="sPz-3E-8CI"/>
                                                                 <constraint firstAttribute="width" constant="20" id="vb1-68-XvF"/>
@@ -352,7 +401,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="M7m-Sw-Psg">
-                                        <rect key="frame" x="0.0" y="338" width="393" height="60"/>
+                                        <rect key="frame" x="0.0" y="396" width="393" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M7m-Sw-Psg" id="zdF-2p-unK">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -377,7 +426,7 @@
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dxc-sp-tbz">
                                                             <rect key="frame" x="333" y="21" width="20" height="18.666666666666671"/>
-                                                            <color key="tintColor" name="black"/>
+                                                            <color key="tintColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="5cE-oV-faB"/>
                                                                 <constraint firstAttribute="height" constant="20" id="JMd-JL-lCY"/>
@@ -395,7 +444,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="ffk-GL-R43">
-                                        <rect key="frame" x="0.0" y="398" width="393" height="60"/>
+                                        <rect key="frame" x="0.0" y="456" width="393" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffk-GL-R43" id="9u3-vN-S8r">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -420,7 +469,7 @@
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SES-IP-LrU">
                                                             <rect key="frame" x="333" y="21" width="20" height="18.666666666666671"/>
-                                                            <color key="tintColor" name="black"/>
+                                                            <color key="tintColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="14U-FM-v9y"/>
                                                                 <constraint firstAttribute="height" constant="20" id="qtM-Yt-yIe"/>
@@ -446,10 +495,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="q50-cv-9nJ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Stu-VL-W8B" id="ARD-vG-fVM"/>
+                        <outlet property="pageControl" destination="n0j-fO-yMm" id="J5D-ea-laV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bx0-DU-cvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="1855"/>
+            <point key="canvasLocation" x="1087.7862595419847" y="1854.9295774647887"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="6Nw-4s-Fpo">
@@ -470,9 +523,9 @@
     <resources>
         <image name="airplayvideo" catalog="system" width="128" height="102"/>
         <image name="arrowshape.right.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="basketball" width="1536" height="1536"/>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="feedback" width="331" height="480"/>
-        <image name="footbal" width="1536" height="1536"/>
+        <image name="football" width="500" height="500"/>
         <image name="info.square.fill" catalog="system" width="128" height="114"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>

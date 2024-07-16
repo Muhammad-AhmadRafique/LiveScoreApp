@@ -8,7 +8,16 @@
 import UIKit
 import MessageUI
 
+class ProfileImageCollectionCell : UICollectionViewCell {
+    @IBOutlet weak var imgView: UIImageView!
+}
+
 class ProfileViewController: UITableViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    private let imageList = [UIImage(named: "football"), UIImage(named: "basketball")]
+    private var timer: Timer?
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -17,10 +26,30 @@ class ProfileViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 0.0, height: CGFloat.leastNormalMagnitude)))
-
+        setupTimer()
     }
     
     //MARK: - Helper Methods
+    private func setupTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollToIndex), userInfo: nil, repeats: true)
+    }
+    
+    @objc func scrollToIndex() {
+        if let indexPath = self.collectionView.indexPathsForVisibleItems.first {
+            var index = indexPath.row
+            let section = indexPath.section
+            if index >= self.imageList.count - 1 {
+                index -= 1
+            } else {
+                index += 1
+            }
+            
+            self.collectionView.scrollToItem(at: IndexPath(item: index, section: section), at: .left, animated: true)
+            self.pageControl.currentPage = index
+        }
+    }
+    
     private func openAppStoreConnect() {
         if let url = URL(string: "https://appstoreconnect.apple.com") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -66,4 +95,33 @@ extension ProfileViewController : MFMailComposeViewControllerDelegate {
         // Present the mail composer
         self.present(mailComposeViewController, animated: true, completion: nil)
     }
+}
+
+extension ProfileViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCollectionCell.className, for: indexPath) as! ProfileImageCollectionCell
+        cell.imgView.image = imageList[indexPath.row]
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.size
+        return CGSize(width: size.width, height: size.height)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x / scrollView.frame.width)
+        pageControl.currentPage = Int(pageIndex)
+        setupTimer()
+    }
+    
 }
