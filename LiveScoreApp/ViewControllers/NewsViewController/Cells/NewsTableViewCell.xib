@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ks8-zE-xG0">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="297"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footbal" translatesAutoresizingMaskIntoConstraints="NO" id="FxM-MP-bwk">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="FxM-MP-bwk">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="zXa-R1-o2L"/>
@@ -95,7 +95,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="footbal" width="1536" height="1536"/>
+        <image name="football" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

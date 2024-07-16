@@ -35,8 +35,8 @@ public class CellCardBackgroundShadowedView: UIView {
         
         layer.cornerRadius = 8
         layer.shadowOpacity = 0.3
-        layer.shadowRadius = 2
-        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowRadius = 3
+        layer.shadowOffset = CGSize(width: 1, height: 3)
     }
     
     public func showBorder(color: UIColor = UIColor.black) {
