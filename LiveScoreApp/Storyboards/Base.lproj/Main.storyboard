@@ -96,6 +96,40 @@
             </objects>
             <point key="canvasLocation" x="-3556" y="1842"/>
         </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="S0Q-ja-PP8">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailViewController" id="BHh-qx-Ytl" customClass="NewsDetailViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ynr-3c-ocu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jcd-UM-Z6v">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BHh-qx-Ytl" id="dKF-0t-Qhg"/>
+                                    <outlet property="delegate" destination="BHh-qx-Ytl" id="ed6-IX-CY3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bd3-SG-xik"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="top" secondItem="bd3-SG-xik" secondAttribute="top" id="XvN-zG-c4D"/>
+                            <constraint firstItem="bd3-SG-xik" firstAttribute="trailing" secondItem="jcd-UM-Z6v" secondAttribute="trailing" id="al3-Qr-lLi"/>
+                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="leading" secondItem="bd3-SG-xik" secondAttribute="leading" id="alQ-Um-eNx"/>
+                            <constraint firstItem="bd3-SG-xik" firstAttribute="bottom" secondItem="jcd-UM-Z6v" secondAttribute="bottom" id="vL1-os-ZXb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="jcd-UM-Z6v" id="gt2-e9-wsQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bb6-5s-gFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3541" y="2594"/>
+        </scene>
         <!--Live-->
         <scene sceneID="yNN-jh-Gfh">
             <objects>

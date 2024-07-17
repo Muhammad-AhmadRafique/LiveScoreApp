@@ -17,4 +17,10 @@ class Router: NSObject {
         controller.show(control, sender: nil)
     }
     
+    func openNewsDetailViewController(controller:UIViewController) -> Void {
+        let control = Storyboards.MAIN.instantiateViewController(withIdentifier: NewsDetailViewController.className) as! NewsDetailViewController
+        controller.show(control, sender: nil)
+    }
+    
+    
 }

@@ -73,4 +73,11 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
             return UITableView.automaticDimension
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.removeSelection()
+        if indexPath.section == 1 {
+            Router.shared.openNewsDetailViewController(controller: self)
+        }
+    }
 }
