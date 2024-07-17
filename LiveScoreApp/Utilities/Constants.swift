@@ -11,3 +11,10 @@ import UIKit
 struct Storyboards {
     static let MAIN = UIStoryboard(name: "Main", bundle: nil)
 }
+
+struct Colors {
+    static let black = UIColor(named: "black")!
+    static let selectedColor = UIColor(named: "selectedColor")!
+    static let darkGray = UIColor.darkGray
+    static let lightGray = UIColor.lightGray
+}

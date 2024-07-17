@@ -16,8 +16,9 @@ class NewsHeaderView: UIView {
         return v
     }
     
-    func configure() {
-        headingLabel.text = "Lates Updates"
+    func configure(title: String, font: UIFont) {
+        headingLabel.text = title
+        headingLabel.font = font
     }
 
 }

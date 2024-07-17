@@ -20,3 +20,15 @@ class RoundedImageView: UIImageView {
     }
 }
 
+
+class RoundedView: UIView {
+    
+    //MARK: Methods
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 8
+        clipsToBounds = true
+        layer.masksToBounds = true
+    }
+}

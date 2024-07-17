@@ -12,6 +12,12 @@ class LeaguesViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var topStackView: UIStackView!
     
+    @IBOutlet weak var footballButton: UIButton!
+    @IBOutlet weak var footballLineView: UIView!
+    
+    @IBOutlet weak var basketballButton: UIButton!
+    @IBOutlet weak var basketballLineView: UIView!
+    
     private var pageController: UIPageViewController?
     private var currentIndex: Int = 0
     private var viewControllerList = [UIViewController]()
@@ -20,9 +26,21 @@ class LeaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageController()
+        
+        footballLineView.roundedCorners(radius: 2)
+        basketballLineView.roundedCorners(radius: 2)
+        updateTopButtons(footballSelected: true)
     }
     
     //MARK: - Helper Methods
+    private func updateTopButtons(footballSelected: Bool) {
+        footballButton.setTitleColor(footballSelected ? Colors.selectedColor : Colors.darkGray, for: .normal)
+        basketballButton.setTitleColor(footballSelected ? Colors.darkGray : Colors.selectedColor, for: .normal)
+        footballLineView.backgroundColor = footballSelected ? Colors.selectedColor : Colors.lightGray
+        basketballLineView.backgroundColor = footballSelected ? Colors.lightGray : Colors.selectedColor
+
+    }
+    
     private func setupPageController() {
         
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -30,13 +48,13 @@ class LeaguesViewController: UIViewController {
         self.view.addSubview(self.pageController!.view)
         self.pageController?.dataSource = self
         self.pageController?.delegate = self
-        self.pageController?.view.frame = CGRect(x: 0,y: self.mainView.frame.origin.y, width: self.mainView.frame.width,height: self.mainView.frame.height)
+        self.pageController?.view.frame = CGRect(x: mainView.frame.origin.x, y: self.mainView.frame.origin.y, width: self.mainView.frame.width, height: self.mainView.frame.height)
         
         pageController?.view.translatesAutoresizingMaskIntoConstraints  = false
         pageController?.view.topAnchor.constraint(equalTo: self.mainView.topAnchor).isActive = true
         pageController?.view.bottomAnchor.constraint(equalTo: self.mainView.bottomAnchor).isActive = true
-        pageController?.view.leftAnchor.constraint(equalTo: topStackView.leftAnchor).isActive = true
-        pageController?.view.rightAnchor.constraint(equalTo: topStackView.rightAnchor).isActive = true
+        pageController?.view.leftAnchor.constraint(equalTo: mainView.leftAnchor).isActive = true
+        pageController?.view.rightAnchor.constraint(equalTo: mainView.rightAnchor).isActive = true
         
         let control1 = Storyboards.MAIN.instantiateViewController(withIdentifier: FootballLeaguesViewController.className) as! FootballLeaguesViewController
         let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: BasketballLeaguesViewController.className) as! BasketballLeaguesViewController
@@ -46,8 +64,6 @@ class LeaguesViewController: UIViewController {
         if let firstVC = viewControllerList.first as? FootballLeaguesViewController {
             self.pageController?.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
-        
-//        self.pageController?.didMove(toParent: self)
     }
     
     @IBAction func nextPage() {
@@ -56,6 +72,7 @@ class LeaguesViewController: UIViewController {
         guard nextIndex < viewControllerList.count else { return }
         let nextVC = viewControllerList[nextIndex]
         self.pageController?.setViewControllers([nextVC], direction: .forward, animated: true, completion: nil)
+        updateTopButtons(footballSelected: false)
     }
     
     // Navigate to the previous page
@@ -65,6 +82,7 @@ class LeaguesViewController: UIViewController {
         guard previousIndex >= 0 else { return }
         let previousVC = viewControllerList[previousIndex]
         self.pageController?.setViewControllers([previousVC], direction: .reverse, animated: true, completion: nil)
+        updateTopButtons(footballSelected: true)
     }
     
 }
@@ -82,19 +100,6 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
         guard let viewControllerIndex = indexOf(viewController) else {
             return nil
         }
-        
-//        let previousIndex = viewControllerIndex - 1
-//        
-//        guard previousIndex >= 0 else {
-//            return nil
-//        }
-//        
-//        guard viewControllerList.count > previousIndex else {
-//            return nil
-//        }
-//        
-//        return viewControllerList[previousIndex]
-//        let index = (viewController as? PageViewControllerItem)?.pageIndex ?? 0
         return (viewControllerIndex <= 0) ? nil : self.viewControllerList[viewControllerIndex - 1] as? UIViewController
     }
     
@@ -102,20 +107,6 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
         guard let viewControllerIndex = indexOf(viewController) else {
             return nil
         }
-        
-//        let nextIndex = viewControllerIndex + 1
-//        let orderedViewControllersCount = viewControllerList.count
-//        
-//        guard orderedViewControllersCount != nextIndex else {
-//            return nil
-//        }
-//        
-//        guard orderedViewControllersCount > nextIndex else {
-//            return nil
-//        }
-//        
-//        return viewControllerList[nextIndex]
-        
         if (viewControllerIndex + 1 >= viewControllerList.count) {
             return nil
         }
@@ -129,13 +120,18 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
-
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        guard let firstViewController = viewControllerList.first,
-//              let firstViewControllerIndex = indexOf(firstViewController) else {
-//            return 0
-//        }
-//        
-//        return firstViewControllerIndex
-//    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            
+            guard let lastViewController = previousViewControllers.first else {
+                return
+            }
+            if lastViewController.isKind(of: FootballLeaguesViewController.self) {
+                updateTopButtons(footballSelected: false)
+            } else {
+                updateTopButtons(footballSelected: true)
+            }
+        }
+    }
 }

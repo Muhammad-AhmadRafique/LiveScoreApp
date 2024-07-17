@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "english_premier_league.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

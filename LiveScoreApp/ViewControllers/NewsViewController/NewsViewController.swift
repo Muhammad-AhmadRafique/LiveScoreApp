@@ -29,6 +29,7 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = NewsHeaderView.view()
+        view.configure(title: "Latest updates", font: .systemFont(ofSize: 25, weight: .bold))
         return view
     }
     
