@@ -32,3 +32,16 @@ class RoundedView: UIView {
         layer.masksToBounds = true
     }
 }
+
+
+class CircularView: UIView {
+    
+    //MARK: Methods
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = frame.height/2
+        clipsToBounds = true
+        layer.masksToBounds = true
+    }
+}

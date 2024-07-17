@@ -21,4 +21,14 @@ extension UIView {
         self.clipsToBounds = false
         self.layer.masksToBounds = true
     }
+    
+    func addBorder(with color: UIColor, width: CGFloat) {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = width
+    }
+
+    func removeBorder() {
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 0
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 class LeaguesViewController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var topStackView: UIStackView!
     
     @IBOutlet weak var footballButton: UIButton!
@@ -25,11 +26,22 @@ class LeaguesViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchView.addBorder(with: .systemGray3, width: 1.0)
         setupPageController()
         
         footballLineView.roundedCorners(radius: 2)
         basketballLineView.roundedCorners(radius: 2)
         updateTopButtons(footballSelected: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     //MARK: - Helper Methods
@@ -100,7 +112,7 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
         guard let viewControllerIndex = indexOf(viewController) else {
             return nil
         }
-        return (viewControllerIndex <= 0) ? nil : self.viewControllerList[viewControllerIndex - 1] as? UIViewController
+        return (viewControllerIndex <= 0) ? nil : self.viewControllerList[viewControllerIndex - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -110,7 +122,7 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
         if (viewControllerIndex + 1 >= viewControllerList.count) {
             return nil
         }
-        return self.viewControllerList[viewControllerIndex + 1] as? UIViewController
+        return self.viewControllerList[viewControllerIndex + 1]
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {

@@ -17,4 +17,5 @@ struct Colors {
     static let selectedColor = UIColor(named: "selectedColor")!
     static let darkGray = UIColor.darkGray
     static let lightGray = UIColor.lightGray
+    static let yellow = UIColor(named: "yellow")!
 }

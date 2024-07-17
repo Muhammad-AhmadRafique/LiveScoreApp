@@ -14,11 +14,13 @@ class Router: NSObject {
     
     func openAboutUsViewController(controller:UIViewController) -> Void {
         let control = Storyboards.MAIN.instantiateViewController(withIdentifier: AboutUsViewController.className) as! AboutUsViewController
+        control.hidesBottomBarWhenPushed = true
         controller.show(control, sender: nil)
     }
     
     func openNewsDetailViewController(controller:UIViewController) -> Void {
         let control = Storyboards.MAIN.instantiateViewController(withIdentifier: NewsDetailViewController.className) as! NewsDetailViewController
+        control.hidesBottomBarWhenPushed = true
         controller.show(control, sender: nil)
     }
     

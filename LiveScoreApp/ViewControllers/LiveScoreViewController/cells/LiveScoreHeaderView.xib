@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LiveScoreHeaderView" customModule="LiveScoreApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yds-eN-Hsq">
+                    <rect key="frame" x="20" y="0.0" width="353" height="57"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa_flag" translatesAutoresizingMaskIntoConstraints="NO" id="4Go-1B-c2D">
+                            <rect key="frame" x="0.0" y="13.666666666666664" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="U7G-jC-QV0"/>
+                                <constraint firstAttribute="width" constant="30" id="eZ2-71-ryu"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspired Generation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r35-9k-eAf">
+                            <rect key="frame" x="46" y="18.333333333333336" width="279" height="20.333333333333336"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="TXE-nf-vCc">
+                            <rect key="frame" x="341" y="22.666666666666668" width="12" height="12.000000000000004"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="Tn3-ok-H1P"/>
+                                <constraint firstAttribute="height" constant="12" id="gJE-TI-rUJ"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="yds-eN-Hsq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="DPs-Pj-TUy"/>
+                <constraint firstAttribute="trailing" secondItem="yds-eN-Hsq" secondAttribute="trailing" constant="20" id="dIs-Ay-CDJ"/>
+                <constraint firstItem="yds-eN-Hsq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oVN-Gh-t9d"/>
+                <constraint firstAttribute="bottom" secondItem="yds-eN-Hsq" secondAttribute="bottom" id="wc8-d6-MD7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="78.625954198473281" y="-281.33802816901408"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="right_arrow_icon" width="7.6666665077209473" height="13"/>
+        <image name="usa_flag" width="800" height="421"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
