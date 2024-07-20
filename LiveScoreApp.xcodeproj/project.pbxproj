@@ -31,6 +31,10 @@
 		E05EDC902C480715007B750F /* UpcomingLiveScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05EDC8F2C480715007B750F /* UpcomingLiveScoreViewController.swift */; };
 		E05EDC932C481186007B750F /* LiveScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05EDC912C481186007B750F /* LiveScoreTableViewCell.swift */; };
 		E05EDC942C481186007B750F /* LiveScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05EDC922C481186007B750F /* LiveScoreTableViewCell.xib */; };
+		E09543952C49588C00BE9040 /* NewsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09543942C49588C00BE9040 /* NewsTableHeaderView.swift */; };
+		E09543972C49589300BE9040 /* NewsTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09543962C49589300BE9040 /* NewsTableHeaderView.xib */; };
+		E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09543982C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift */; };
+		E095439B2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09543992C49594600BE9040 /* NewsTableHeaderCollectionViewCell.xib */; };
 		E0B1A1202C469E0400C250DB /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1A11F2C469E0400C250DB /* ShadowView.swift */; };
 		E0B1A1222C46A9A500C250DB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1A1212C46A9A500C250DB /* UIView+Extension.swift */; };
 		E0B1A1242C46AA7900C250DB /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1A1232C46AA7900C250DB /* NewsHeaderView.swift */; };
@@ -86,6 +90,10 @@
 		E05EDC8F2C480715007B750F /* UpcomingLiveScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLiveScoreViewController.swift; sourceTree = "<group>"; };
 		E05EDC912C481186007B750F /* LiveScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreTableViewCell.swift; sourceTree = "<group>"; };
 		E05EDC922C481186007B750F /* LiveScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreTableViewCell.xib; sourceTree = "<group>"; };
+		E09543942C49588C00BE9040 /* NewsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableHeaderView.swift; sourceTree = "<group>"; };
+		E09543962C49589300BE9040 /* NewsTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableHeaderView.xib; sourceTree = "<group>"; };
+		E09543982C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		E09543992C49594600BE9040 /* NewsTableHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		E0B1A11F2C469E0400C250DB /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		E0B1A1212C46A9A500C250DB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E0B1A1232C46AA7900C250DB /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
@@ -336,6 +344,10 @@
 				E04D06F72C47E4EB00293B37 /* NewsHotMatchesTableViewCell.xib */,
 				E04D06FA2C47E54200293B37 /* NewsHotMatchesCollectionViewCell.swift */,
 				E04D06FB2C47E54200293B37 /* NewsHotMatchesCollectionViewCell.xib */,
+				E09543942C49588C00BE9040 /* NewsTableHeaderView.swift */,
+				E09543962C49589300BE9040 /* NewsTableHeaderView.xib */,
+				E09543982C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift */,
+				E09543992C49594600BE9040 /* NewsTableHeaderCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -400,7 +412,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E095439B2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.xib in Resources */,
 				E04D06EB2C47ABC100293B37 /* LeaguesHeaderView.xib in Resources */,
+				E09543972C49589300BE9040 /* NewsTableHeaderView.xib in Resources */,
 				E0B371632C35A710009EB405 /* Assets.xcassets in Resources */,
 				E0B1A1262C46AA8200C250DB /* NewsHeaderView.xib in Resources */,
 				E04D06F92C47E4EB00293B37 /* NewsHotMatchesTableViewCell.xib in Resources */,
@@ -470,6 +484,7 @@
 				E0F037702C468EB1003ED0BA /* UIViewController+Extension.swift in Sources */,
 				E05EDC8C2C4806D2007B750F /* FinishedLiveScoreViewController.swift in Sources */,
 				E04D06E32C47A89300293B37 /* String+Extension.swift in Sources */,
+				E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */,
 				E0F0376E2C468DEF003ED0BA /* UITableView+Extension.swift in Sources */,
 				E0B1A1222C46A9A500C250DB /* UIView+Extension.swift in Sources */,
 				E0DE549E2C4699A500546745 /* NewsTableViewCell.swift in Sources */,
@@ -498,6 +513,7 @@
 				E05EDC832C47FB9C007B750F /* NewsDetailViewController.swift in Sources */,
 				E0B1A1362C46EE9C00C250DB /* BasketballLeaguesViewController.swift in Sources */,
 				E04D06F82C47E4EB00293B37 /* NewsHotMatchesTableViewCell.swift in Sources */,
+				E09543952C49588C00BE9040 /* NewsTableHeaderView.swift in Sources */,
 				E05EDC872C47FC15007B750F /* NewsDetailTableViewCell.swift in Sources */,
 				E011FDCA2C48195F0099B113 /* LiveScoreHeaderView.swift in Sources */,
 				E0B1A1292C46ABF200C250DB /* LeaguesViewController.swift in Sources */,

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewsTableHeaderView" customModule="LiveScoreApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="83u-W5-XCr">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hD3-0w-mA9">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="ULl-h3-oLN"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="B1U-YQ-vMH"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="acu-HA-6e3">
+                    <rect key="frame" x="147.66666666666666" y="146.33333333333334" width="98" height="25.666666666666657"/>
+                    <color key="tintColor" name="black"/>
+                    <color key="pageIndicatorTintColor" name="black"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="83u-W5-XCr" secondAttribute="trailing" id="1cD-iQ-BmJ"/>
+                <constraint firstItem="83u-W5-XCr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JTI-ui-WKx"/>
+                <constraint firstItem="acu-HA-6e3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cNT-c1-2Zp"/>
+                <constraint firstItem="83u-W5-XCr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m0n-33-6kE"/>
+                <constraint firstAttribute="bottom" secondItem="acu-HA-6e3" secondAttribute="bottom" constant="8" id="nyf-3w-xay"/>
+                <constraint firstAttribute="bottom" secondItem="83u-W5-XCr" secondAttribute="bottom" id="zbN-Iq-GzH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="83u-W5-XCr" id="Pjg-HT-wVP"/>
+                <outlet property="pageControl" destination="acu-HA-6e3" id="siA-8i-v25"/>
+            </connections>
+            <point key="canvasLocation" x="3.8167938931297707" y="184.50704225352115"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
