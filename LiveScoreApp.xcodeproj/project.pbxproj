@@ -69,6 +69,10 @@
 		E0EBC5992C4D0BBD00700B54 /* LiveScoreHeadToHeadHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBC5982C4D0BBD00700B54 /* LiveScoreHeadToHeadHeaderView.xib */; };
 		E0EBC59C2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBC59A2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.swift */; };
 		E0EBC59D2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBC59B2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.xib */; };
+		E0EBC5A12C4D142C00700B54 /* LiveScoreLinupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBC59F2C4D142C00700B54 /* LiveScoreLinupTableViewCell.swift */; };
+		E0EBC5A22C4D142C00700B54 /* LiveScoreLinupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBC5A02C4D142C00700B54 /* LiveScoreLinupTableViewCell.xib */; };
+		E0EBC5A42C4D199E00700B54 /* LiveScoreLinupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBC5A32C4D199E00700B54 /* LiveScoreLinupHeaderView.swift */; };
+		E0EBC5A62C4D19A300700B54 /* LiveScoreLinupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBC5A52C4D19A300700B54 /* LiveScoreLinupHeaderView.xib */; };
 		E0F037642C4689F5003ED0BA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F037632C4689F5003ED0BA /* Router.swift */; };
 		E0F037672C468B09003ED0BA /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F037662C468B09003ED0BA /* AboutUsViewController.swift */; };
 		E0F037692C468B1F003ED0BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F037682C468B1E003ED0BA /* Constants.swift */; };
@@ -145,6 +149,10 @@
 		E0EBC5982C4D0BBD00700B54 /* LiveScoreHeadToHeadHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreHeadToHeadHeaderView.xib; sourceTree = "<group>"; };
 		E0EBC59A2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreHeadToHeadTableViewCell.swift; sourceTree = "<group>"; };
 		E0EBC59B2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreHeadToHeadTableViewCell.xib; sourceTree = "<group>"; };
+		E0EBC59F2C4D142C00700B54 /* LiveScoreLinupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreLinupTableViewCell.swift; sourceTree = "<group>"; };
+		E0EBC5A02C4D142C00700B54 /* LiveScoreLinupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreLinupTableViewCell.xib; sourceTree = "<group>"; };
+		E0EBC5A32C4D199E00700B54 /* LiveScoreLinupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreLinupHeaderView.swift; sourceTree = "<group>"; };
+		E0EBC5A52C4D19A300700B54 /* LiveScoreLinupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreLinupHeaderView.xib; sourceTree = "<group>"; };
 		E0F037632C4689F5003ED0BA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E0F037662C468B09003ED0BA /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		E0F037682C468B1E003ED0BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -316,6 +324,7 @@
 		E0D550B82C4C3C630014FDF4 /* LiveScoreLineupViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E0EBC59E2C4D139800700B54 /* cells */,
 				E0D550B92C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift */,
 			);
 			path = LiveScoreLineupViewController;
@@ -388,6 +397,17 @@
 				E0EBC5982C4D0BBD00700B54 /* LiveScoreHeadToHeadHeaderView.xib */,
 				E0EBC59A2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.swift */,
 				E0EBC59B2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		E0EBC59E2C4D139800700B54 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0EBC59F2C4D142C00700B54 /* LiveScoreLinupTableViewCell.swift */,
+				E0EBC5A02C4D142C00700B54 /* LiveScoreLinupTableViewCell.xib */,
+				E0EBC5A32C4D199E00700B54 /* LiveScoreLinupHeaderView.swift */,
+				E0EBC5A52C4D19A300700B54 /* LiveScoreLinupHeaderView.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -538,6 +558,8 @@
 				E0B1A1302C46E88E00C250DB /* LeaguesTableViewCell.xib in Resources */,
 				E04D06EF2C47BF9900293B37 /* TopLeaguesTableViewCell.xib in Resources */,
 				E04D06E72C47AADC00293B37 /* LeagueMatchTableViewCell.xib in Resources */,
+				E0EBC5A62C4D19A300700B54 /* LiveScoreLinupHeaderView.xib in Resources */,
+				E0EBC5A22C4D142C00700B54 /* LiveScoreLinupTableViewCell.xib in Resources */,
 				E04D06F52C47C00900293B37 /* TopLeaguesCollectionViewCell.xib in Resources */,
 				E0B371612C35A70F009EB405 /* Base in Resources */,
 				E05EDC882C47FC15007B750F /* NewsDetailTableViewCell.xib in Resources */,
@@ -594,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0EBC5A42C4D199E00700B54 /* LiveScoreLinupHeaderView.swift in Sources */,
 				E0D550B42C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift in Sources */,
 				E0F037702C468EB1003ED0BA /* UIViewController+Extension.swift in Sources */,
 				E05EDC8C2C4806D2007B750F /* FinishedLiveScoreViewController.swift in Sources */,
@@ -603,6 +626,7 @@
 				E04D06E32C47A89300293B37 /* String+Extension.swift in Sources */,
 				E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */,
 				E0F0376E2C468DEF003ED0BA /* UITableView+Extension.swift in Sources */,
+				E0EBC5A12C4D142C00700B54 /* LiveScoreLinupTableViewCell.swift in Sources */,
 				E0D550C02C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift in Sources */,
 				E0EBC5972C4D0BB600700B54 /* LiveScoreHeadToHeadHeaderView.swift in Sources */,
 				E0B1A1222C46A9A500C250DB /* UIView+Extension.swift in Sources */,

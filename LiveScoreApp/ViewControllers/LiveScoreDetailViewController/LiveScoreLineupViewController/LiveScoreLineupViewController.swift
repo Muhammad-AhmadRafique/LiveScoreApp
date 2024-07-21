@@ -9,21 +9,58 @@ import UIKit
 
 class LiveScoreLineupViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: LiveScoreLinupTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreLinupTableViewCell.className)
+    }
 
-        // Do any additional setup after loading the view.
+
+}
+
+extension LiveScoreLineupViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = LiveScoreLinupHeaderView.view()
+        switch section {
+        case 0:
+            view.configure(title: "Startup Lineups")
+        case 1:
+            view.configure(title: "Substitues")
+        default:
+            view.configure(title: "Coaches")
+        }
+        return view
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 10
+        case 1:
+            return 10
+        default:
+            return 2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreLinupTableViewCell.className, for: indexPath) as! LiveScoreLinupTableViewCell
+        cell.configureCell()
+        return cell
+    }
 }

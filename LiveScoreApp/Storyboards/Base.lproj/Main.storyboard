@@ -1378,23 +1378,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-VW-frS">
-                                <rect key="frame" x="170.66666666666666" y="415.66666666666669" width="51.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gDy-uv-GAh">
+                                <rect key="frame" x="0.0" y="69" width="393" height="749"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wqu-T2-reR">
+                                        <rect key="frame" x="10" y="0.0" width="373" height="32"/>
+                                        <segments>
+                                            <segment title="Tai'an Tuankuang"/>
+                                            <segment title="Dalli'an Kun city"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-BH-794">
+                                        <rect key="frame" x="0.0" y="41" width="393" height="708"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="4Y0-M4-8Pm" id="w3f-5B-uhN"/>
+                                            <outlet property="delegate" destination="4Y0-M4-8Pm" id="BmV-Se-Vb7"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gMH-BH-794" firstAttribute="leading" secondItem="gDy-uv-GAh" secondAttribute="leading" id="6p5-jL-qDE"/>
+                                    <constraint firstAttribute="trailing" secondItem="gMH-BH-794" secondAttribute="trailing" id="f1H-GY-txb"/>
+                                    <constraint firstItem="wqu-T2-reR" firstAttribute="leading" secondItem="gDy-uv-GAh" secondAttribute="leading" constant="10" id="gpS-Zk-aE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="wqu-T2-reR" secondAttribute="trailing" constant="10" id="yck-Ul-JEP"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xa4-VW-frS" firstAttribute="centerY" secondItem="0QJ-en-gIz" secondAttribute="centerY" id="M93-1N-7AQ"/>
-                            <constraint firstItem="Xa4-VW-frS" firstAttribute="centerX" secondItem="0QJ-en-gIz" secondAttribute="centerX" id="sYH-Oc-hIx"/>
+                            <constraint firstItem="gDy-uv-GAh" firstAttribute="leading" secondItem="0QJ-en-gIz" secondAttribute="leading" id="N3m-rW-AxI"/>
+                            <constraint firstItem="gDy-uv-GAh" firstAttribute="top" secondItem="QUl-Xd-ZcP" secondAttribute="bottom" constant="10" id="Sbf-2M-AAO"/>
+                            <constraint firstItem="SFS-fT-5fd" firstAttribute="top" secondItem="gDy-uv-GAh" secondAttribute="bottom" id="VVB-N1-Kb3"/>
+                            <constraint firstAttribute="trailing" secondItem="gDy-uv-GAh" secondAttribute="trailing" id="wLd-Hu-shJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gMH-BH-794" id="yij-ia-BfP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzu-TW-3x1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2373" y="4261"/>
+            <point key="canvasLocation" x="-2373.2824427480914" y="4260.5633802816901"/>
         </scene>
         <!--Live Score Headto Head View Controller-->
         <scene sceneID="ur0-pM-31R">
