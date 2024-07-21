@@ -11,6 +11,7 @@ class UpcomingLiveScoreViewController: UIViewController, PageItem {
     
     @IBOutlet weak var tableView: UITableView!
     var pageIndex: Int = 2
+    weak var parentNavigationController: UINavigationController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()

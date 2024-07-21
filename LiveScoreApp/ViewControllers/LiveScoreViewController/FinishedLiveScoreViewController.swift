@@ -11,6 +11,7 @@ class FinishedLiveScoreViewController: UIViewController, PageItem {
 
     @IBOutlet weak var tableView: UITableView!
     var pageIndex: Int = 0
+    weak var parentNavigationController: UINavigationController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,5 +51,6 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
+        Router.shared.openLiveScoreDetailViewController(controller: parentNavigationController)
     }
 }

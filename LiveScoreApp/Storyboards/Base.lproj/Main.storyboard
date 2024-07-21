@@ -512,12 +512,54 @@
                                             <constraint firstAttribute="height" constant="50" id="AaU-af-Vhw"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-9w-bEu">
+                                        <rect key="frame" x="0.0" y="110" width="393" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="184-NW-TOT">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="07/17">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dr9-hv-K82">
+                                                <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="07/17">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUg-ps-S6p">
+                                                <rect key="frame" x="196.66666666666666" y="0.0" width="97.999999999999972" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="07/17">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b9-Ie-erW">
+                                                <rect key="frame" x="294.66666666666669" y="0.0" width="98.333333333333314" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="07/17">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="0bS-6B-5Qd"/>
+                                        </constraints>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVm-NW-Zuj">
-                                        <rect key="frame" x="0.0" y="110" width="393" height="556"/>
+                                        <rect key="frame" x="0.0" y="145" width="393" height="521"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="t4G-9w-bEu" secondAttribute="trailing" id="0MT-6n-sxT"/>
+                                    <constraint firstItem="t4G-9w-bEu" firstAttribute="leading" secondItem="xeU-qk-Klc" secondAttribute="leading" id="1Xi-y3-8Da"/>
                                     <constraint firstAttribute="trailing" secondItem="mVm-NW-Zuj" secondAttribute="trailing" id="29N-8A-b9E"/>
                                     <constraint firstAttribute="trailing" secondItem="IM7-RX-P5t" secondAttribute="trailing" constant="20" id="2Kr-qB-0ix"/>
                                     <constraint firstItem="MOr-Jx-vNg" firstAttribute="leading" secondItem="xeU-qk-Klc" secondAttribute="leading" id="Dsm-4W-NsN"/>
@@ -553,6 +595,7 @@
                         <segue destination="VnO-eW-cOn" kind="show" id="5uw-Rn-TNg"/>
                         <segue destination="RlT-Mc-l0B" kind="show" id="kRj-kZ-2U3"/>
                         <segue destination="fWQ-bv-QjN" kind="show" id="HY5-3a-l4q"/>
+                        <segue destination="uDK-JB-y3D" kind="show" id="iAr-l4-utU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzM-Hg-eqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1152,6 +1195,267 @@
             </objects>
             <point key="canvasLocation" x="-1979.3893129770991" y="2595.7746478873241"/>
         </scene>
+        <!--Live Score Odds View Controller-->
+        <scene sceneID="jJS-mo-gDf">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreOddsViewController" id="nfo-1x-zcz" customClass="LiveScoreOddsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eiY-85-ggg"/>
+                        <viewControllerLayoutGuide type="bottom" id="gsZ-a2-xb8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="16r-cJ-9ej">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-uW-gAf">
+                                <rect key="frame" x="172" y="415.66666666666669" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fk6-uW-gAf" firstAttribute="centerY" secondItem="16r-cJ-9ej" secondAttribute="centerY" id="CiR-Sj-MuO"/>
+                            <constraint firstItem="Fk6-uW-gAf" firstAttribute="centerX" secondItem="16r-cJ-9ej" secondAttribute="centerX" id="Uw9-mz-zZ5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIW-GR-CTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4080" y="4264"/>
+        </scene>
+        <!--Live Score Detail View Controller-->
+        <scene sceneID="9ez-D7-D26">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreDetailViewController" id="uDK-JB-y3D" customClass="LiveScoreDetailViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l6r-ar-j2A"/>
+                        <viewControllerLayoutGuide type="bottom" id="fmq-N3-7w1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SEG-p7-CEL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-r0-Obr">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-im-2fP">
+                                        <rect key="frame" x="8" y="0.0" width="377" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="LLz-0c-d3d"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kH4-Kk-rg1">
+                                            <size key="itemSize" width="134" height="67"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveScoreDetailCollectionViewCell" id="2ZJ-iO-CBJ" customClass="LiveScoreDetailCollectionViewCell" customModule="LiveScoreApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-5" width="134" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JMg-nQ-3fh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GLw-kL-rqh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="134" height="50"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-VY-T0w">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="47"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gs-jU-PlR">
+                                                                    <rect key="frame" x="0.0" y="47" width="134" height="3"/>
+                                                                    <color key="backgroundColor" name="AccentColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="3" id="DG3-pu-mwF"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="PSt-VY-T0w" firstAttribute="leading" secondItem="GLw-kL-rqh" secondAttribute="leading" id="E9p-By-aF6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="PSt-VY-T0w" secondAttribute="trailing" id="H4H-d1-UIX"/>
+                                                                <constraint firstItem="9gs-jU-PlR" firstAttribute="leading" secondItem="GLw-kL-rqh" secondAttribute="leading" id="I1b-RW-WLj"/>
+                                                                <constraint firstAttribute="bottom" secondItem="9gs-jU-PlR" secondAttribute="bottom" id="Itg-41-JF5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="9gs-jU-PlR" secondAttribute="trailing" id="l6n-s9-uzS"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="GLw-kL-rqh" firstAttribute="leading" secondItem="JMg-nQ-3fh" secondAttribute="leading" id="Igz-5b-5VX"/>
+                                                        <constraint firstItem="GLw-kL-rqh" firstAttribute="top" secondItem="JMg-nQ-3fh" secondAttribute="top" id="LmL-6U-Wiq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GLw-kL-rqh" secondAttribute="bottom" id="S7Z-3c-d0F"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GLw-kL-rqh" secondAttribute="trailing" id="w3T-Gu-IDA"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="134" height="50"/>
+                                                <connections>
+                                                    <outlet property="lineView" destination="9gs-jU-PlR" id="SfK-NP-2bq"/>
+                                                    <outlet property="nameLabel" destination="PSt-VY-T0w" id="5qA-yk-89J"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="uDK-JB-y3D" id="gjo-BN-YVq"/>
+                                            <outlet property="delegate" destination="uDK-JB-y3D" id="jrY-Xj-e8H"/>
+                                        </connections>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1l-yX-zLe">
+                                        <rect key="frame" x="0.0" y="40" width="393" height="626"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O1l-yX-zLe" firstAttribute="leading" secondItem="hAw-r0-Obr" secondAttribute="leading" id="T84-f5-0bb"/>
+                                    <constraint firstItem="dG1-im-2fP" firstAttribute="leading" secondItem="hAw-r0-Obr" secondAttribute="leading" constant="8" id="bxe-Yb-hof"/>
+                                    <constraint firstAttribute="trailing" secondItem="O1l-yX-zLe" secondAttribute="trailing" id="eAM-9A-a8x"/>
+                                    <constraint firstAttribute="trailing" secondItem="dG1-im-2fP" secondAttribute="trailing" constant="8" id="rmg-Iu-tzt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fmq-N3-7w1" firstAttribute="top" secondItem="hAw-r0-Obr" secondAttribute="bottom" id="B7M-Y0-dhP"/>
+                            <constraint firstItem="hAw-r0-Obr" firstAttribute="leading" secondItem="SEG-p7-CEL" secondAttribute="leading" id="oc3-bz-Di3"/>
+                            <constraint firstItem="hAw-r0-Obr" firstAttribute="top" secondItem="l6r-ar-j2A" secondAttribute="bottom" id="tjI-ie-q8e"/>
+                            <constraint firstAttribute="trailing" secondItem="hAw-r0-Obr" secondAttribute="trailing" id="u6J-dc-3gl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="teW-Hm-VeE"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dG1-im-2fP" id="5cq-i9-5ZI"/>
+                        <outlet property="mainView" destination="O1l-yX-zLe" id="4cb-RX-gmc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SH-EO-6FA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2404" y="3522"/>
+        </scene>
+        <!--Live Score Stats View Controller-->
+        <scene sceneID="s0n-xg-EXF">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreStatsViewController" id="8H8-xV-eBd" customClass="LiveScoreStatsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tdx-0C-FPL"/>
+                        <viewControllerLayoutGuide type="bottom" id="l55-dp-nQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ygy-pM-WXL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-G3-HZ7">
+                                <rect key="frame" x="171" y="415.66666666666669" width="51.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XZc-G3-HZ7" firstAttribute="centerX" secondItem="ygy-pM-WXL" secondAttribute="centerX" id="LD7-OE-MRZ"/>
+                            <constraint firstItem="XZc-G3-HZ7" firstAttribute="centerY" secondItem="ygy-pM-WXL" secondAttribute="centerY" id="XqH-LT-fj5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTS-qt-Fr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3256" y="4261"/>
+        </scene>
+        <!--Live Score Lineup View Controller-->
+        <scene sceneID="mQa-b3-MVv">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreLineupViewController" id="4Y0-M4-8Pm" customClass="LiveScoreLineupViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QUl-Xd-ZcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFS-fT-5fd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0QJ-en-gIz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-VW-frS">
+                                <rect key="frame" x="170.66666666666666" y="415.66666666666669" width="51.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xa4-VW-frS" firstAttribute="centerY" secondItem="0QJ-en-gIz" secondAttribute="centerY" id="M93-1N-7AQ"/>
+                            <constraint firstItem="Xa4-VW-frS" firstAttribute="centerX" secondItem="0QJ-en-gIz" secondAttribute="centerX" id="sYH-Oc-hIx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzu-TW-3x1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2373" y="4261"/>
+        </scene>
+        <!--Live Score Headto Head View Controller-->
+        <scene sceneID="ur0-pM-31R">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreHeadtoHeadViewController" id="NDX-Kj-57p" customClass="LiveScoreHeadtoHeadViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYd-pU-TQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="9s5-br-Er2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hIn-Mp-mnj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23M-0c-tgx">
+                                <rect key="frame" x="170.66666666666666" y="415.66666666666669" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="23M-0c-tgx" firstAttribute="centerX" secondItem="hIn-Mp-mnj" secondAttribute="centerX" id="S8r-Hp-yr6"/>
+                            <constraint firstItem="23M-0c-tgx" firstAttribute="centerY" secondItem="hIn-Mp-mnj" secondAttribute="centerY" id="uB7-Gb-mDF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kE0-M6-mS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1555" y="4267"/>
+        </scene>
+        <!--Live Score Standing View Controller-->
+        <scene sceneID="dyJ-LO-ghV">
+            <objects>
+                <viewController storyboardIdentifier="LiveScoreStandingViewController" id="4xc-kh-Usm" customClass="LiveScoreStandingViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U8u-rr-7yW"/>
+                        <viewControllerLayoutGuide type="bottom" id="qml-8o-WQR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8CO-ye-deh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUA-4Y-8iE">
+                                <rect key="frame" x="170.66666666666666" y="415.66666666666669" width="51.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XUA-4Y-8iE" firstAttribute="centerX" secondItem="8CO-ye-deh" secondAttribute="centerX" id="WzR-Jt-loY"/>
+                            <constraint firstItem="XUA-4Y-8iE" firstAttribute="centerY" secondItem="8CO-ye-deh" secondAttribute="centerY" id="xOh-PJ-k0G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rij-6E-lls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="4265"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplayvideo" catalog="system" width="128" height="102"/>
@@ -1167,6 +1471,9 @@
         <image name="soccerball" catalog="system" width="128" height="123"/>
         <image name="star.square.fill" catalog="system" width="128" height="114"/>
         <image name="tell_friend" width="378" height="334"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="black">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

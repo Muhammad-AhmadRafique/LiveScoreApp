@@ -9,7 +9,6 @@ import UIKit
 
 class LiveScoreViewController: UIViewController {
 
-    @IBOutlet weak var topfilterStackView: UIStackView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var topStackView: UIStackView!
@@ -86,6 +85,10 @@ class LiveScoreViewController: UIViewController {
         let control1 = Storyboards.MAIN.instantiateViewController(withIdentifier: FinishedLiveScoreViewController.className) as! FinishedLiveScoreViewController
         let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: LiveScoreListViewController.className) as! LiveScoreListViewController
         let control3 = Storyboards.MAIN.instantiateViewController(withIdentifier: UpcomingLiveScoreViewController.className) as! UpcomingLiveScoreViewController
+        
+        control1.parentNavigationController = self.navigationController
+        control2.parentNavigationController = self.navigationController
+        control3.parentNavigationController = self.navigationController
 
         self.viewControllerList.append(control1)
         self.viewControllerList.append(control2)

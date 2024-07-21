@@ -49,6 +49,13 @@
 		E0B371612C35A70F009EB405 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E0B371602C35A70F009EB405 /* Base */; };
 		E0B371632C35A710009EB405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B371622C35A710009EB405 /* Assets.xcassets */; };
 		E0B371662C35A710009EB405 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E0B371652C35A710009EB405 /* Base */; };
+		E0D550AF2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550AE2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift */; };
+		E0D550B12C4C2AD40014FDF4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550B02C4C2AD40014FDF4 /* CustomNavigationController.swift */; };
+		E0D550B42C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550B32C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift */; };
+		E0D550B72C4C3C350014FDF4 /* LiveScoreStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550B62C4C3C350014FDF4 /* LiveScoreStatsViewController.swift */; };
+		E0D550BA2C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550B92C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift */; };
+		E0D550BD2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550BC2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift */; };
+		E0D550C02C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D550BF2C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift */; };
 		E0D674D02C46788600426D40 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D674CF2C46788600426D40 /* NewsViewController.swift */; };
 		E0D674D22C46789300426D40 /* LiveScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D674D12C46789300426D40 /* LiveScoreViewController.swift */; };
 		E0D674D62C4678B100426D40 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D674D52C4678B100426D40 /* ProfileViewController.swift */; };
@@ -110,6 +117,13 @@
 		E0B371622C35A710009EB405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0B371652C35A710009EB405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B371672C35A710009EB405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D550AE2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreDetailViewController.swift; sourceTree = "<group>"; };
+		E0D550B02C4C2AD40014FDF4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		E0D550B32C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreOddsViewController.swift; sourceTree = "<group>"; };
+		E0D550B62C4C3C350014FDF4 /* LiveScoreStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreStatsViewController.swift; sourceTree = "<group>"; };
+		E0D550B92C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreLineupViewController.swift; sourceTree = "<group>"; };
+		E0D550BC2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreHeadtoHeadViewController.swift; sourceTree = "<group>"; };
+		E0D550BF2C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreStandingViewController.swift; sourceTree = "<group>"; };
 		E0D674CF2C46788600426D40 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E0D674D12C46789300426D40 /* LiveScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreViewController.swift; sourceTree = "<group>"; };
 		E0D674D52C4678B100426D40 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -254,9 +268,63 @@
 			path = LiveScoreApp;
 			sourceTree = "<group>";
 		};
+		E0D550AD2C4C1EA90014FDF4 /* LiveScoreDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550BE2C4C3CCB0014FDF4 /* LiveScoreStandingViewController */,
+				E0D550BB2C4C3CA30014FDF4 /* LiveScoreHeadtoHeadViewController */,
+				E0D550B82C4C3C630014FDF4 /* LiveScoreLineupViewController */,
+				E0D550B52C4C3C1C0014FDF4 /* LiveScoreStatsViewController */,
+				E0D550B22C4C3A500014FDF4 /* LiveScoreOddsViewController */,
+				E0D550AE2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift */,
+			);
+			path = LiveScoreDetailViewController;
+			sourceTree = "<group>";
+		};
+		E0D550B22C4C3A500014FDF4 /* LiveScoreOddsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550B32C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift */,
+			);
+			path = LiveScoreOddsViewController;
+			sourceTree = "<group>";
+		};
+		E0D550B52C4C3C1C0014FDF4 /* LiveScoreStatsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550B62C4C3C350014FDF4 /* LiveScoreStatsViewController.swift */,
+			);
+			path = LiveScoreStatsViewController;
+			sourceTree = "<group>";
+		};
+		E0D550B82C4C3C630014FDF4 /* LiveScoreLineupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550B92C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift */,
+			);
+			path = LiveScoreLineupViewController;
+			sourceTree = "<group>";
+		};
+		E0D550BB2C4C3CA30014FDF4 /* LiveScoreHeadtoHeadViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550BC2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift */,
+			);
+			path = LiveScoreHeadtoHeadViewController;
+			sourceTree = "<group>";
+		};
+		E0D550BE2C4C3CCB0014FDF4 /* LiveScoreStandingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0D550BF2C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift */,
+			);
+			path = LiveScoreStandingViewController;
+			sourceTree = "<group>";
+		};
 		E0D674CC2C46785B00426D40 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E0D550AD2C4C1EA90014FDF4 /* LiveScoreDetailViewController */,
 				E05EDC892C48062F007B750F /* LiveScoreViewController */,
 				E05EDC812C47FB87007B750F /* NewsDetailViewController */,
 				E0F037742C469729003ED0BA /* NewsViewController */,
@@ -290,6 +358,7 @@
 				E0F037712C469529003ED0BA /* Custom Views */,
 				E0F037632C4689F5003ED0BA /* Router.swift */,
 				E0F037682C468B1E003ED0BA /* Constants.swift */,
+				E0D550B02C4C2AD40014FDF4 /* CustomNavigationController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -481,14 +550,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D550B42C4C3A6C0014FDF4 /* LiveScoreOddsViewController.swift in Sources */,
 				E0F037702C468EB1003ED0BA /* UIViewController+Extension.swift in Sources */,
 				E05EDC8C2C4806D2007B750F /* FinishedLiveScoreViewController.swift in Sources */,
+				E0D550B72C4C3C350014FDF4 /* LiveScoreStatsViewController.swift in Sources */,
+				E0D550BD2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift in Sources */,
 				E04D06E32C47A89300293B37 /* String+Extension.swift in Sources */,
 				E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */,
 				E0F0376E2C468DEF003ED0BA /* UITableView+Extension.swift in Sources */,
+				E0D550C02C4C3CEA0014FDF4 /* LiveScoreStandingViewController.swift in Sources */,
 				E0B1A1222C46A9A500C250DB /* UIView+Extension.swift in Sources */,
 				E0DE549E2C4699A500546745 /* NewsTableViewCell.swift in Sources */,
 				E05EDC8E2C48070A007B750F /* LiveScoreListViewController.swift in Sources */,
+				E0D550BA2C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift in Sources */,
 				E0F037672C468B09003ED0BA /* AboutUsViewController.swift in Sources */,
 				E04D06E62C47AADC00293B37 /* LeagueMatchTableViewCell.swift in Sources */,
 				E0D674D62C4678B100426D40 /* ProfileViewController.swift in Sources */,
@@ -505,6 +579,7 @@
 				E0B3715C2C35A70F009EB405 /* SceneDelegate.swift in Sources */,
 				E04D06E92C47ABB800293B37 /* LeaguesHeaderView.swift in Sources */,
 				E04D06F42C47C00900293B37 /* TopLeaguesCollectionViewCell.swift in Sources */,
+				E0D550AF2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift in Sources */,
 				E0F037732C46953B003ED0BA /* RoundedImageView.swift in Sources */,
 				E0D674D22C46789300426D40 /* LiveScoreViewController.swift in Sources */,
 				E0F037692C468B1F003ED0BA /* Constants.swift in Sources */,
@@ -516,6 +591,7 @@
 				E09543952C49588C00BE9040 /* NewsTableHeaderView.swift in Sources */,
 				E05EDC872C47FC15007B750F /* NewsDetailTableViewCell.swift in Sources */,
 				E011FDCA2C48195F0099B113 /* LiveScoreHeaderView.swift in Sources */,
+				E0D550B12C4C2AD40014FDF4 /* CustomNavigationController.swift in Sources */,
 				E0B1A1292C46ABF200C250DB /* LeaguesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
