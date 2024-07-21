@@ -119,7 +119,7 @@ class LiveScoreViewController: UIViewController {
         if selectedIndex == 0 {
             return
         }
-        let controller = Storyboards.MAIN.instantiateViewController(withIdentifier: FinishedLiveScoreViewController.className) as! FinishedLiveScoreViewController
+        let controller = viewControllerList[0]
         self.pageController?.setViewControllers([controller], direction: .reverse, animated: true, completion: nil)
         selectedIndex = 0
         updateTopButtons()
@@ -130,7 +130,7 @@ class LiveScoreViewController: UIViewController {
         if selectedIndex == 1 {
             return
         }
-        let controller = Storyboards.MAIN.instantiateViewController(withIdentifier: LiveScoreListViewController.className) as! LiveScoreListViewController
+        let controller = viewControllerList[1]
         self.pageController?.setViewControllers([controller], direction: selectedIndex == 0 ? .forward : .reverse, animated: true, completion: nil)
         selectedIndex = 1
         updateTopButtons()
@@ -140,7 +140,7 @@ class LiveScoreViewController: UIViewController {
         if selectedIndex == 2 {
             return
         }
-        let controller = Storyboards.MAIN.instantiateViewController(withIdentifier: UpcomingLiveScoreViewController.className) as! UpcomingLiveScoreViewController
+        let controller = viewControllerList[2]
         self.pageController?.setViewControllers([controller], direction: .forward, animated: true, completion: nil)
         selectedIndex = 2
         updateTopButtons()
