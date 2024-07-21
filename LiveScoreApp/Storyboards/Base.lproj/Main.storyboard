@@ -1348,19 +1348,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-G3-HZ7">
-                                <rect key="frame" x="171" y="415.66666666666669" width="51.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-Ye-okU">
+                                <rect key="frame" x="0.0" y="69" width="393" height="749"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-oj-bc0">
+                                        <rect key="frame" x="10" y="0.0" width="373" height="32"/>
+                                        <segments>
+                                            <segment title="Barcelona"/>
+                                            <segment title="Real Madrid"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tjy-es-XPA">
+                                        <rect key="frame" x="0.0" y="41" width="393" height="708"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8H8-xV-eBd" id="hUd-VI-809"/>
+                                            <outlet property="delegate" destination="8H8-xV-eBd" id="82T-9C-C2Z"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tjy-es-XPA" firstAttribute="leading" secondItem="PAd-Ye-okU" secondAttribute="leading" id="QxI-5a-14X"/>
+                                    <constraint firstItem="UHL-oj-bc0" firstAttribute="leading" secondItem="PAd-Ye-okU" secondAttribute="leading" constant="10" id="fY3-SH-vts"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tjy-es-XPA" secondAttribute="trailing" id="lH7-nS-umM"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHL-oj-bc0" secondAttribute="trailing" constant="10" id="zfD-AP-0dr"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XZc-G3-HZ7" firstAttribute="centerX" secondItem="ygy-pM-WXL" secondAttribute="centerX" id="LD7-OE-MRZ"/>
-                            <constraint firstItem="XZc-G3-HZ7" firstAttribute="centerY" secondItem="ygy-pM-WXL" secondAttribute="centerY" id="XqH-LT-fj5"/>
+                            <constraint firstItem="l55-dp-nQh" firstAttribute="top" secondItem="PAd-Ye-okU" secondAttribute="bottom" id="Ghx-0Q-Ro5"/>
+                            <constraint firstAttribute="trailing" secondItem="PAd-Ye-okU" secondAttribute="trailing" id="PL5-PH-BGf"/>
+                            <constraint firstItem="PAd-Ye-okU" firstAttribute="leading" secondItem="ygy-pM-WXL" secondAttribute="leading" id="gCu-Eu-MAO"/>
+                            <constraint firstItem="PAd-Ye-okU" firstAttribute="top" secondItem="Tdx-0C-FPL" secondAttribute="bottom" constant="10" id="gJF-y0-vdq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Tjy-es-XPA" id="WPc-yt-Wnn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTS-qt-Fr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

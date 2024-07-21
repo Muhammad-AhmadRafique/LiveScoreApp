@@ -12,6 +12,7 @@ class LiveScoreOddsViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
 
