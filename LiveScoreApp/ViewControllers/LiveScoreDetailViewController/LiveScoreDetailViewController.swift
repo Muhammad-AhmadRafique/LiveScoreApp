@@ -52,6 +52,7 @@ class LiveScoreDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Match Details"
         selectedItem = list.first
         setupPageController()
     }

@@ -25,17 +25,17 @@
                                 <constraint firstAttribute="width" constant="30" id="eZ2-71-ryu"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspired Generation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r35-9k-eAf">
-                            <rect key="frame" x="46" y="18.333333333333336" width="279" height="20.333333333333336"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Korean K League 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r35-9k-eAf">
+                            <rect key="frame" x="46" y="18.333333333333336" width="281" height="20.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="TXE-nf-vCc">
-                            <rect key="frame" x="341" y="22.666666666666668" width="12" height="12.000000000000004"/>
+                            <rect key="frame" x="343" y="23.666666666666668" width="10" height="10.000000000000004"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="12" id="Tn3-ok-H1P"/>
-                                <constraint firstAttribute="height" constant="12" id="gJE-TI-rUJ"/>
+                                <constraint firstAttribute="width" constant="10" id="Tn3-ok-H1P"/>
+                                <constraint firstAttribute="height" constant="10" id="gJE-TI-rUJ"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -58,7 +58,7 @@
         <image name="right_arrow_icon" width="7.6666665077209473" height="13"/>
         <image name="usa_flag" width="800" height="421"/>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

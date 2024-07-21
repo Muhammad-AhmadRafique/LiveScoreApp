@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xek-jn-tu1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xyU-N6-7Oy">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,10 +65,6 @@
         <scene sceneID="pGv-O0-reV">
             <objects>
                 <viewController storyboardIdentifier="NewsViewController" id="0mf-oU-oaF" customClass="NewsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VEJ-pJ-FcU"/>
-                        <viewControllerLayoutGuide type="bottom" id="8fK-PO-keg"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="950-0g-3Gu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,12 +78,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jYX-Dp-FnI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8fK-PO-keg" firstAttribute="top" secondItem="T5F-2O-DwD" secondAttribute="bottom" id="3xz-fz-gTJ"/>
+                            <constraint firstItem="jYX-Dp-FnI" firstAttribute="bottom" secondItem="T5F-2O-DwD" secondAttribute="bottom" id="3xz-fz-gTJ"/>
                             <constraint firstItem="T5F-2O-DwD" firstAttribute="top" secondItem="950-0g-3Gu" secondAttribute="top" id="5kO-8K-xZy"/>
-                            <constraint firstItem="T5F-2O-DwD" firstAttribute="leading" secondItem="950-0g-3Gu" secondAttribute="leading" id="I5y-oe-iL3"/>
-                            <constraint firstAttribute="trailing" secondItem="T5F-2O-DwD" secondAttribute="trailing" id="bni-Wv-Vl6"/>
+                            <constraint firstItem="T5F-2O-DwD" firstAttribute="leading" secondItem="jYX-Dp-FnI" secondAttribute="leading" id="I5y-oe-iL3"/>
+                            <constraint firstItem="jYX-Dp-FnI" firstAttribute="trailing" secondItem="T5F-2O-DwD" secondAttribute="trailing" id="bni-Wv-Vl6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P24-ts-daa"/>
@@ -103,10 +101,6 @@
         <scene sceneID="S0Q-ja-PP8">
             <objects>
                 <viewController storyboardIdentifier="NewsDetailViewController" id="BHh-qx-Ytl" customClass="NewsDetailViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7mo-nR-pRO"/>
-                        <viewControllerLayoutGuide type="bottom" id="Uq5-ZZ-Erk"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ynr-3c-ocu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,12 +114,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="D8m-uf-3Hw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="top" secondItem="7mo-nR-pRO" secondAttribute="bottom" id="XvN-zG-c4D"/>
-                            <constraint firstAttribute="trailing" secondItem="jcd-UM-Z6v" secondAttribute="trailing" id="al3-Qr-lLi"/>
-                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="leading" secondItem="Ynr-3c-ocu" secondAttribute="leading" id="alQ-Um-eNx"/>
-                            <constraint firstItem="Uq5-ZZ-Erk" firstAttribute="top" secondItem="jcd-UM-Z6v" secondAttribute="bottom" id="vL1-os-ZXb"/>
+                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="top" secondItem="D8m-uf-3Hw" secondAttribute="top" id="XvN-zG-c4D"/>
+                            <constraint firstItem="D8m-uf-3Hw" firstAttribute="trailing" secondItem="jcd-UM-Z6v" secondAttribute="trailing" id="al3-Qr-lLi"/>
+                            <constraint firstItem="jcd-UM-Z6v" firstAttribute="leading" secondItem="D8m-uf-3Hw" secondAttribute="leading" id="alQ-Um-eNx"/>
+                            <constraint firstItem="D8m-uf-3Hw" firstAttribute="bottom" secondItem="jcd-UM-Z6v" secondAttribute="bottom" id="vL1-os-ZXb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eqJ-5q-jzP"/>
@@ -141,10 +136,6 @@
         <scene sceneID="bBa-Mn-51t">
             <objects>
                 <viewController storyboardIdentifier="FinishedLiveScoreViewController" id="fWQ-bv-QjN" customClass="FinishedLiveScoreViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PL9-6v-cKT"/>
-                        <viewControllerLayoutGuide type="bottom" id="0fw-M5-k1p"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FS2-TO-auQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,12 +149,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gyz-ok-UnX"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
-                            <constraint firstItem="VTU-P9-7nz" firstAttribute="leading" secondItem="FS2-TO-auQ" secondAttribute="leading" id="Grd-MS-ssL"/>
-                            <constraint firstItem="VTU-P9-7nz" firstAttribute="top" secondItem="PL9-6v-cKT" secondAttribute="bottom" id="Jdx-5S-G45"/>
-                            <constraint firstAttribute="trailing" secondItem="VTU-P9-7nz" secondAttribute="trailing" id="sOp-1L-BaN"/>
-                            <constraint firstItem="0fw-M5-k1p" firstAttribute="top" secondItem="VTU-P9-7nz" secondAttribute="bottom" id="wCj-fg-ggs"/>
+                            <constraint firstItem="VTU-P9-7nz" firstAttribute="leading" secondItem="gyz-ok-UnX" secondAttribute="leading" id="Grd-MS-ssL"/>
+                            <constraint firstItem="VTU-P9-7nz" firstAttribute="top" secondItem="gyz-ok-UnX" secondAttribute="top" id="Jdx-5S-G45"/>
+                            <constraint firstItem="gyz-ok-UnX" firstAttribute="trailing" secondItem="VTU-P9-7nz" secondAttribute="trailing" id="sOp-1L-BaN"/>
+                            <constraint firstItem="gyz-ok-UnX" firstAttribute="bottom" secondItem="VTU-P9-7nz" secondAttribute="bottom" id="wCj-fg-ggs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tZ6-Gr-eOD"/>
@@ -256,32 +248,10 @@
             </objects>
             <point key="canvasLocation" x="2225" y="1078"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="bFS-1y-Yvx">
-            <objects>
-                <viewController id="wQK-DK-LNS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="00r-6c-Dfh"/>
-                        <viewControllerLayoutGuide type="bottom" id="pTf-kw-ZrB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="maR-My-vYV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xhH-Ki-GVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3749" y="-773"/>
-        </scene>
         <!--Live Score View Controller-->
         <scene sceneID="Z8r-3Z-bfn">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreViewController" id="uOc-TP-CdW" customClass="LiveScoreViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nZ5-qQ-Dc0"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mar-p3-Ypx"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WU1-bw-gNE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,12 +539,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VOJ-zG-Ch9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mar-p3-Ypx" firstAttribute="top" secondItem="xeU-qk-Klc" secondAttribute="bottom" id="14h-Bw-enP"/>
-                            <constraint firstItem="xeU-qk-Klc" firstAttribute="top" secondItem="nZ5-qQ-Dc0" secondAttribute="bottom" id="8fg-EF-Xik"/>
-                            <constraint firstAttribute="trailing" secondItem="xeU-qk-Klc" secondAttribute="trailing" id="Eao-LE-MMB"/>
-                            <constraint firstItem="xeU-qk-Klc" firstAttribute="leading" secondItem="WU1-bw-gNE" secondAttribute="leading" id="bOA-Z8-VAn"/>
+                            <constraint firstItem="VOJ-zG-Ch9" firstAttribute="bottom" secondItem="xeU-qk-Klc" secondAttribute="bottom" id="14h-Bw-enP"/>
+                            <constraint firstItem="xeU-qk-Klc" firstAttribute="top" secondItem="VOJ-zG-Ch9" secondAttribute="top" id="8fg-EF-Xik"/>
+                            <constraint firstItem="VOJ-zG-Ch9" firstAttribute="trailing" secondItem="xeU-qk-Klc" secondAttribute="trailing" id="Eao-LE-MMB"/>
+                            <constraint firstItem="xeU-qk-Klc" firstAttribute="leading" secondItem="VOJ-zG-Ch9" secondAttribute="leading" id="bOA-Z8-VAn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KqQ-8i-KID"/>
@@ -606,10 +577,6 @@
         <scene sceneID="8kS-pr-aU0">
             <objects>
                 <viewController storyboardIdentifier="LeaguesViewController" id="rEz-4Q-6ZM" customClass="LeaguesViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CLy-fP-Tns"/>
-                        <viewControllerLayoutGuide type="bottom" id="SyC-0i-Guf"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="stt-No-AvG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -712,17 +679,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kAR-1K-tGW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="trailing" secondItem="stt-No-AvG" secondAttribute="trailing" id="6Bx-EN-bOd"/>
-                            <constraint firstAttribute="trailing" secondItem="OMf-gC-mNl" secondAttribute="trailing" constant="30" id="7GJ-Ow-fs1"/>
+                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="trailing" secondItem="kAR-1K-tGW" secondAttribute="trailing" id="6Bx-EN-bOd"/>
+                            <constraint firstItem="kAR-1K-tGW" firstAttribute="trailing" secondItem="OMf-gC-mNl" secondAttribute="trailing" constant="30" id="7GJ-Ow-fs1"/>
                             <constraint firstItem="SKa-eL-CdU" firstAttribute="top" secondItem="OMf-gC-mNl" secondAttribute="bottom" constant="20" id="7TL-Bh-cQu"/>
-                            <constraint firstItem="SKa-eL-CdU" firstAttribute="leading" secondItem="stt-No-AvG" secondAttribute="leading" id="BMY-8H-MzA"/>
-                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="top" secondItem="CLy-fP-Tns" secondAttribute="bottom" id="CYQ-SB-YhJ"/>
-                            <constraint firstAttribute="trailing" secondItem="SKa-eL-CdU" secondAttribute="trailing" id="N1G-pj-Jhc"/>
-                            <constraint firstItem="OMf-gC-mNl" firstAttribute="leading" secondItem="stt-No-AvG" secondAttribute="leading" constant="20" id="NKL-BS-urk"/>
-                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="leading" secondItem="stt-No-AvG" secondAttribute="leading" id="Ojv-i8-Ve4"/>
-                            <constraint firstItem="SyC-0i-Guf" firstAttribute="top" secondItem="SKa-eL-CdU" secondAttribute="bottom" id="eLB-Mo-5WH"/>
+                            <constraint firstItem="SKa-eL-CdU" firstAttribute="leading" secondItem="kAR-1K-tGW" secondAttribute="leading" id="BMY-8H-MzA"/>
+                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="top" secondItem="kAR-1K-tGW" secondAttribute="top" id="CYQ-SB-YhJ"/>
+                            <constraint firstItem="kAR-1K-tGW" firstAttribute="trailing" secondItem="SKa-eL-CdU" secondAttribute="trailing" id="N1G-pj-Jhc"/>
+                            <constraint firstItem="OMf-gC-mNl" firstAttribute="leading" secondItem="kAR-1K-tGW" secondAttribute="leading" constant="20" id="NKL-BS-urk"/>
+                            <constraint firstItem="rwP-Zb-P9Z" firstAttribute="leading" secondItem="kAR-1K-tGW" secondAttribute="leading" id="Ojv-i8-Ve4"/>
+                            <constraint firstItem="kAR-1K-tGW" firstAttribute="bottom" secondItem="SKa-eL-CdU" secondAttribute="bottom" id="eLB-Mo-5WH"/>
                             <constraint firstItem="OMf-gC-mNl" firstAttribute="top" secondItem="rwP-Zb-P9Z" secondAttribute="bottom" id="fR4-5M-2eA"/>
                         </constraints>
                     </view>
@@ -1027,10 +995,6 @@
         <scene sceneID="Qia-mK-D1W">
             <objects>
                 <viewController storyboardIdentifier="BasketballLeaguesViewController" id="di0-wg-Kkh" customClass="BasketballLeaguesViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3fL-tp-eZ1"/>
-                        <viewControllerLayoutGuide type="bottom" id="ucg-So-HfN"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CGs-rT-9M1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1045,12 +1009,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EeX-2o-5wH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ucg-So-HfN" firstAttribute="top" secondItem="RND-cZ-dqZ" secondAttribute="bottom" id="SrY-I1-Zq7"/>
-                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="trailing" secondItem="CGs-rT-9M1" secondAttribute="trailing" id="YfY-bU-GAh"/>
-                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="top" secondItem="3fL-tp-eZ1" secondAttribute="bottom" id="fMa-HL-4GC"/>
-                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="leading" secondItem="CGs-rT-9M1" secondAttribute="leading" id="oxU-hW-w1H"/>
+                            <constraint firstItem="EeX-2o-5wH" firstAttribute="bottom" secondItem="RND-cZ-dqZ" secondAttribute="bottom" id="SrY-I1-Zq7"/>
+                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="trailing" secondItem="EeX-2o-5wH" secondAttribute="trailing" id="YfY-bU-GAh"/>
+                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="top" secondItem="EeX-2o-5wH" secondAttribute="top" id="fMa-HL-4GC"/>
+                            <constraint firstItem="RND-cZ-dqZ" firstAttribute="leading" secondItem="EeX-2o-5wH" secondAttribute="leading" id="oxU-hW-w1H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1GC-mY-mGm"/>
@@ -1066,13 +1031,10 @@
         <scene sceneID="6Nw-4s-Fpo">
             <objects>
                 <viewController storyboardIdentifier="AboutUsViewController" id="xJR-Kg-uFg" customClass="AboutUsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tDX-tR-amx"/>
-                        <viewControllerLayoutGuide type="bottom" id="J3d-R7-ThV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gSv-2G-XPi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GYv-E5-9az"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -1084,10 +1046,6 @@
         <scene sceneID="NdR-1W-msT">
             <objects>
                 <viewController storyboardIdentifier="FootballLeaguesViewController" id="AFw-Iu-nzU" customClass="FootballLeaguesViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vHa-R1-XbS"/>
-                        <viewControllerLayoutGuide type="bottom" id="ooa-N2-wKA"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rig-mS-d7r">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1102,12 +1060,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="p4F-d5-Qpd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="GmD-3h-dGJ" secondAttribute="trailing" id="13F-eA-kcf"/>
-                            <constraint firstItem="GmD-3h-dGJ" firstAttribute="leading" secondItem="Rig-mS-d7r" secondAttribute="leading" id="2ts-fC-bCt"/>
-                            <constraint firstItem="ooa-N2-wKA" firstAttribute="top" secondItem="GmD-3h-dGJ" secondAttribute="bottom" id="686-8q-cac"/>
-                            <constraint firstItem="GmD-3h-dGJ" firstAttribute="top" secondItem="vHa-R1-XbS" secondAttribute="bottom" id="yV6-I1-rD7"/>
+                            <constraint firstItem="p4F-d5-Qpd" firstAttribute="trailing" secondItem="GmD-3h-dGJ" secondAttribute="trailing" id="13F-eA-kcf"/>
+                            <constraint firstItem="GmD-3h-dGJ" firstAttribute="leading" secondItem="p4F-d5-Qpd" secondAttribute="leading" id="2ts-fC-bCt"/>
+                            <constraint firstItem="p4F-d5-Qpd" firstAttribute="bottom" secondItem="GmD-3h-dGJ" secondAttribute="bottom" id="686-8q-cac"/>
+                            <constraint firstItem="GmD-3h-dGJ" firstAttribute="top" secondItem="p4F-d5-Qpd" secondAttribute="top" id="yV6-I1-rD7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UgQ-Kt-PCq"/>
@@ -1123,10 +1082,6 @@
         <scene sceneID="5eY-IB-aMD">
             <objects>
                 <viewController storyboardIdentifier="UpcomingLiveScoreViewController" id="VnO-eW-cOn" customClass="UpcomingLiveScoreViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qby-WB-Jrk"/>
-                        <viewControllerLayoutGuide type="bottom" id="tP5-Ke-sV1"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xpv-fr-Z2r">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1140,12 +1095,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="sBk-fS-ndF"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="tP5-Ke-sV1" firstAttribute="top" secondItem="S9R-cX-s7L" secondAttribute="bottom" id="8G9-13-0YR"/>
-                            <constraint firstItem="S9R-cX-s7L" firstAttribute="leading" secondItem="xpv-fr-Z2r" secondAttribute="leading" id="nF9-Sw-k9k"/>
-                            <constraint firstItem="S9R-cX-s7L" firstAttribute="top" secondItem="Qby-WB-Jrk" secondAttribute="bottom" id="qMh-Xg-y2Q"/>
-                            <constraint firstAttribute="trailing" secondItem="S9R-cX-s7L" secondAttribute="trailing" id="vxT-Kq-qit"/>
+                            <constraint firstItem="sBk-fS-ndF" firstAttribute="bottom" secondItem="S9R-cX-s7L" secondAttribute="bottom" id="8G9-13-0YR"/>
+                            <constraint firstItem="S9R-cX-s7L" firstAttribute="leading" secondItem="sBk-fS-ndF" secondAttribute="leading" id="nF9-Sw-k9k"/>
+                            <constraint firstItem="S9R-cX-s7L" firstAttribute="top" secondItem="sBk-fS-ndF" secondAttribute="top" id="qMh-Xg-y2Q"/>
+                            <constraint firstItem="sBk-fS-ndF" firstAttribute="trailing" secondItem="S9R-cX-s7L" secondAttribute="trailing" id="vxT-Kq-qit"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xP1-vg-oZ6"/>
@@ -1161,10 +1117,6 @@
         <scene sceneID="Mph-OS-iSb">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreListViewController" id="RlT-Mc-l0B" customClass="LiveScoreListViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2LD-eu-glc"/>
-                        <viewControllerLayoutGuide type="bottom" id="MNg-pr-Zn2"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QpX-Gy-KIg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1178,12 +1130,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lrQ-CJ-Zfs"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nYW-kS-xSL" secondAttribute="trailing" id="3i0-bM-Wf9"/>
-                            <constraint firstItem="MNg-pr-Zn2" firstAttribute="top" secondItem="nYW-kS-xSL" secondAttribute="bottom" id="TPY-gA-Pj5"/>
-                            <constraint firstItem="nYW-kS-xSL" firstAttribute="top" secondItem="2LD-eu-glc" secondAttribute="bottom" id="XLp-aI-YQz"/>
-                            <constraint firstItem="nYW-kS-xSL" firstAttribute="leading" secondItem="QpX-Gy-KIg" secondAttribute="leading" id="bdP-70-lcb"/>
+                            <constraint firstItem="lrQ-CJ-Zfs" firstAttribute="trailing" secondItem="nYW-kS-xSL" secondAttribute="trailing" id="3i0-bM-Wf9"/>
+                            <constraint firstItem="lrQ-CJ-Zfs" firstAttribute="bottom" secondItem="nYW-kS-xSL" secondAttribute="bottom" id="TPY-gA-Pj5"/>
+                            <constraint firstItem="nYW-kS-xSL" firstAttribute="top" secondItem="lrQ-CJ-Zfs" secondAttribute="top" id="XLp-aI-YQz"/>
+                            <constraint firstItem="nYW-kS-xSL" firstAttribute="leading" secondItem="lrQ-CJ-Zfs" secondAttribute="leading" id="bdP-70-lcb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mFo-jU-SiY"/>
@@ -1199,27 +1152,32 @@
         <scene sceneID="jJS-mo-gDf">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreOddsViewController" id="nfo-1x-zcz" customClass="LiveScoreOddsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eiY-85-ggg"/>
-                        <viewControllerLayoutGuide type="bottom" id="gsZ-a2-xb8"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16r-cJ-9ej">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-uW-gAf">
-                                <rect key="frame" x="172" y="415.66666666666669" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ttA-QQ-eDm">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nfo-1x-zcz" id="DG4-lr-KG6"/>
+                                    <outlet property="delegate" destination="nfo-1x-zcz" id="elr-z2-cJQ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="H1Z-Bz-INc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fk6-uW-gAf" firstAttribute="centerY" secondItem="16r-cJ-9ej" secondAttribute="centerY" id="CiR-Sj-MuO"/>
-                            <constraint firstItem="Fk6-uW-gAf" firstAttribute="centerX" secondItem="16r-cJ-9ej" secondAttribute="centerX" id="Uw9-mz-zZ5"/>
+                            <constraint firstItem="ttA-QQ-eDm" firstAttribute="leading" secondItem="H1Z-Bz-INc" secondAttribute="leading" id="E20-gq-04u"/>
+                            <constraint firstItem="H1Z-Bz-INc" firstAttribute="trailing" secondItem="ttA-QQ-eDm" secondAttribute="trailing" id="VCf-RJ-RVV"/>
+                            <constraint firstItem="ttA-QQ-eDm" firstAttribute="top" secondItem="H1Z-Bz-INc" secondAttribute="top" id="X8D-ao-VRd"/>
+                            <constraint firstItem="H1Z-Bz-INc" firstAttribute="bottom" secondItem="ttA-QQ-eDm" secondAttribute="bottom" id="zKF-5B-qtH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ttA-QQ-eDm" id="1iG-5p-piX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIW-GR-CTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1229,10 +1187,6 @@
         <scene sceneID="9ez-D7-D26">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreDetailViewController" id="uDK-JB-y3D" customClass="LiveScoreDetailViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="l6r-ar-j2A"/>
-                        <viewControllerLayoutGuide type="bottom" id="fmq-N3-7w1"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SEG-p7-CEL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1240,8 +1194,95 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-r0-Obr">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-t1-59a">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cop-la-hfg">
+                                                <rect key="frame" x="20" y="19.999999999999993" width="353" height="126.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Korean K League 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEM-ee-1Ht">
+                                                        <rect key="frame" x="102.33333333333333" y="0.0" width="148.33333333333337" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-ge-feP">
+                                                        <rect key="frame" x="37.333333333333343" y="40.333333333333343" width="278.66666666666663" height="86"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-mH-usy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="75.333333333333329" height="86"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6CC-76-KRi">
+                                                                        <rect key="frame" x="7.6666666666666643" y="0.0" width="59.999999999999993" height="60"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="6bo-YF-eO0"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="I9S-Zs-6CY"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChangWon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-if-F1W">
+                                                                        <rect key="frame" x="0.0" y="68" width="75.333333333333329" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="My6-4g-HWO">
+                                                                <rect key="frame" x="105.33333333333331" y="62" width="68" height="24"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB2-dx-jUS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="9.6666666666666661" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSi-5n-cbT">
+                                                                        <rect key="frame" x="29.666666666666686" y="0.0" width="6" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-PQ-OKK">
+                                                                        <rect key="frame" x="55.666666666666686" y="0.0" width="12.333333333333329" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="heZ-oG-T44">
+                                                                <rect key="frame" x="203.33333333333334" y="0.0" width="75.333333333333343" height="86"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_icon" translatesAutoresizingMaskIntoConstraints="NO" id="K0r-jI-Qbg">
+                                                                        <rect key="frame" x="7.6666666666666288" y="0.0" width="60" height="60"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="60" id="dFx-bV-JOW"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="kz2-CB-vwi"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChangWon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-xp-93s">
+                                                                        <rect key="frame" x="0.0" y="68" width="75.333333333333329" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="black"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cop-la-hfg" secondAttribute="trailing" constant="20" id="2qy-86-hrJ"/>
+                                            <constraint firstAttribute="height" constant="180" id="Owf-GZ-ZE9"/>
+                                            <constraint firstItem="cop-la-hfg" firstAttribute="leading" secondItem="iCn-t1-59a" secondAttribute="leading" constant="20" id="m7J-Vj-d5p"/>
+                                            <constraint firstItem="cop-la-hfg" firstAttribute="top" secondItem="iCn-t1-59a" secondAttribute="top" constant="20" id="qQr-F9-oeP"/>
+                                        </constraints>
+                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-im-2fP">
-                                        <rect key="frame" x="8" y="0.0" width="377" height="40"/>
+                                        <rect key="frame" x="8" y="180" width="377" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="LLz-0c-d3d"/>
@@ -1306,7 +1347,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1l-yX-zLe">
-                                        <rect key="frame" x="0.0" y="40" width="393" height="626"/>
+                                        <rect key="frame" x="0.0" y="220" width="393" height="446"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -1314,16 +1355,19 @@
                                     <constraint firstItem="O1l-yX-zLe" firstAttribute="leading" secondItem="hAw-r0-Obr" secondAttribute="leading" id="T84-f5-0bb"/>
                                     <constraint firstItem="dG1-im-2fP" firstAttribute="leading" secondItem="hAw-r0-Obr" secondAttribute="leading" constant="8" id="bxe-Yb-hof"/>
                                     <constraint firstAttribute="trailing" secondItem="O1l-yX-zLe" secondAttribute="trailing" id="eAM-9A-a8x"/>
+                                    <constraint firstAttribute="trailing" secondItem="iCn-t1-59a" secondAttribute="trailing" id="fm9-JE-QBj"/>
+                                    <constraint firstItem="iCn-t1-59a" firstAttribute="leading" secondItem="hAw-r0-Obr" secondAttribute="leading" id="fnm-RT-SZH"/>
                                     <constraint firstAttribute="trailing" secondItem="dG1-im-2fP" secondAttribute="trailing" constant="8" id="rmg-Iu-tzt"/>
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="IEH-Fe-BE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fmq-N3-7w1" firstAttribute="top" secondItem="hAw-r0-Obr" secondAttribute="bottom" id="B7M-Y0-dhP"/>
-                            <constraint firstItem="hAw-r0-Obr" firstAttribute="leading" secondItem="SEG-p7-CEL" secondAttribute="leading" id="oc3-bz-Di3"/>
-                            <constraint firstItem="hAw-r0-Obr" firstAttribute="top" secondItem="l6r-ar-j2A" secondAttribute="bottom" id="tjI-ie-q8e"/>
-                            <constraint firstAttribute="trailing" secondItem="hAw-r0-Obr" secondAttribute="trailing" id="u6J-dc-3gl"/>
+                            <constraint firstItem="IEH-Fe-BE7" firstAttribute="bottom" secondItem="hAw-r0-Obr" secondAttribute="bottom" id="B7M-Y0-dhP"/>
+                            <constraint firstItem="hAw-r0-Obr" firstAttribute="leading" secondItem="IEH-Fe-BE7" secondAttribute="leading" id="oc3-bz-Di3"/>
+                            <constraint firstItem="hAw-r0-Obr" firstAttribute="top" secondItem="IEH-Fe-BE7" secondAttribute="top" id="tjI-ie-q8e"/>
+                            <constraint firstItem="IEH-Fe-BE7" firstAttribute="trailing" secondItem="hAw-r0-Obr" secondAttribute="trailing" id="u6J-dc-3gl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="teW-Hm-VeE"/>
@@ -1340,10 +1384,6 @@
         <scene sceneID="s0n-xg-EXF">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreStatsViewController" id="8H8-xV-eBd" customClass="LiveScoreStatsViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Tdx-0C-FPL"/>
-                        <viewControllerLayoutGuide type="bottom" id="l55-dp-nQh"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ygy-pM-WXL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1376,12 +1416,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lEU-jl-ohP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="l55-dp-nQh" firstAttribute="top" secondItem="PAd-Ye-okU" secondAttribute="bottom" id="Ghx-0Q-Ro5"/>
-                            <constraint firstAttribute="trailing" secondItem="PAd-Ye-okU" secondAttribute="trailing" id="PL5-PH-BGf"/>
-                            <constraint firstItem="PAd-Ye-okU" firstAttribute="leading" secondItem="ygy-pM-WXL" secondAttribute="leading" id="gCu-Eu-MAO"/>
-                            <constraint firstItem="PAd-Ye-okU" firstAttribute="top" secondItem="Tdx-0C-FPL" secondAttribute="bottom" constant="10" id="gJF-y0-vdq"/>
+                            <constraint firstItem="lEU-jl-ohP" firstAttribute="bottom" secondItem="PAd-Ye-okU" secondAttribute="bottom" id="Ghx-0Q-Ro5"/>
+                            <constraint firstItem="lEU-jl-ohP" firstAttribute="trailing" secondItem="PAd-Ye-okU" secondAttribute="trailing" id="PL5-PH-BGf"/>
+                            <constraint firstItem="PAd-Ye-okU" firstAttribute="leading" secondItem="lEU-jl-ohP" secondAttribute="leading" id="gCu-Eu-MAO"/>
+                            <constraint firstItem="PAd-Ye-okU" firstAttribute="top" secondItem="lEU-jl-ohP" secondAttribute="top" constant="10" id="gJF-y0-vdq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1396,10 +1437,6 @@
         <scene sceneID="mQa-b3-MVv">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreLineupViewController" id="4Y0-M4-8Pm" customClass="LiveScoreLineupViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QUl-Xd-ZcP"/>
-                        <viewControllerLayoutGuide type="bottom" id="SFS-fT-5fd"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0QJ-en-gIz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1432,12 +1469,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="B9U-pq-JAZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gDy-uv-GAh" firstAttribute="leading" secondItem="0QJ-en-gIz" secondAttribute="leading" id="N3m-rW-AxI"/>
-                            <constraint firstItem="gDy-uv-GAh" firstAttribute="top" secondItem="QUl-Xd-ZcP" secondAttribute="bottom" constant="10" id="Sbf-2M-AAO"/>
-                            <constraint firstItem="SFS-fT-5fd" firstAttribute="top" secondItem="gDy-uv-GAh" secondAttribute="bottom" id="VVB-N1-Kb3"/>
-                            <constraint firstAttribute="trailing" secondItem="gDy-uv-GAh" secondAttribute="trailing" id="wLd-Hu-shJ"/>
+                            <constraint firstItem="gDy-uv-GAh" firstAttribute="leading" secondItem="B9U-pq-JAZ" secondAttribute="leading" id="N3m-rW-AxI"/>
+                            <constraint firstItem="gDy-uv-GAh" firstAttribute="top" secondItem="B9U-pq-JAZ" secondAttribute="top" constant="10" id="Sbf-2M-AAO"/>
+                            <constraint firstItem="B9U-pq-JAZ" firstAttribute="bottom" secondItem="gDy-uv-GAh" secondAttribute="bottom" id="VVB-N1-Kb3"/>
+                            <constraint firstItem="B9U-pq-JAZ" firstAttribute="trailing" secondItem="gDy-uv-GAh" secondAttribute="trailing" id="wLd-Hu-shJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1452,10 +1490,6 @@
         <scene sceneID="ur0-pM-31R">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreHeadtoHeadViewController" id="NDX-Kj-57p" customClass="LiveScoreHeadtoHeadViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uYd-pU-TQC"/>
-                        <viewControllerLayoutGuide type="bottom" id="9s5-br-Er2"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hIn-Mp-mnj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1489,12 +1523,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bg8-1C-oSY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1PG-MP-Ab5" firstAttribute="top" secondItem="uYd-pU-TQC" secondAttribute="bottom" constant="10" id="Amx-ma-nZS"/>
+                            <constraint firstItem="1PG-MP-Ab5" firstAttribute="top" secondItem="Bg8-1C-oSY" secondAttribute="top" constant="10" id="Amx-ma-nZS"/>
                             <constraint firstAttribute="bottom" secondItem="1PG-MP-Ab5" secondAttribute="bottom" id="It6-hE-q3p"/>
-                            <constraint firstAttribute="trailing" secondItem="1PG-MP-Ab5" secondAttribute="trailing" id="KY8-tK-ayk"/>
-                            <constraint firstItem="1PG-MP-Ab5" firstAttribute="leading" secondItem="hIn-Mp-mnj" secondAttribute="leading" id="Yq9-8X-Pol"/>
+                            <constraint firstItem="Bg8-1C-oSY" firstAttribute="trailing" secondItem="1PG-MP-Ab5" secondAttribute="trailing" id="KY8-tK-ayk"/>
+                            <constraint firstItem="1PG-MP-Ab5" firstAttribute="leading" secondItem="Bg8-1C-oSY" secondAttribute="leading" id="Yq9-8X-Pol"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1509,10 +1544,6 @@
         <scene sceneID="dyJ-LO-ghV">
             <objects>
                 <viewController storyboardIdentifier="LiveScoreStandingViewController" id="4xc-kh-Usm" customClass="LiveScoreStandingViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="U8u-rr-7yW"/>
-                        <viewControllerLayoutGuide type="bottom" id="qml-8o-WQR"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8CO-ye-deh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1546,12 +1577,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ATu-P6-hpc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qml-8o-WQR" firstAttribute="top" secondItem="qUr-iS-67d" secondAttribute="bottom" id="6DA-Dw-ZFU"/>
-                            <constraint firstItem="qUr-iS-67d" firstAttribute="leading" secondItem="8CO-ye-deh" secondAttribute="leading" id="VW5-G3-wFd"/>
-                            <constraint firstItem="qUr-iS-67d" firstAttribute="top" secondItem="U8u-rr-7yW" secondAttribute="bottom" constant="10" id="jxl-cV-oAW"/>
-                            <constraint firstAttribute="trailing" secondItem="qUr-iS-67d" secondAttribute="trailing" id="pO3-eQ-YS8"/>
+                            <constraint firstItem="ATu-P6-hpc" firstAttribute="bottom" secondItem="qUr-iS-67d" secondAttribute="bottom" id="6DA-Dw-ZFU"/>
+                            <constraint firstItem="qUr-iS-67d" firstAttribute="leading" secondItem="ATu-P6-hpc" secondAttribute="leading" id="VW5-G3-wFd"/>
+                            <constraint firstItem="qUr-iS-67d" firstAttribute="top" secondItem="ATu-P6-hpc" secondAttribute="top" constant="10" id="jxl-cV-oAW"/>
+                            <constraint firstItem="ATu-P6-hpc" firstAttribute="trailing" secondItem="qUr-iS-67d" secondAttribute="trailing" id="pO3-eQ-YS8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1561,6 +1593,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rij-6E-lls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-781" y="4265"/>
+        </scene>
+        <!--Custom Launch View Controller-->
+        <scene sceneID="JEj-kE-Phk">
+            <objects>
+                <viewController storyboardIdentifier="CustomLaunchViewController" id="xyU-N6-7Oy" customClass="CustomLaunchViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rcr-D4-akR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Vi-Y0b">
+                                <rect key="frame" x="8" y="272.66666666666669" width="377" height="307.00000000000006"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sports_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5jt-xc-YKz">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="TMm-xK-zQX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiveScoreHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPu-9b-143">
+                                        <rect key="frame" x="0.0" y="269.99999999999994" width="377" height="37"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                        <color key="textColor" name="black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pEx-cA-Pl5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="meQ-Vi-Y0b" firstAttribute="centerX" secondItem="pEx-cA-Pl5" secondAttribute="centerX" id="Lr2-uv-vKj"/>
+                            <constraint firstItem="pEx-cA-Pl5" firstAttribute="trailing" secondItem="meQ-Vi-Y0b" secondAttribute="trailing" constant="8" id="Ode-vk-gsp"/>
+                            <constraint firstItem="meQ-Vi-Y0b" firstAttribute="leading" secondItem="pEx-cA-Pl5" secondAttribute="leading" constant="8" id="SVY-ew-3b5"/>
+                            <constraint firstItem="meQ-Vi-Y0b" firstAttribute="centerY" secondItem="rcr-D4-akR" secondAttribute="centerY" id="Zv5-Nk-9GZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLj-HG-L1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="465" y="120"/>
         </scene>
     </scenes>
     <resources>
@@ -1575,7 +1647,9 @@
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="right_arrow_icon" width="7.6666665077209473" height="13"/>
         <image name="soccerball" catalog="system" width="128" height="123"/>
+        <image name="sports_icon" width="1279" height="1151"/>
         <image name="star.square.fill" catalog="system" width="128" height="114"/>
+        <image name="team_icon" width="319" height="312"/>
         <image name="tell_friend" width="378" height="334"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
