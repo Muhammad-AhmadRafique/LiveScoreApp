@@ -51,5 +51,6 @@ extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
+        Router.shared.openLiveScoreDetailViewController(controller: parentNavigationController)
     }
 }

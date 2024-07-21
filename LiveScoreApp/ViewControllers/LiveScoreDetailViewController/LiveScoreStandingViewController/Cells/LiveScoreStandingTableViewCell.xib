@@ -30,7 +30,7 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-iL-Jps">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AC Milan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-iL-Jps">
                                 <rect key="frame" x="34" y="0.0" width="150" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="PlK-SU-FNq"/>
@@ -97,6 +97,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="placeLabel" destination="7Z8-8m-3rf" id="54o-Ff-TBV"/>
+            </connections>
             <point key="canvasLocation" x="87.022900763358777" y="-1.4084507042253522"/>
         </tableViewCell>
     </objects>

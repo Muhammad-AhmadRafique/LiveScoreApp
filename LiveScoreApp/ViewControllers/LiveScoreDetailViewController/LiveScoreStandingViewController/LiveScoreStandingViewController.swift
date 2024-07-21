@@ -40,10 +40,15 @@ extension LiveScoreStandingViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreStandingTableViewCell.className, for: indexPath) as! LiveScoreStandingTableViewCell
+        cell.configureCell(place: "\(indexPath.row + 1)")
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.removeSelection()
     }
 }
