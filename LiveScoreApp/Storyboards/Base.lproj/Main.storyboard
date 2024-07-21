@@ -1438,19 +1438,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUA-4Y-8iE">
-                                <rect key="frame" x="170.66666666666666" y="415.66666666666669" width="51.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qUr-iS-67d">
+                                <rect key="frame" x="0.0" y="69" width="393" height="749"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kj0-sd-pW2">
+                                        <rect key="frame" x="10" y="0.0" width="373" height="32"/>
+                                        <segments>
+                                            <segment title="All"/>
+                                            <segment title="Home"/>
+                                            <segment title="Away"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fHB-Qz-uTB">
+                                        <rect key="frame" x="0.0" y="41" width="393" height="708"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="4xc-kh-Usm" id="l7K-kJ-Mw0"/>
+                                            <outlet property="delegate" destination="4xc-kh-Usm" id="CKg-Nj-ukK"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kj0-sd-pW2" secondAttribute="trailing" constant="10" id="Lqt-JG-HCG"/>
+                                    <constraint firstItem="fHB-Qz-uTB" firstAttribute="leading" secondItem="qUr-iS-67d" secondAttribute="leading" id="UN4-LR-lTF"/>
+                                    <constraint firstAttribute="trailing" secondItem="fHB-Qz-uTB" secondAttribute="trailing" id="ht9-tl-FHi"/>
+                                    <constraint firstItem="kj0-sd-pW2" firstAttribute="leading" secondItem="qUr-iS-67d" secondAttribute="leading" constant="10" id="jJD-Ir-M87"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XUA-4Y-8iE" firstAttribute="centerX" secondItem="8CO-ye-deh" secondAttribute="centerX" id="WzR-Jt-loY"/>
-                            <constraint firstItem="XUA-4Y-8iE" firstAttribute="centerY" secondItem="8CO-ye-deh" secondAttribute="centerY" id="xOh-PJ-k0G"/>
+                            <constraint firstItem="qml-8o-WQR" firstAttribute="top" secondItem="qUr-iS-67d" secondAttribute="bottom" id="6DA-Dw-ZFU"/>
+                            <constraint firstItem="qUr-iS-67d" firstAttribute="leading" secondItem="8CO-ye-deh" secondAttribute="leading" id="VW5-G3-wFd"/>
+                            <constraint firstItem="qUr-iS-67d" firstAttribute="top" secondItem="U8u-rr-7yW" secondAttribute="bottom" constant="10" id="jxl-cV-oAW"/>
+                            <constraint firstAttribute="trailing" secondItem="qUr-iS-67d" secondAttribute="trailing" id="pO3-eQ-YS8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fHB-Qz-uTB" id="TFy-wI-uJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rij-6E-lls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

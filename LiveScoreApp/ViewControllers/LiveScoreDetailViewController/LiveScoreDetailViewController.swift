@@ -112,7 +112,7 @@ extension LiveScoreDetailViewController : UICollectionViewDelegate, UICollection
         return size
     }
     
-    private func getCurrentItemIndex() -> Int {
+    func getCurrentItemIndex() -> Int {
         guard let index = list.firstIndex(where: {$0 == selectedItem}) else {
             return -1
         }
@@ -127,6 +127,7 @@ extension LiveScoreDetailViewController : UICollectionViewDelegate, UICollection
         let controller = viewControllerList[indexPath.row]
         self.pageController?.setViewControllers([controller], direction: direction, animated: true, completion: nil)
         selectedItem = list[indexPath.row]
+        collectionView.scrollToItem(at: IndexPath(item: indexPath.row, section: 0), at: .centeredHorizontally, animated: true)
         collectionView.reloadData()
     }
 }
@@ -186,7 +187,9 @@ extension LiveScoreDetailViewController: UIPageViewControllerDataSource, UIPageV
             } else if lastViewController.isKind(of: LiveScoreStandingViewController.self) {
                 selectedItem = list[4]
             }
-            
+        
+            let index = getCurrentItemIndex()
+            collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
             collectionView.reloadData()
            
         }

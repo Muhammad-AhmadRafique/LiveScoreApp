@@ -9,21 +9,41 @@ import UIKit
 
 class LiveScoreStandingViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: LiveScoreStandingTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreStandingTableViewCell.className)
 
-        // Do any additional setup after loading the view.
+    }
+
+}
+
+extension LiveScoreStandingViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = LiveScoreStandingHeaderView.view()
+        return view
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreStandingTableViewCell.className, for: indexPath) as! LiveScoreStandingTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
 }
