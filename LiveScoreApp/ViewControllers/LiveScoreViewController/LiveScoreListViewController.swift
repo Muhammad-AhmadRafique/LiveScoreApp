@@ -42,12 +42,20 @@ class LiveScoreListViewController: UIViewController, PageItem {
     var liveScoreLeagueList = [LiveScoreLeagueModel]()
     
     weak var delegate : LiveScoreListViewControllerDelegate? = nil
-    
+    let refreshControl = UIRefreshControl()
+
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.sectionFooterHeight = 0
         tableView.register(UINib(nibName: LiveScoreTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreTableViewCell.className)
+        setupRefreshControl()
         getLiveScores()
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(getLiveScores), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
 }
@@ -90,13 +98,14 @@ extension LiveScoreListViewController : UITableViewDelegate, UITableViewDataSour
 }
 
 extension LiveScoreListViewController {
-    private func getLiveScores() {
+    @objc private func getLiveScores() {
         showProgressHud()
         
         let url = API.Leagues.Football.liveScore
         APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
             guard let `self`  = self else { return }
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.hideProgressHud()
                 switch response {
                 case .success(let result):

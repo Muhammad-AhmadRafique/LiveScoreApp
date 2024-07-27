@@ -19,12 +19,20 @@ class UpcomingLiveScoreViewController: UIViewController, PageItem {
     var upcomingScoreLeagueList = [LiveScoreLeagueModel]()
     
     weak var delegate : UpcomingLiveScoreViewControllerDelegate? = nil
-
+    let refreshControl = UIRefreshControl()
+    
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.sectionFooterHeight = 0
         tableView.register(UINib(nibName: LiveScoreTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreTableViewCell.className)
+        setupRefreshControl()
         getUpcomingMatches()
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(getUpcomingMatches), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
 }
@@ -67,7 +75,7 @@ extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewData
 
 extension UpcomingLiveScoreViewController {
     
-    private func getUpcomingMatches() {
+    @objc private func getUpcomingMatches() {
         showProgressHud()
         
         let currentDate = Date()
@@ -78,6 +86,7 @@ extension UpcomingLiveScoreViewController {
         APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
             guard let `self`  = self else { return }
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.hideProgressHud()
                 switch response {
                 case .success(let result):

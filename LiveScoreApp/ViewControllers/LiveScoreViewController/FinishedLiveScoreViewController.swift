@@ -19,12 +19,20 @@ class FinishedLiveScoreViewController: UIViewController, PageItem {
     var finishedScoreLeagueList = [LiveScoreLeagueModel]()
     
     weak var delegate: FinishedLiveScoreViewControllerDelegate? = nil
+    let refreshControl = UIRefreshControl()
 
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.sectionFooterHeight = 0
         tableView.register(UINib(nibName: LiveScoreTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreTableViewCell.className)
+        setupRefreshControl()
         getFinsishedMatches()
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(getFinsishedMatches), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
 }
@@ -67,7 +75,7 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
 
 extension FinishedLiveScoreViewController {
     
-    private func getFinsishedMatches() {
+    @objc private func getFinsishedMatches() {
         showProgressHud()
         
         let currentDate = Date()
@@ -79,6 +87,8 @@ extension FinishedLiveScoreViewController {
             guard let `self`  = self else { return }
             DispatchQueue.main.async {
                 self.hideProgressHud()
+                self.refreshControl.endRefreshing()
+
                 switch response {
                 case .success(let result):
                     let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
