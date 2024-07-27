@@ -8,5 +8,5 @@ target 'LiveScoreApp' do
   # Pods for LiveScoreApp
 
   pod 'MBProgressHUD'
-
+  pod 'SDWebImage'
 end

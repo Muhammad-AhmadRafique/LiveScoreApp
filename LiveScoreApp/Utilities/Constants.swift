@@ -19,3 +19,11 @@ struct Colors {
     static let lightGray = UIColor.lightGray
     static let yellow = UIColor(named: "yellow")!
 }
+
+struct K {
+    static let ERROR = "error"
+}
+
+struct Icons {
+    static let RECTANGLE_PLACEHOLDER = UIImage(named: "rectangle_placeholder")!
+}

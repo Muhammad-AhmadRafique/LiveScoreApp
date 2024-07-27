@@ -49,7 +49,7 @@ extension BasketballLeaguesViewController : UITableViewDelegate, UITableViewData
             return view
         default:
             let view = LeaguesHeaderView.view()
-            view.configure(section: section)
+            view.configure(section: section, countryLeague: nil)
             view.leagueHeaderButtonTapped = {
                 self.toggleSwitchList[section].isOpen = !self.toggleSwitchList[section].isOpen
                 DispatchQueue.main.async {
@@ -94,12 +94,12 @@ extension BasketballLeaguesViewController : UITableViewDelegate, UITableViewData
             let cell = tableView.dequeueReusableCell(withIdentifier: TopLeaguesTableViewCell.className, for: indexPath) as! TopLeaguesTableViewCell
             cell.separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
             cell.selectionStyle = .none
-            cell.configureCell()
+            cell.configureCell(leagues: [])
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: LeagueMatchTableViewCell.className, for: indexPath) as! LeagueMatchTableViewCell
             cell.separatorInset = tableView.separatorInset
-            cell.configureCell()
+            cell.configureCell(league: nil)
             return cell
         }
        

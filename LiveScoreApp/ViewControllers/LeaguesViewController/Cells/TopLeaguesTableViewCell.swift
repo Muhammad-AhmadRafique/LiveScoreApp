@@ -11,6 +11,8 @@ class TopLeaguesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var leagueList = [LeagueModel]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,17 +27,19 @@ class TopLeaguesTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         // Configure the view for the selected state
     }
     
-    func configureCell() {
-        
+    func configureCell(leagues: [LeagueModel]) {
+        leagueList = leagues
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopLeaguesCollectionViewCell.className, for: indexPath) as! TopLeaguesCollectionViewCell
+        cell.configureCell(league: leagueList[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return leagueList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -32,18 +32,18 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English Premier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-1q-3ix">
-                                        <rect key="frame" x="0.0" y="138" width="143" height="32"/>
+                                        <rect key="frame" x="4" y="138" width="135" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gdo-1q-3ix" firstAttribute="leading" secondItem="kGb-9U-l2Z" secondAttribute="leading" id="Clf-2q-hG2"/>
+                                    <constraint firstItem="gdo-1q-3ix" firstAttribute="leading" secondItem="kGb-9U-l2Z" secondAttribute="leading" constant="4" id="Clf-2q-hG2"/>
                                     <constraint firstItem="oIK-K9-kdR" firstAttribute="top" secondItem="kGb-9U-l2Z" secondAttribute="top" id="NAh-pd-mS0"/>
                                     <constraint firstItem="oIK-K9-kdR" firstAttribute="leading" secondItem="kGb-9U-l2Z" secondAttribute="leading" id="R9P-PP-gJE"/>
                                     <constraint firstAttribute="trailing" secondItem="oIK-K9-kdR" secondAttribute="trailing" id="TqC-bw-ygC"/>
-                                    <constraint firstAttribute="trailing" secondItem="gdo-1q-3ix" secondAttribute="trailing" id="XaN-aa-iUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="gdo-1q-3ix" secondAttribute="trailing" constant="4" id="XaN-aa-iUL"/>
                                 </constraints>
                             </stackView>
                         </subviews>

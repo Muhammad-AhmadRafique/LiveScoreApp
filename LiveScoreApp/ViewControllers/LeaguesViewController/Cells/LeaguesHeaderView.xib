@@ -30,16 +30,13 @@
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4vM-qo-gGc">
                             <rect key="frame" x="0.0" y="50" width="353" height="53"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-Ag-vdx">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDz-iv-P1v">
                                     <rect key="frame" x="0.0" y="11.666666666666664" width="30" height="30"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="0yG-Z4-UpX"/>
-                                        <constraint firstAttribute="height" constant="30" id="SXW-MU-5xI"/>
+                                        <constraint firstAttribute="width" constant="30" id="cXP-Kn-8kx"/>
+                                        <constraint firstAttribute="height" constant="30" id="gPX-xi-UE2"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Argentina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtC-9E-ZlF">
                                     <rect key="frame" x="38" y="17.666666666666671" width="255" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -101,7 +98,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="arrowIcon" destination="UFA-mk-0X0" id="Uvs-l9-iKd"/>
-                <outlet property="countryImageLabel" destination="JLl-Ag-vdx" id="qc2-u3-dUt"/>
+                <outlet property="countryImageView" destination="WDz-iv-P1v" id="vKM-57-0mv"/>
                 <outlet property="headingLabel" destination="JaV-FU-CWj" id="vWL-YZ-9ll"/>
                 <outlet property="leaguesCountLabel" destination="QVd-Le-ckf" id="8Ir-VJ-gmd"/>
                 <outlet property="titleLabel" destination="EtC-9E-ZlF" id="dJH-Gs-1WQ"/>

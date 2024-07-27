@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
+    
     func countryFlag() -> String {
         let countryCode = self == "UK" ? "GB" : self
         let base = 127397
@@ -20,5 +22,17 @@ extension String {
             }
         }
         return String(usv)
+    }
+    
+    func isValidURL() -> Bool {
+        let urlString = self
+        guard let url = URL(string: urlString), isPNG() else {
+            return false
+        }
+        return UIApplication.shared.canOpenURL(url)
+    }
+    
+    func isPNG() -> Bool {
+        return self.lowercased().hasSuffix(".png")
     }
 }

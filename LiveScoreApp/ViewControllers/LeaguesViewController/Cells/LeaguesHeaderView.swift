@@ -15,7 +15,7 @@ class LeaguesHeaderView: UIView {
     }
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var countryImageLabel: UILabel!
+    @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var leaguesCountLabel: UILabel!
     @IBOutlet weak var arrowIcon: UIImageView!
@@ -27,9 +27,19 @@ class LeaguesHeaderView: UIView {
         // Initialization code
     }
     
-    func configure(section: Int) {
-        countryImageLabel.text = "AR".countryFlag()
-        headingLabel.isHidden = section != 1
+    func configure(section: Int, countryLeague: LeagueCountryModel?) {
+        headingLabel.isHidden = section != 0
+        guard let countryLeague = countryLeague else { return }
+        
+        titleLabel.text = countryLeague.countryName
+        let totalLeagueCount = countryLeague.leagueList?.count ?? 0
+        leaguesCountLabel.text = "\(totalLeagueCount)"
+        
+        if let url = URL(string: countryLeague.countryLogo ?? ""){
+            countryImageView.sd_setImageWithURLWithFade(url: url, placeholderImage:Icons.RECTANGLE_PLACEHOLDER)
+        } else {
+            countryImageView.image = Icons.RECTANGLE_PLACEHOLDER
+        }
     }
     
     @IBAction func headerButtonWasPressed(_ sender: Any) {

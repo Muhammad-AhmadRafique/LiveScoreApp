@@ -9,7 +9,7 @@ import UIKit
 
 class LeagueMatchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var countryImageLabel: UILabel!
+    @IBOutlet weak var leagueImageView: UIImageView!
     @IBOutlet weak var matchNameLabel: UILabel!
     
     override func awakeFromNib() {
@@ -22,8 +22,15 @@ class LeagueMatchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell() {
-        countryImageLabel.text = "AR".countryFlag()
+    func configureCell(league: LeagueModel?) {
+        guard let league = league else { return }
+        if let url = URL(string: league.leagueLogo ?? ""){
+            leagueImageView.sd_setImageWithURLWithFade(url: url, placeholderImage:Icons.RECTANGLE_PLACEHOLDER)
+        } else {
+            leagueImageView.image = Icons.RECTANGLE_PLACEHOLDER
+        }
+        
+        matchNameLabel.text = league.leagueName
     }
     
 }

@@ -18,8 +18,13 @@ class TopLeaguesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configureCell() {
-        
+    func configureCell(league: LeagueModel) {
+        leagueNameLabel.text = league.leagueName
+        if let url = URL(string: league.leagueLogo ?? ""){
+            leagueImageView.sd_setImageWithURLWithFade(url: url, placeholderImage:Icons.RECTANGLE_PLACEHOLDER)
+        } else {
+            leagueImageView.image = Icons.RECTANGLE_PLACEHOLDER
+        }
     }
     
 }
