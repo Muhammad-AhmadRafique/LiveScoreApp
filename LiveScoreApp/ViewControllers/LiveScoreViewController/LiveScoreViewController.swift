@@ -83,9 +83,12 @@ class LiveScoreViewController: UIViewController {
         pageController?.view.rightAnchor.constraint(equalTo: mainView.rightAnchor).isActive = true
         
         let control1 = Storyboards.MAIN.instantiateViewController(withIdentifier: FinishedLiveScoreViewController.className) as! FinishedLiveScoreViewController
+        control1.delegate = self
         let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: LiveScoreListViewController.className) as! LiveScoreListViewController
+        control2.delegate = self
         let control3 = Storyboards.MAIN.instantiateViewController(withIdentifier: UpcomingLiveScoreViewController.className) as! UpcomingLiveScoreViewController
-        
+        control3.delegate = self
+
         control1.parentNavigationController = self.navigationController
         control2.parentNavigationController = self.navigationController
         control3.parentNavigationController = self.navigationController
@@ -197,5 +200,19 @@ extension LiveScoreViewController: UIPageViewControllerDataSource, UIPageViewCon
             }
             updateTopButtons()
         }
+    }
+}
+
+extension LiveScoreViewController : FinishedLiveScoreViewControllerDelegate, LiveScoreListViewControllerDelegate, UpcomingLiveScoreViewControllerDelegate {
+    func updateFinishedButtonTitle(title: String) {
+        finishButton.setTitle(title, for: .normal)
+    }
+    
+    func updateLiveButtonTitle(title: String) {
+        liveButton.setTitle(title, for: .normal)
+    }
+    
+    func updateUpcomingButtonTitle(title: String) {
+        upcomingButton.setTitle(title, for: .normal)
     }
 }

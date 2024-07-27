@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Zng-Wb-pf2">
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zng-Wb-pf2">
                         <rect key="frame" x="20" y="16" width="280" height="63"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="llX-5e-P3z">
@@ -40,11 +41,20 @@
                                     <constraint firstAttribute="width" constant="50" id="gKI-KQ-AAY"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Q-RT-Uvl">
+                                <rect key="frame" x="58" y="24.333333333333336" width="30" height="14.333333333333336"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="spV-TL-0yo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-ME-UpZ">
-                                <rect key="frame" x="54" y="9.6666666666666679" width="202" height="44"/>
+                                <rect key="frame" x="96" y="9.6666666666666679" width="156" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pc6-le-NKQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa_flag" translatesAutoresizingMaskIntoConstraints="NO" id="OQo-cV-kdS">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -54,7 +64,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0r-fo-DX6">
-                                                <rect key="frame" x="28" y="0.0" width="174" height="20"/>
+                                                <rect key="frame" x="28" y="0.0" width="128" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -62,7 +72,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-fa-AmU">
-                                        <rect key="frame" x="0.0" y="24" width="202" height="20"/>
+                                        <rect key="frame" x="0.0" y="24" width="156" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa_flag" translatesAutoresizingMaskIntoConstraints="NO" id="gZq-oN-Xz3">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -72,7 +82,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serbia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v1-mt-bOY">
-                                                <rect key="frame" x="28" y="0.0" width="174" height="20"/>
+                                                <rect key="frame" x="28" y="0.0" width="128" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -112,10 +122,26 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="awayTeamGoalsLabel" destination="Znh-j5-MqW" id="Otf-F6-RDe"/>
+                <outlet property="awayTeamIcon" destination="gZq-oN-Xz3" id="ZMd-oD-T4G"/>
+                <outlet property="awayTeamNameLabel" destination="8v1-mt-bOY" id="yOk-DB-8Vp"/>
+                <outlet property="dateTimeView" destination="llX-5e-P3z" id="K4M-OG-bff"/>
+                <outlet property="dayLabel" destination="gUb-mf-2EK" id="pTC-NX-lex"/>
+                <outlet property="homeTeamGoalsLabel" destination="lZp-CG-LIx" id="KeE-DB-Z1a"/>
+                <outlet property="homeTeamIcon" destination="OQo-cV-kdS" id="znA-DJ-Y03"/>
+                <outlet property="homeTeamNameLabel" destination="s0r-fo-DX6" id="Jlz-C8-cWM"/>
+                <outlet property="liveScoreMinuteLabel" destination="Y7Q-RT-Uvl" id="chf-Pb-fOm"/>
+                <outlet property="liveScoreMinuteLabelWidthConstraint" destination="spV-TL-0yo" id="9PT-Uj-cxy"/>
+                <outlet property="timeLabel" destination="lkK-5n-67H" id="T2r-uo-vOW"/>
+            </connections>
             <point key="canvasLocation" x="103.81679389312977" y="16.549295774647888"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="usa_flag" width="800" height="421"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

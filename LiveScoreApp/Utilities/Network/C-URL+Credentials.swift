@@ -23,16 +23,16 @@ var apiURL : String {
 struct API {
     struct Leagues {
         struct Football {
-            static let allLeagues = "\(apiURL)/football/"
+            static let fixtures = "\(apiURL)/football/?met=Fixtures&APIkey=\(API_KEY)"
+            static let allLeagues = "\(apiURL)/football/?met=Leagues&APIkey=\(API_KEY)"
+            static let liveScore = "\(apiURL)/football/?met=Livescore&APIkey=\(API_KEY)"
         }
         
         struct Baseball {
-            
+            static let allLeagues = "\(apiURL)/basketball/"
         }
 
     }
-
-   
 
         
 }

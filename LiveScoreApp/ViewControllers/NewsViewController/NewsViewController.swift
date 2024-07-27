@@ -93,3 +93,39 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+extension NewsViewController {
+//    private func getFootballTopFixtures() {
+////        &from=2021-05-18&to=2021-05-18
+//        showProgressHud()
+//        let abc = ""
+//        let def = ""
+//        let url = API.Leagues.Football.topFixtures + "&from=\(abc)&to=\(def)"
+//        APIGeneric<LeaguesResponseModel>.fetchRequest(apiURL: url) { [weak self] response in
+//            guard let `self`  = self else { return }
+//            DispatchQueue.main.async {
+//                self.hideProgressHud()
+//                switch response {
+//                case .success(let result):
+//                    let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
+//                    switch success {
+//                    case .success:
+//                        let leagues = result.result ?? []
+//                        self.allLeagueList = leagues
+//                        self.getTopFiveLeagues()
+//                        self.setupHeader()
+//                        self.countryLeagueList =  self.groupLeaguesByCountry()
+////                        self.tableView.reloadData()
+//                        self.updateUI()
+//                    default:
+//                        let err = CustomError(description: "Something went wrong, please try again")
+//                        self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+//                    }
+//                case .failure(let failure):
+//                    let err = CustomError(description: (failure as? CustomError)?.description ?? "")
+//                    self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+//                }
+//            }
+//        }
+//    }
+}

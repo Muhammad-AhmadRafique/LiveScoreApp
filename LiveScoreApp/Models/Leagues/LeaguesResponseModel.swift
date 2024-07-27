@@ -14,7 +14,15 @@ struct LeaguesResponseModel: Codable {
 }
 
 // MARK: - Result
-struct LeagueModel: Codable {
+struct LeagueModel: Codable, Hashable {
+    static func == (lhs: LeagueModel, rhs: LeagueModel) -> Bool {
+        return lhs.leagueKey == rhs.leagueKey
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(leagueKey)
+    }
+    
     let leagueKey, countryKey: Int?
     let leagueName, countryName: String?
     let leagueLogo, countryLogo: String?

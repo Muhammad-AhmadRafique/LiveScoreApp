@@ -46,6 +46,10 @@
 		E08A84802C54EC9700FEDBAF /* LeaguesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A847F2C54EC9700FEDBAF /* LeaguesTableHeaderView.swift */; };
 		E08A84822C54EDF200FEDBAF /* LeaguesTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08A84812C54EDF200FEDBAF /* LeaguesTableHeaderView.xib */; };
 		E08A84842C54F4AC00FEDBAF /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A84832C54F4AC00FEDBAF /* UIImageView+Extension.swift */; };
+		E08A84872C5531B400FEDBAF /* TopFixtureResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A84862C5531B400FEDBAF /* TopFixtureResponseModel.swift */; };
+		E08A848A2C55407600FEDBAF /* LiveScoreResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A84892C55407600FEDBAF /* LiveScoreResponseModel.swift */; };
+		E08A848C2C55746E00FEDBAF /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A848B2C55746E00FEDBAF /* HelperFunctions.swift */; };
+		E08A848E2C55752D00FEDBAF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A848D2C55752D00FEDBAF /* Date+Extension.swift */; };
 		E09543952C49588C00BE9040 /* NewsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09543942C49588C00BE9040 /* NewsTableHeaderView.swift */; };
 		E09543972C49589300BE9040 /* NewsTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09543962C49589300BE9040 /* NewsTableHeaderView.xib */; };
 		E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09543982C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift */; };
@@ -148,6 +152,10 @@
 		E08A847F2C54EC9700FEDBAF /* LeaguesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableHeaderView.swift; sourceTree = "<group>"; };
 		E08A84812C54EDF200FEDBAF /* LeaguesTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTableHeaderView.xib; sourceTree = "<group>"; };
 		E08A84832C54F4AC00FEDBAF /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		E08A84862C5531B400FEDBAF /* TopFixtureResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFixtureResponseModel.swift; sourceTree = "<group>"; };
+		E08A84892C55407600FEDBAF /* LiveScoreResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreResponseModel.swift; sourceTree = "<group>"; };
+		E08A848B2C55746E00FEDBAF /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E08A848D2C55752D00FEDBAF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		E09543942C49588C00BE9040 /* NewsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableHeaderView.swift; sourceTree = "<group>"; };
 		E09543962C49589300BE9040 /* NewsTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableHeaderView.xib; sourceTree = "<group>"; };
 		E09543982C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -298,6 +306,8 @@
 		E06AD6132C51779000A278E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E08A84882C55406500FEDBAF /* LiveScore */,
+				E08A84852C5531A800FEDBAF /* Fixtures */,
 				E08A847C2C54D73D00FEDBAF /* Leagues */,
 				E06AD6142C5177A400A278E9 /* GeneralModels.swift */,
 			);
@@ -310,6 +320,22 @@
 				E08A847D2C54D74A00FEDBAF /* LeaguesResponseModel.swift */,
 			);
 			path = Leagues;
+			sourceTree = "<group>";
+		};
+		E08A84852C5531A800FEDBAF /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				E08A84862C5531B400FEDBAF /* TopFixtureResponseModel.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		E08A84882C55406500FEDBAF /* LiveScore */ = {
+			isa = PBXGroup;
+			children = (
+				E08A84892C55407600FEDBAF /* LiveScoreResponseModel.swift */,
+			);
+			path = LiveScore;
 			sourceTree = "<group>";
 		};
 		E0B1A1272C46ABDF00C250DB /* LeaguesViewController */ = {
@@ -536,6 +562,7 @@
 				E0F037682C468B1E003ED0BA /* Constants.swift */,
 				E0D550B02C4C2AD40014FDF4 /* CustomNavigationController.swift */,
 				E0D46BD42C4D7257000CC677 /* ModeSelection.swift */,
+				E08A848B2C55746E00FEDBAF /* HelperFunctions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -560,6 +587,7 @@
 				E06AD6162C5177C900A278E9 /* Encodable+Extension.swift */,
 				E06AD6182C5177EA00A278E9 /* Dictionary+Extension.swift */,
 				E08A84832C54F4AC00FEDBAF /* UIImageView+Extension.swift */,
+				E08A848D2C55752D00FEDBAF /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -750,12 +778,14 @@
 				E06AD6112C5176F500A278E9 /* ReachabilityTest.swift in Sources */,
 				E06AD60C2C5176F500A278E9 /* DataService.swift in Sources */,
 				E0D550B72C4C3C350014FDF4 /* LiveScoreStatsViewController.swift in Sources */,
+				E08A848A2C55407600FEDBAF /* LiveScoreResponseModel.swift in Sources */,
 				E0EBC59C2C4D0C2800700B54 /* LiveScoreHeadToHeadTableViewCell.swift in Sources */,
 				E0D550BD2C4C3CBC0014FDF4 /* LiveScoreHeadtoHeadViewController.swift in Sources */,
 				E06AD60F2C5176F500A278E9 /* NetworkService.swift in Sources */,
 				E04D06E32C47A89300293B37 /* String+Extension.swift in Sources */,
 				E095439A2C49594600BE9040 /* NewsTableHeaderCollectionViewCell.swift in Sources */,
 				E0F0376E2C468DEF003ED0BA /* UITableView+Extension.swift in Sources */,
+				E08A848C2C55746E00FEDBAF /* HelperFunctions.swift in Sources */,
 				E0D46BD12C4D4370000CC677 /* CustomLaunchViewController.swift in Sources */,
 				E06AD6152C5177A400A278E9 /* GeneralModels.swift in Sources */,
 				E06AD6122C5176F500A278E9 /* WebAPIs.swift in Sources */,
@@ -780,6 +810,7 @@
 				E0D674D62C4678B100426D40 /* ProfileViewController.swift in Sources */,
 				E0D674D02C46788600426D40 /* NewsViewController.swift in Sources */,
 				E04D06FC2C47E54200293B37 /* NewsHotMatchesCollectionViewCell.swift in Sources */,
+				E08A84872C5531B400FEDBAF /* TopFixtureResponseModel.swift in Sources */,
 				E0B3715A2C35A70F009EB405 /* AppDelegate.swift in Sources */,
 				E05EDC902C480715007B750F /* UpcomingLiveScoreViewController.swift in Sources */,
 				E0F037642C4689F5003ED0BA /* Router.swift in Sources */,
@@ -796,6 +827,7 @@
 				E0D550AF2C4C1EBE0014FDF4 /* LiveScoreDetailViewController.swift in Sources */,
 				E0F037732C46953B003ED0BA /* RoundedImageView.swift in Sources */,
 				E0D674D22C46789300426D40 /* LiveScoreViewController.swift in Sources */,
+				E08A848E2C55752D00FEDBAF /* Date+Extension.swift in Sources */,
 				E0EBC5AF2C4D363800700B54 /* LiveScoreOddsTableViewCell.swift in Sources */,
 				E0F037692C468B1F003ED0BA /* Constants.swift in Sources */,
 				E0B1A12F2C46E88E00C250DB /* LeaguesTableViewCell.swift in Sources */,
