@@ -23,9 +23,11 @@ class LiveScoreStatsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(title: String, count: String) {
-        titleLabel.text = title
-        countLabel.text = count
+    func configureCell(model: Statistic?, selectedTeam: SelectedTeam) {
+        if let model = model {
+            titleLabel.text = model.type
+            countLabel.text = selectedTeam == .home ? model.home : model.away
+        }
     }
     
 }

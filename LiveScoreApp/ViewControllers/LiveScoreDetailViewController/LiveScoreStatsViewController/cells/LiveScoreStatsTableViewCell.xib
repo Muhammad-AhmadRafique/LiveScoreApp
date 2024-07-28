@@ -21,15 +21,15 @@
                         <rect key="frame" x="20" y="8" width="280" height="28"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots On Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-9y-Qdb">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="28"/>
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Q-zk-yjt">
-                                <rect key="frame" x="260" y="0.0" width="20" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Q-zk-yjt">
+                                <rect key="frame" x="230" y="0.0" width="50" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="rzP-z3-EEp"/>
+                                    <constraint firstAttribute="width" constant="50" id="rzP-z3-EEp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" name="black"/>

@@ -93,7 +93,7 @@ extension LiveScoreListViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(controller: parentNavigationController)
+        Router.shared.openLiveScoreDetailViewController(model: liveScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 

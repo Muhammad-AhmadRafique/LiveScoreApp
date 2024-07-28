@@ -18,7 +18,8 @@ class LiveScoreOddsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var itemList : [OddsModel] = []
-    
+    var liveScoreModel : LiveScoreModel?
+
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,10 @@ class LiveScoreOddsViewController: UIViewController {
         itemList.append(OddsModel(sectionTitle: sectionTitle, titleList: titleList, valueList: valueList))
         
         tableView.reloadData()
+    }
+    
+    func updateInformation(liveScoreModel : LiveScoreModel?) {
+        self.liveScoreModel = liveScoreModel
     }
 
 }

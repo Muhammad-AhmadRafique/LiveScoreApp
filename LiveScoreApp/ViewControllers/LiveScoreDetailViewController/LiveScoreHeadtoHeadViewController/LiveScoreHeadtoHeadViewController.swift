@@ -11,12 +11,17 @@ class LiveScoreHeadtoHeadViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var liveScoreModel : LiveScoreModel?
+
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreHeadToHeadTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreHeadToHeadTableViewCell.className)
     }
 
+    func updateInformation(liveScoreModel : LiveScoreModel?) {
+        self.liveScoreModel = liveScoreModel
+    }
 
 }
 

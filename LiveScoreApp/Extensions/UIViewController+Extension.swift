@@ -55,6 +55,8 @@ extension UIViewController {
     func showProgressHud() -> Void {
         DispatchQueue.main.async {
             let progressHud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            progressHud.mode = .indeterminate
+            progressHud.isUserInteractionEnabled = true
             progressHud.label.text = "Loading..."
         }
     }

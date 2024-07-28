@@ -11,12 +11,16 @@ class LiveScoreLineupViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var liveScoreModel : LiveScoreModel?
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreLinupTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreLinupTableViewCell.className)
     }
 
+    func updateInformation(liveScoreModel : LiveScoreModel?) {
+        self.liveScoreModel = liveScoreModel
+    }
 
 }
 

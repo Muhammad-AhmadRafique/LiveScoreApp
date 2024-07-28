@@ -1370,7 +1370,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="teW-Hm-VeE"/>
                     <connections>
+                        <outlet property="awayTeamGoalsLabel" destination="wWd-PQ-OKK" id="iAw-8L-KU1"/>
+                        <outlet property="awayTeamIcon" destination="K0r-jI-Qbg" id="COf-q6-4QZ"/>
+                        <outlet property="awayTeamNameLabel" destination="bcb-xp-93s" id="f4N-Kh-V2v"/>
                         <outlet property="collectionView" destination="dG1-im-2fP" id="5cq-i9-5ZI"/>
+                        <outlet property="homeTeamGoalsLabel" destination="bB2-dx-jUS" id="DYY-hm-3By"/>
+                        <outlet property="homeTeamIcon" destination="6CC-76-KRi" id="bae-bu-AUl"/>
+                        <outlet property="homeTeamNameLabel" destination="sxd-if-F1W" id="ctd-v6-oE7"/>
+                        <outlet property="leagueNameLabel" destination="KEM-ee-1Ht" id="tEU-GR-qDJ"/>
                         <outlet property="mainView" destination="O1l-yX-zLe" id="4cb-RX-gmc"/>
                     </connections>
                 </viewController>
@@ -1395,6 +1402,9 @@
                                             <segment title="Barcelona"/>
                                             <segment title="Real Madrid"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentControlValueChanged:" destination="8H8-xV-eBd" eventType="valueChanged" id="Fjh-iv-vmV"/>
+                                        </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tjy-es-XPA">
                                         <rect key="frame" x="0.0" y="41" width="393" height="708"/>
@@ -1424,6 +1434,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="segmentControl" destination="UHL-oj-bc0" id="LJt-bA-d9c"/>
                         <outlet property="tableView" destination="Tjy-es-XPA" id="WPc-yt-Wnn"/>
                     </connections>
                 </viewController>

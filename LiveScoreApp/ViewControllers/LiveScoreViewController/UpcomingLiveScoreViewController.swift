@@ -69,7 +69,7 @@ extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(controller: parentNavigationController)
+        Router.shared.openLiveScoreDetailViewController(model: upcomingScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 
@@ -79,8 +79,8 @@ extension UpcomingLiveScoreViewController {
         showProgressHud()
         
         let currentDate = Date()
-        let startDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)?.getFormattedDateString() ?? ""
-        let endDate = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)?.getFormattedDateString() ?? ""
+        let startDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)?.getFormattedDateString() ?? ""
+        let endDate = Calendar.current.date(byAdding: .hour, value: 6, to: currentDate)?.getFormattedDateString() ?? ""
         
         let url = API.Leagues.Football.fixtures + "&from=\(startDate)&to=\(endDate)"
         APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
@@ -93,7 +93,7 @@ extension UpcomingLiveScoreViewController {
                     let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
                     switch success {
                     case .success:
-                        let upcomingScoreLeagueList = result.result ?? []
+                        let upcomingScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() == ""})
                         self.upcomingScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: upcomingScoreLeagueList)
                         self.delegate?.updateUpcomingButtonTitle(title: "Upcoming (\(upcomingScoreLeagueList.count))")
                         self.tableView.reloadData()

@@ -54,4 +54,18 @@ extension String {
         let outputString = outputDateFormatter.string(from: date)
         return outputString
     }
+    
+    func getGoalsStats() -> (home: String, away: String){
+        var home = ""
+        var away = ""
+        let score = self
+        let components = score.components(separatedBy: "-")
+        if let first = components.first {
+            home = first
+        }
+        if let last = components.last {
+            away = last
+        }
+        return (home: home, away: away)
+    }
 }

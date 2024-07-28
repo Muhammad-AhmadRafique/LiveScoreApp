@@ -69,7 +69,7 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(controller: parentNavigationController)
+        Router.shared.openLiveScoreDetailViewController(model: finishedScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 
@@ -79,8 +79,8 @@ extension FinishedLiveScoreViewController {
         showProgressHud()
         
         let currentDate = Date()
-        let startDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)?.getFormattedDateString() ?? ""
-        let endDate = Calendar.current.date(byAdding: .hour, value: -10, to: currentDate)?.getFormattedDateString() ?? ""
+        let startDate = Calendar.current.date(byAdding: .hour, value: -8, to: currentDate)?.getFormattedDateString() ?? ""
+        let endDate = Calendar.current.date(byAdding: .hour, value: -1, to: currentDate)?.getFormattedDateString() ?? ""
         
         let url = API.Leagues.Football.fixtures + "&from=\(startDate)&to=\(endDate)"
         APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
@@ -94,7 +94,7 @@ extension FinishedLiveScoreViewController {
                     let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
                     switch success {
                     case .success:
-                        let finishedScoreLeagueList = result.result ?? []
+                        let finishedScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() == "finished"})
                         self.finishedScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: finishedScoreLeagueList)
                         self.delegate?.updateFinishedButtonTitle(title: "Finished (\(finishedScoreLeagueList.count))")
                         self.tableView.reloadData()

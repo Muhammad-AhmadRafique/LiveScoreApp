@@ -33,9 +33,21 @@ enum LiveScoreItem: String {
 
 class LiveScoreDetailViewController: UIViewController {
 
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    
+    @IBOutlet weak var homeTeamIcon: UIImageView!
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var homeTeamGoalsLabel: UILabel!
+    
+    @IBOutlet weak var awayTeamGoalsLabel: UILabel!
+    @IBOutlet weak var awayTeamIcon: UIImageView!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var mainView: UIView!
     
+    var liveScoreModel : LiveScoreModel?
+    var apiLiveScoreModel: LiveScoreModel?
     private let list : [LiveScoreItem] = [
         LiveScoreItem.odds,
         LiveScoreItem.stats,
@@ -55,9 +67,37 @@ class LiveScoreDetailViewController: UIViewController {
         navigationItem.title = "Match Details"
         selectedItem = list.first
         setupPageController()
+        getLiveScoreDetail()
     }
     
     //MARK: - Helper Methods
+    private func updateInformation() {
+        if let model = self.apiLiveScoreModel {
+            leagueNameLabel.text = model.leagueName
+            
+            homeTeamNameLabel.text = model.eventHomeTeam
+            awayTeamNameLabel.text = model.eventAwayTeam
+            
+            let score = model.eventFinalResult ?? ""
+            let goalStats = score.getGoalsStats()
+            homeTeamGoalsLabel.text = goalStats.home
+            awayTeamGoalsLabel.text = goalStats.away
+            
+            if let url = URL(string: model.homeTeamLogo ?? ""){
+                homeTeamIcon.sd_setImageWithURLWithFade(url: url, placeholderImage:Icons.RECTANGLE_PLACEHOLDER)
+            } else {
+                homeTeamIcon.image = Icons.RECTANGLE_PLACEHOLDER
+            }
+            
+            if let url = URL(string: model.awayTeamLogo ?? ""){
+                awayTeamIcon.sd_setImageWithURLWithFade(url: url, placeholderImage:Icons.RECTANGLE_PLACEHOLDER)
+            } else {
+                awayTeamIcon.image = Icons.RECTANGLE_PLACEHOLDER
+            }
+            
+        }
+    }
+    
     private func setupPageController() {
         
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -93,6 +133,34 @@ class LiveScoreDetailViewController: UIViewController {
             self.pageController?.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
     }
+    
+    func updateChildData(index: Int) {
+        switch index {
+        case 0:
+            if let vc = self.pageController?.viewControllers?.first as? LiveScoreOddsViewController {
+                vc.updateInformation(liveScoreModel: self.apiLiveScoreModel)
+            }
+        case 1:
+            if let vc = self.pageController?.viewControllers?.first as? LiveScoreStatsViewController {
+                vc.updateInformation(liveScoreModel: self.apiLiveScoreModel)
+            }
+        case 2:
+            if let vc = self.pageController?.viewControllers?.first as? LiveScoreLineupViewController {
+                vc.updateInformation(liveScoreModel: self.apiLiveScoreModel)
+            }
+        case 3:
+            if let vc = self.pageController?.viewControllers?.first as? LiveScoreHeadtoHeadViewController {
+                vc.updateInformation(liveScoreModel: self.apiLiveScoreModel)
+            }
+        case 4:
+            if let vc = self.pageController?.viewControllers?.first as? LiveScoreStandingViewController {
+                vc.updateInformation(liveScoreModel: self.apiLiveScoreModel)
+            }
+        default:
+            break
+        }
+    }
+        
 }
 
 extension LiveScoreDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -124,9 +192,11 @@ extension LiveScoreDetailViewController : UICollectionViewDelegate, UICollection
         if list[indexPath.row] == selectedItem {
             return
         }
-        let direction : UIPageViewController.NavigationDirection = indexPath.row < getCurrentItemIndex()     ? .reverse : .forward
+        let direction : UIPageViewController.NavigationDirection = indexPath.row < getCurrentItemIndex() ? .reverse : .forward
         let controller = viewControllerList[indexPath.row]
-        self.pageController?.setViewControllers([controller], direction: direction, animated: true, completion: nil)
+        self.pageController?.setViewControllers([controller], direction: direction, animated: true, completion: {_ in 
+            self.updateChildData(index: indexPath.row)
+        })
         selectedItem = list[indexPath.row]
         collectionView.scrollToItem(at: IndexPath(item: indexPath.row, section: 0), at: .centeredHorizontally, animated: true)
         collectionView.reloadData()
@@ -190,9 +260,47 @@ extension LiveScoreDetailViewController: UIPageViewControllerDataSource, UIPageV
             }
         
             let index = getCurrentItemIndex()
+            self.updateChildData(index: index)
             collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
             collectionView.reloadData()
            
+        }
+    }
+}
+
+extension LiveScoreDetailViewController {
+    private func getLiveScoreDetail() {
+        showProgressHud()
+        
+        let countryId = liveScoreModel?.eventCountryKey ?? 0
+        let leagueId = liveScoreModel?.leagueKey ?? 0
+        let matchId = liveScoreModel?.eventKey ?? 0
+        let url = API.Leagues.Football.fixtures + "&countryId=\(countryId)&leagueId=\(leagueId)&matchId=\(matchId)"
+        APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
+            guard let `self`  = self else { return }
+            DispatchQueue.main.async {
+                self.hideProgressHud()
+                switch response {
+                case .success(let result):
+                    let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
+                    switch success {
+                    case .success:
+                        let liveScoreLeagueList = result.result ?? []
+                        self.apiLiveScoreModel = liveScoreLeagueList.first
+                        self.updateInformation()
+                        self.updateChildData(index: 0)
+//                        (self.pageController?.viewControllers?[1] as? LiveScoreStatsViewController)?.liveScoreModel = liveScoreLeagueList.first
+//                        self.pageController.re
+//                        self.tableView.reloadData()
+                    default:
+                        let err = CustomError(description: "Something went wrong, please try again")
+                        self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+                    }
+                case .failure(let failure):
+                    let err = CustomError(description: (failure as? CustomError)?.description ?? "")
+                    self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+                }
+            }
         }
     }
 }

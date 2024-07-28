@@ -51,14 +51,10 @@ class LiveScoreTableViewCell: UITableViewCell {
         }
         awayTeamNameLabel.text = model?.eventAwayTeam
         
-        let score = model?.eventFinalResult ?? ""
-        let components = score.components(separatedBy: "-")
-        if let first = components.first {
-            homeTeamGoalsLabel.text = first
-        }
-        if let last = components.last {
-            awayTeamGoalsLabel.text = last
-        }
+        let score = model?.eventFinalResult ?? ""        
+        let goalStats = score.getGoalsStats()
+        homeTeamGoalsLabel.text = goalStats.home
+        awayTeamGoalsLabel.text = goalStats.away
         
         dateTimeView.isHidden = isLive
         liveScoreMinuteLabel.isHidden = !isLive

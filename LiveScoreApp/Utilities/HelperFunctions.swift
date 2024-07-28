@@ -13,8 +13,7 @@ class Helper {
         
         for match in list {
             guard let leagueKey = match.leagueKey,
-                  let leagueName = match.leagueName,
-                  let leagueLogo = match.leagueLogo else {
+                  let leagueName = match.leagueName else {
                 continue
             }
             
@@ -22,7 +21,7 @@ class Helper {
                 leagueModel.matchList?.append(match)
                 leagueDict[leagueKey] = leagueModel
             } else {
-                let newLeagueModel = LiveScoreLeagueModel(leagueKey: leagueKey, leagueName: leagueName, matchList: [match], leagueLogo: leagueLogo)
+                let newLeagueModel = LiveScoreLeagueModel(leagueKey: leagueKey, leagueName: leagueName, matchList: [match], leagueLogo: match.leagueLogo ?? "")
                 leagueDict[leagueKey] = newLeagueModel
             }
         }

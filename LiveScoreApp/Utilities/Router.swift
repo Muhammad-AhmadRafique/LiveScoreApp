@@ -24,8 +24,9 @@ class Router: NSObject {
         controller.show(control, sender: nil)
     }
     
-    func openLiveScoreDetailViewController(controller:UINavigationController?) -> Void {
+    func openLiveScoreDetailViewController(model: LiveScoreModel?, controller:UINavigationController?) -> Void {
         let control = Storyboards.MAIN.instantiateViewController(withIdentifier: LiveScoreDetailViewController.className) as! LiveScoreDetailViewController
+        control.liveScoreModel = model
         control.hidesBottomBarWhenPushed = true
         controller?.show(control, sender: nil)
     }
