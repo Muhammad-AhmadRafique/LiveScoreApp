@@ -16,6 +16,7 @@ class LiveScoreStatsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     var liveScoreModel : LiveScoreModel?
     private var selectedTeam : SelectedTeam = .home
@@ -33,6 +34,8 @@ class LiveScoreStatsViewController: UIViewController {
         self.liveScoreModel = liveScoreModel
         self.segmentControl.setTitle(liveScoreModel?.eventHomeTeam, forSegmentAt: SelectedTeam.home.rawValue)
         self.segmentControl.setTitle(liveScoreModel?.eventAwayTeam, forSegmentAt: SelectedTeam.away.rawValue)
+        
+        noDataLabel.isHidden = !((liveScoreModel?.statistics?.count ?? 0) == 0)
         tableView.reloadData()
     }
     

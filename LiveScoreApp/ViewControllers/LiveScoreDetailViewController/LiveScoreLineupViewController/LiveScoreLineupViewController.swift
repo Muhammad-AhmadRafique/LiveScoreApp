@@ -20,6 +20,7 @@ struct LineupModel {
 class LiveScoreLineupViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
     private var selectedTeam : SelectedTeam = .home
@@ -53,6 +54,13 @@ class LiveScoreLineupViewController: UIViewController {
             if let awayTeam = lineup.awayTeam {
                 awayTeamLineupList = getModels(team: awayTeam)
             }
+        }
+        
+        switch selectedTeam {
+        case .home:
+            noDataLabel.isHidden = !homeTeamLineupList.isEmpty
+        case .away:
+            noDataLabel.isHidden = !awayTeamLineupList.isEmpty
         }
         tableView.reloadData()
     }

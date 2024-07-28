@@ -19,7 +19,7 @@ class LeaguesTableHeaderView: UIView, UICollectionViewDelegate, UICollectionView
     private var leagueList = [LeagueModel]()
     
     func setup() {
-        self.frame = CGRect(x: 0, y: 0, width: frame.width, height: 350)
+//        self.frame = CGRect(x: 0, y: 0, width: frame.width, height: 350)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.register(UINib(nibName: TopLeaguesCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: TopLeaguesCollectionViewCell.className)
     }    

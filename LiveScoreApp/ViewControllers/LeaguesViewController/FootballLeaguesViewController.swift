@@ -56,7 +56,7 @@ class FootballLeaguesViewController: UIViewController, PageItem {
         
         tableView.sectionFooterHeight = 0
         headerView = LeaguesTableHeaderView.view()
-        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 250)
+        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 350)
         tableView.tableHeaderView = headerView
        
         setupDatasource()
@@ -138,7 +138,7 @@ extension FootballLeaguesViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 100 : 50
+        return section == 0 ? 90 : 45
     }
     
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -37,6 +37,7 @@ struct LiveScoreH2HLeagueModel : Hashable {
 class LiveScoreHeadtoHeadViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
     var liveScoreModel : LiveScoreModel?
@@ -55,6 +56,7 @@ class LiveScoreHeadtoHeadViewController: UIViewController {
     
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
         selectedType = LiveScoreH2HType(rawValue: sender.selectedSegmentIndex) ?? .h2h
+        self.setupNoDataLabel()
         tableView.reloadData()
     }
 
@@ -130,6 +132,17 @@ extension LiveScoreHeadtoHeadViewController : UITableViewDelegate, UITableViewDa
 }
 
 extension LiveScoreHeadtoHeadViewController {
+    private func setupNoDataLabel() {
+        switch selectedType {
+        case .h2h:
+            noDataLabel.isHidden = !h2hLeagueList.isEmpty
+        case .home:
+            noDataLabel.isHidden = !homeH2HLeagueList.isEmpty
+        case .away:
+            noDataLabel.isHidden = !awayH2HLeagueList.isEmpty
+        }
+    }
+    
     private func getH2HDetail() {
         showProgressHud()
         
@@ -153,6 +166,7 @@ extension LiveScoreHeadtoHeadViewController {
                         self.homeH2HLeagueList = Helper.groupH2HScoreMatchesByLeagues(list: homeList)
                         self.awayH2HLeagueList = Helper.groupH2HScoreMatchesByLeagues(list: awayList)
                         
+                        self.setupNoDataLabel()
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")

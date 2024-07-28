@@ -34,6 +34,7 @@ struct LiveScoreOddsMatchModel {
 class LiveScoreOddsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     private var itemList = [OddsModel]()
     private var oddsList : [LiveScoreOddsMatchModel] = []
@@ -119,8 +120,8 @@ extension LiveScoreOddsViewController {
                         let matchIdStr = "\(matchId)"
                         if let resultList = result.result, let list = resultList[matchIdStr] {
                             self.oddsList = Helper.groupOddsScoreMatchesByMatch(list: list)
-                            print(resultList)
                         }
+                        self.noDataLabel.isHidden = !self.oddsList.isEmpty
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")

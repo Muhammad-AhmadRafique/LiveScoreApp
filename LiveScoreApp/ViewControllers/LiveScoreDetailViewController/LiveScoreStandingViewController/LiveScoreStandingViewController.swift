@@ -16,6 +16,7 @@ enum LiveScoreStandingType : Int {
 class LiveScoreStandingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
     var liveScoreModel : LiveScoreModel?
@@ -33,6 +34,7 @@ class LiveScoreStandingViewController: UIViewController {
     
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
         selectedItem = LiveScoreStandingType(rawValue: sender.selectedSegmentIndex) ?? .home
+        self.setupNoDataLabel()
         tableView.reloadData()
     }
 
@@ -102,6 +104,18 @@ extension LiveScoreStandingViewController : UITableViewDelegate, UITableViewData
 }
 
 extension LiveScoreStandingViewController {
+    private func setupNoDataLabel() {
+        switch selectedItem {
+        case .all:
+            noDataLabel.isHidden = !allStandingList.isEmpty
+        case .home:
+            noDataLabel.isHidden = !homeStandingList.isEmpty
+        case .away:
+            noDataLabel.isHidden = !awayStandingList.isEmpty
+        }
+    }
+    
+    
     private func getStandingDetail() {
         showProgressHud()
         
@@ -119,6 +133,7 @@ extension LiveScoreStandingViewController {
                         self.allStandingList = result.result?.total ?? []
                         self.homeStandingList = result.result?.home ?? []
                         self.awayStandingList = result.result?.away ?? []
+                        self.setupNoDataLabel()
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
