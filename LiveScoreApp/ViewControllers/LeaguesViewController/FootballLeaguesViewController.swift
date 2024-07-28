@@ -56,7 +56,7 @@ class FootballLeaguesViewController: UIViewController, PageItem {
         
         tableView.sectionFooterHeight = 0
         headerView = LeaguesTableHeaderView.view()
-        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 350)
+        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 250)
         tableView.tableHeaderView = headerView
        
         setupDatasource()

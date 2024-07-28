@@ -44,20 +44,20 @@
                                             <constraint firstAttribute="height" constant="20" id="j6G-oC-28p"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-dj-lKU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-dj-lKU">
                                         <rect key="frame" x="0.0" y="30" width="168" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 Jul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJk-Tf-6dy">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="l9B-Nh-Mfw"/>
+                                                    <constraint firstAttribute="width" constant="60" id="l9B-Nh-Mfw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champions League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-Zh-0Jk">
-                                                <rect key="frame" x="58" y="0.0" width="110" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champions League" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-Zh-0Jk">
+                                                <rect key="frame" x="64" y="0.0" width="104" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -164,6 +164,18 @@
                 <constraint firstItem="qGB-KL-7C1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="y8S-G7-zON"/>
             </constraints>
             <size key="customSize" width="204" height="113"/>
+            <connections>
+                <outlet property="awayTeamGoalsLabel" destination="IYW-PK-tcl" id="nfH-Im-4Rp"/>
+                <outlet property="awayTeamIcon" destination="Jw9-CZ-ip4" id="qj6-Rq-aaO"/>
+                <outlet property="awayTeamNameLabel" destination="BQG-CM-No4" id="m3o-Nq-K6W"/>
+                <outlet property="countryNameLabel" destination="lTO-dC-slO" id="tdl-oh-xre"/>
+                <outlet property="dayLabel" destination="fJk-Tf-6dy" id="3Fr-ro-h2V"/>
+                <outlet property="homeTeamGoalsLabel" destination="zhS-eP-Ms8" id="lM2-IB-Gfc"/>
+                <outlet property="homeTeamIcon" destination="HW9-M4-qAN" id="aIK-yG-KH0"/>
+                <outlet property="homeTeamNameLabel" destination="Hyq-7o-xGH" id="ePb-4L-m18"/>
+                <outlet property="leagueNameLabel" destination="hmf-Zh-0Jk" id="OjQ-Dp-2Lw"/>
+                <outlet property="timeLabel" destination="1b3-xq-MoQ" id="mwg-TM-xwA"/>
+            </connections>
             <point key="canvasLocation" x="236.64122137404578" y="2.8169014084507045"/>
         </collectionViewCell>
     </objects>

@@ -10,6 +10,7 @@ import UIKit
 class NewsHotMatchesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var liveScoreModelList: [LiveScoreModel]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,16 +25,27 @@ class NewsHotMatchesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         // Configure the view for the selected state
     }
     
-    func configureCell() {
-        
+    func configureCell(liveScoreModelList: [LiveScoreModel]?) {
+        let totalCount = liveScoreModelList?.count ?? 0
+        if totalCount > 5 {
+            for i in 0..<5 {
+                if let model = liveScoreModelList?[i] {
+                    self.liveScoreModelList?.append(model)
+                }
+            }
+        } else {
+            self.liveScoreModelList = liveScoreModelList
+        }
+        self.collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return liveScoreModelList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsHotMatchesCollectionViewCell.className, for: indexPath) as! NewsHotMatchesCollectionViewCell
+        cell.configureCell(model: liveScoreModelList?[indexPath.row])
         return cell
     }
     

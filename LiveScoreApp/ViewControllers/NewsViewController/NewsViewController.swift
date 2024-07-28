@@ -10,7 +10,8 @@ import UIKit
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var liveScoreLeagueList = [LiveScoreModel]()
+
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class NewsViewController: UIViewController {
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        getUpcomingMatches()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +56,7 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 50
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,6 +72,7 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewsHotMatchesTableViewCell.className, for: indexPath) as! NewsHotMatchesTableViewCell
+            cell.configureCell(liveScoreModelList: liveScoreLeagueList)
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.className, for: indexPath) as! NewsTableViewCell
@@ -95,37 +99,31 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension NewsViewController {
-//    private func getFootballTopFixtures() {
-////        &from=2021-05-18&to=2021-05-18
-//        showProgressHud()
-//        let abc = ""
-//        let def = ""
-//        let url = API.Leagues.Football.topFixtures + "&from=\(abc)&to=\(def)"
-//        APIGeneric<LeaguesResponseModel>.fetchRequest(apiURL: url) { [weak self] response in
-//            guard let `self`  = self else { return }
-//            DispatchQueue.main.async {
-//                self.hideProgressHud()
-//                switch response {
-//                case .success(let result):
-//                    let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
-//                    switch success {
-//                    case .success:
-//                        let leagues = result.result ?? []
-//                        self.allLeagueList = leagues
-//                        self.getTopFiveLeagues()
-//                        self.setupHeader()
-//                        self.countryLeagueList =  self.groupLeaguesByCountry()
-////                        self.tableView.reloadData()
-//                        self.updateUI()
-//                    default:
-//                        let err = CustomError(description: "Something went wrong, please try again")
-//                        self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
-//                    }
-//                case .failure(let failure):
-//                    let err = CustomError(description: (failure as? CustomError)?.description ?? "")
-//                    self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
-//                }
-//            }
-//        }
-//    }
+    
+    @objc private func getUpcomingMatches() {
+        showProgressHud()
+        
+        let url = API.Leagues.Football.liveScore
+        APIGeneric<LiveScoreResponseModel>.fetchRequest(apiURL: url) { [weak self] (response) in
+            guard let `self`  = self else { return }
+            DispatchQueue.main.async {
+                self.hideProgressHud()
+                switch response {
+                case .success(let result):
+                    let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
+                    switch success {
+                    case .success:
+                        self.liveScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() != "finished"})
+                        self.tableView.reloadData()
+                    default:
+                        let err = CustomError(description: "Something went wrong, please try again")
+                        self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+                    }
+                case .failure(let failure):
+                    let err = CustomError(description: (failure as? CustomError)?.description ?? "")
+                    self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)
+                }
+            }
+        }
+    }
 }
