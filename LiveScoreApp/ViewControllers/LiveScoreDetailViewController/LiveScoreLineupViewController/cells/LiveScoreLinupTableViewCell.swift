@@ -9,6 +9,9 @@ import UIKit
 
 class LiveScoreLinupTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,7 +23,10 @@ class LiveScoreLinupTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell() {
+    func configureCell(model: NameNumberModel) {
+        numberLabel.isHidden = (model.number ?? "").isEmpty
+        numberLabel.text = model.number
+        nameLabel.text = model.name
     }
     
 }

@@ -7,19 +7,99 @@
 
 import UIKit
 
+struct NameNumberModel {
+    let name: String?
+    let number : String?
+}
+
+struct LineupModel {
+    let sectionTitle: String
+    let list : [NameNumberModel]
+}
+
 class LiveScoreLineupViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+
     
+    private var selectedTeam : SelectedTeam = .home
     var liveScoreModel : LiveScoreModel?
+    private var homeTeamLineupList = [LineupModel]()
+    private var awayTeamLineupList = [LineupModel]()
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreLinupTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreLinupTableViewCell.className)
+        selectedTeam = .home
+        segmentControl.selectedSegmentIndex = 0
     }
 
+    //MARK: - Helper Methods
     func updateInformation(liveScoreModel : LiveScoreModel?) {
         self.liveScoreModel = liveScoreModel
+        
+        self.segmentControl.setTitle(liveScoreModel?.eventHomeTeam, forSegmentAt: SelectedTeam.home.rawValue)
+        self.segmentControl.setTitle(liveScoreModel?.eventAwayTeam, forSegmentAt: SelectedTeam.away.rawValue)
+        
+        homeTeamLineupList.removeAll()
+        awayTeamLineupList.removeAll()
+        
+        if let lineup = liveScoreModel?.lineups {
+            if let homeTeam = lineup.homeTeam {
+                homeTeamLineupList = getModels(team: homeTeam)
+            }
+            
+            if let awayTeam = lineup.awayTeam {
+                awayTeamLineupList = getModels(team: awayTeam)
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
+        selectedTeam = SelectedTeam(rawValue: sender.selectedSegmentIndex) ?? .home
+        tableView.reloadData()
+    }
+    
+    private func getModels(team: Team?) -> [LineupModel] {
+        if let team = team {
+            var resultList = [LineupModel]()
+            var nameNumberList = [NameNumberModel]()
+            
+            let startingLineups = team.startingLineups ?? []
+            let substitutes = team.substitutes ?? []
+            let coaches = team.coaches ?? []
+            
+            nameNumberList.removeAll()
+            startingLineups.forEach { lineup in
+                nameNumberList.append(NameNumberModel(name: lineup.player, number: "\(lineup.playerNumber ?? 0)"))
+            }
+            if nameNumberList.count > 0 {
+                resultList.append(LineupModel(sectionTitle: "Starting Lineups", list: nameNumberList))
+            }
+            
+            nameNumberList.removeAll()
+            substitutes.forEach { substitute in
+                nameNumberList.append(NameNumberModel(name: substitute.player, number: "\(substitute.playerNumber ?? 0)"))
+            }
+            if nameNumberList.count > 0 {
+                resultList.append(LineupModel(sectionTitle: "Substitutes", list: nameNumberList))
+            }
+            
+            nameNumberList.removeAll()
+            coaches.forEach { coach in
+                nameNumberList.append(NameNumberModel(name: coach.coache, number: ""))
+            }
+            if nameNumberList.count > 0 {
+                resultList.append(LineupModel(sectionTitle: "Coaches", list: nameNumberList))
+            }
+            
+            
+            return resultList
+        }
+        return []
     }
 
 }
@@ -27,19 +107,12 @@ class LiveScoreLineupViewController: UIViewController {
 extension LiveScoreLineupViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return selectedTeam == .home ? homeTeamLineupList.count : awayTeamLineupList.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = LiveScoreLinupHeaderView.view()
-        switch section {
-        case 0:
-            view.configure(title: "Startup Lineups")
-        case 1:
-            view.configure(title: "Substitues")
-        default:
-            view.configure(title: "Coaches")
-        }
+        view.configure(title: selectedTeam == .home ? homeTeamLineupList[section].sectionTitle : awayTeamLineupList[section].sectionTitle)
         return view
     }
     
@@ -48,14 +121,7 @@ extension LiveScoreLineupViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 10
-        case 1:
-            return 10
-        default:
-            return 2
-        }
+        return selectedTeam == .home ? homeTeamLineupList[section].list.count : awayTeamLineupList[section].list.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,7 +130,8 @@ extension LiveScoreLineupViewController : UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreLinupTableViewCell.className, for: indexPath) as! LiveScoreLinupTableViewCell
-        cell.configureCell()
+        let model =  selectedTeam == .home ? homeTeamLineupList[indexPath.section].list[indexPath.row] : awayTeamLineupList[indexPath.section].list[indexPath.row]
+        cell.configureCell(model: model)
         return cell
     }
     
