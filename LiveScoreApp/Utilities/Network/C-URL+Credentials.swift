@@ -26,8 +26,9 @@ struct API {
             static let fixtures = "\(apiURL)/football/?met=Fixtures&APIkey=\(API_KEY)"
             static let allLeagues = "\(apiURL)/football/?met=Leagues&APIkey=\(API_KEY)"
             static let liveScore = "\(apiURL)/football/?met=Livescore&APIkey=\(API_KEY)"
+            static let standings = "\(apiURL)/football/?met=Standings&APIkey=\(API_KEY)"
         }
-        
+
         struct Baseball {
             static let allLeagues = "\(apiURL)/basketball/"
         }

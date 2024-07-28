@@ -22,7 +22,6 @@ class LiveScoreLineupViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
-    
     private var selectedTeam : SelectedTeam = .home
     var liveScoreModel : LiveScoreModel?
     private var homeTeamLineupList = [LineupModel]()
