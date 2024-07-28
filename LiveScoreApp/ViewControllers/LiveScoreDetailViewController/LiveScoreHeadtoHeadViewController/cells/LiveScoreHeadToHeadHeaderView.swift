@@ -15,8 +15,14 @@ class LiveScoreHeadToHeadHeaderView: UIView {
         return v
     }
     
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    
     func setup() {
         
+    }
+    
+    func configure(name: String) {
+        leagueNameLabel.text = name
     }
 
 }

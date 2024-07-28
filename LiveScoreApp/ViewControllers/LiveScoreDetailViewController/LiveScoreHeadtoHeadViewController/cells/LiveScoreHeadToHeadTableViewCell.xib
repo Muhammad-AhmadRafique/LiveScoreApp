@@ -54,7 +54,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koren K League 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6M-Ui-LgT">
                                                 <rect key="frame" x="33" y="4.666666666666667" width="159" height="15.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -110,6 +110,16 @@
                     <constraint firstAttribute="bottom" secondItem="0ED-a8-cxn" secondAttribute="bottom" constant="8" id="sV8-uV-IQH"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="awayTeamGoalsLabel" destination="lNE-kN-z08" id="ia8-O0-a9C"/>
+                <outlet property="awayTeamIcon" destination="hAu-Bb-W50" id="Pu9-Ee-B0s"/>
+                <outlet property="awayTeamNameLabel" destination="bDL-Sh-m0q" id="4ez-IK-utV"/>
+                <outlet property="dayLabel" destination="0a8-XU-Oco" id="Ean-VV-rM4"/>
+                <outlet property="homeTeamGoalsLabel" destination="U7s-Ti-HfJ" id="pID-vr-izw"/>
+                <outlet property="homeTeamIcon" destination="3OD-Rw-5vD" id="kUL-Lc-Fet"/>
+                <outlet property="homeTeamNameLabel" destination="I6M-Ui-LgT" id="kGK-LU-S3H"/>
+                <outlet property="timeLabel" destination="OfY-9F-IY7" id="4Mc-V4-aNX"/>
+            </connections>
             <point key="canvasLocation" x="138.93129770992365" y="12.323943661971832"/>
         </tableViewCell>
     </objects>

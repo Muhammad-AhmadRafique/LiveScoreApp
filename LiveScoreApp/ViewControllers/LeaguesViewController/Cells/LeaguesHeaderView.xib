@@ -112,10 +112,10 @@
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="quaternarySystemFillColor">
-            <color red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
-            <color red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

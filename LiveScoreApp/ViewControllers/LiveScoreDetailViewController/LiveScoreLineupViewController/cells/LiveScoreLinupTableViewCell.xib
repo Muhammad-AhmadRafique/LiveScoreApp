@@ -22,17 +22,17 @@
                         <rect key="frame" x="20" y="8" width="280" height="28"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUf-86-5Ik">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="28"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="zy8-XQ-Jcp"/>
+                                    <constraint firstAttribute="width" constant="30" id="zy8-XQ-Jcp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihsan Yasinjan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKb-vs-ivv">
-                                <rect key="frame" x="30" y="0.0" width="250" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="40" y="0.0" width="240" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>

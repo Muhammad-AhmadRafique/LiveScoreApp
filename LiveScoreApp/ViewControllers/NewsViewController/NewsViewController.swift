@@ -48,15 +48,15 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         let view = NewsHeaderView.view()
         switch section {
         case 0:
-            view.configure(title: "Hot Matches", font: .systemFont(ofSize: 25, weight: .bold))
+            view.configure(title: "Hot Matches", font: .systemFont(ofSize: 20, weight: .bold))
         default:
-            view.configure(title: "Latest Updates", font: .systemFont(ofSize: 25, weight: .bold))
+            view.configure(title: "Latest Updates", font: .systemFont(ofSize: 20, weight: .bold))
         }
         return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

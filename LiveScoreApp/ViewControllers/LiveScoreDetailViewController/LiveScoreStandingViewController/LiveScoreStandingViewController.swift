@@ -18,7 +18,6 @@ class LiveScoreStandingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
-    
     var liveScoreModel : LiveScoreModel?
     private var allStandingList = [LiveScoreStandingModel]()
     private var homeStandingList = [LiveScoreStandingModel]()
@@ -57,8 +56,16 @@ extension LiveScoreStandingViewController : UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        switch selectedItem {
+        case .all:
+            return allStandingList.count == 0 ? 0 : 30
+        case .home:
+            return homeStandingList.count == 0 ? 0 : 30
+        case .away:
+            return awayStandingList.count == 0 ? 0 : 30
+        }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedItem {
         case .all:
@@ -109,7 +116,6 @@ extension LiveScoreStandingViewController {
                     let success = ResponseType(rawValue: result.success ?? ResponseType.error.rawValue)
                     switch success {
                     case .success:
-                        print(result.result)
                         self.allStandingList = result.result?.total ?? []
                         self.homeStandingList = result.result?.home ?? []
                         self.awayStandingList = result.result?.away ?? []

@@ -9,8 +9,10 @@ import UIKit
 
 class LiveScoreOddsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    
+    @IBOutlet weak var suspendedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +25,9 @@ class LiveScoreOddsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(title: String, value: String) {
-        titleLabel.text = title
-        valueLabel.text = value
+    func configureCell(model: LiveOddModel?) {
+        typeLabel.text = model?.oddType
+        valueLabel.text = model?.oddValue
+        suspendedLabel.text = model?.isOddSuspended
     }
 }

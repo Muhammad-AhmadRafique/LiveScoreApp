@@ -55,6 +55,25 @@ extension String {
         return outputString
     }
     
+    func getH2HDateString() -> String? {
+        // Input date format
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        // Output date format
+        let outputDateFormatter = DateFormatter()
+        outputDateFormatter.dateFormat = "dd MMMM yyyy"
+        
+        // Convert string to Date
+        guard let date = inputDateFormatter.date(from: self) else {
+            return nil
+        }
+        
+        // Convert Date back to desired string format
+        let outputString = outputDateFormatter.string(from: date)
+        return outputString
+    }
+    
     func getGoalsStats() -> (home: String, away: String){
         var home = ""
         var away = ""

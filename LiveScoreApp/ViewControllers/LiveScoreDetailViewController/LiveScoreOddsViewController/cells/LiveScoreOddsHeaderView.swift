@@ -20,7 +20,7 @@ class LiveScoreOddsHeaderView: UIView {
     func setup() {
     }
     
-    func configure(title: String) {
+    func configure(title: String?) {
         titleLabel.text = title
     }
 }

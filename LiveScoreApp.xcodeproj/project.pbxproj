@@ -11,6 +11,8 @@
 		E011FDC82C4819520099B113 /* LiveScoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */; };
 		E011FDCA2C48195F0099B113 /* LiveScoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */; };
 		E01E0A012C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */; };
+		E01E0A042C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */; };
+		E01E0A072C567E39008E91A4 /* LiveOddsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */; };
 		E04D06E32C47A89300293B37 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D06E22C47A89300293B37 /* String+Extension.swift */; };
 		E04D06E62C47AADC00293B37 /* LeagueMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D06E42C47AADC00293B37 /* LeagueMatchTableViewCell.swift */; };
 		E04D06E72C47AADC00293B37 /* LeagueMatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04D06E52C47AADC00293B37 /* LeagueMatchTableViewCell.xib */; };
@@ -118,6 +120,8 @@
 		E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreHeaderView.xib; sourceTree = "<group>"; };
 		E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreHeaderView.swift; sourceTree = "<group>"; };
 		E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreStandingResponseModel.swift; sourceTree = "<group>"; };
+		E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreH2HResponseModel.swift; sourceTree = "<group>"; };
+		E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveOddsResponseModel.swift; sourceTree = "<group>"; };
 		E04D06E22C47A89300293B37 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E04D06E42C47AADC00293B37 /* LeagueMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueMatchTableViewCell.swift; sourceTree = "<group>"; };
 		E04D06E52C47AADC00293B37 /* LeagueMatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueMatchTableViewCell.xib; sourceTree = "<group>"; };
@@ -257,6 +261,22 @@
 			path = Standings;
 			sourceTree = "<group>";
 		};
+		E01E0A022C566BB0008E91A4 /* H2H */ = {
+			isa = PBXGroup;
+			children = (
+				E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */,
+			);
+			path = H2H;
+			sourceTree = "<group>";
+		};
+		E01E0A052C567E2C008E91A4 /* LiveOdds */ = {
+			isa = PBXGroup;
+			children = (
+				E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */,
+			);
+			path = LiveOdds;
+			sourceTree = "<group>";
+		};
 		E05EDC812C47FB87007B750F /* NewsDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +336,8 @@
 		E06AD6132C51779000A278E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E01E0A052C567E2C008E91A4 /* LiveOdds */,
+				E01E0A022C566BB0008E91A4 /* H2H */,
 				E01E09FF2C5664EA008E91A4 /* Standings */,
 				E08A84882C55406500FEDBAF /* LiveScore */,
 				E08A84852C5531A800FEDBAF /* Fixtures */,
@@ -811,9 +833,11 @@
 				E0DE549E2C4699A500546745 /* NewsTableViewCell.swift in Sources */,
 				E08A84842C54F4AC00FEDBAF /* UIImageView+Extension.swift in Sources */,
 				E05EDC8E2C48070A007B750F /* LiveScoreListViewController.swift in Sources */,
+				E01E0A072C567E39008E91A4 /* LiveOddsResponseModel.swift in Sources */,
 				E0D550BA2C4C3C7B0014FDF4 /* LiveScoreLineupViewController.swift in Sources */,
 				E06AD60E2C5176F500A278E9 /* Media.swift in Sources */,
 				E06AD60B2C5176F500A278E9 /* C-URL+Credentials.swift in Sources */,
+				E01E0A042C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift in Sources */,
 				E06AD60D2C5176F500A278E9 /* HooleyPostApi.swift in Sources */,
 				E0EBC5AA2C4D235000700B54 /* LiveScoreStatsableViewCell.swift in Sources */,
 				E08A84802C54EC9700FEDBAF /* LeaguesTableHeaderView.swift in Sources */,
