@@ -87,4 +87,10 @@ extension String {
         }
         return (home: home, away: away)
     }
+    
+    func localizedString() -> String {
+        let path: String? = Bundle(identifier: "com.test.LiveScoreApp")?.path(forResource: "vi", ofType: "lproj")
+        let bundle = Bundle(path: path!)!
+        return (bundle.localizedString(forKey: self, value: self, table: nil))
+    }
 }

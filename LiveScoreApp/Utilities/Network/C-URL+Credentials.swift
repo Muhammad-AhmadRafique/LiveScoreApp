@@ -20,15 +20,16 @@ var apiURL : String {
     return "\(BaseUrl.LIVE)"
 }
 //https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=!_your_account_APIkey_!
+let language = "vi"
 struct API {
     struct Leagues {
         struct Football {
-            static let fixtures = "\(apiURL)/football/?met=Fixtures&APIkey=\(API_KEY)"
-            static let allLeagues = "\(apiURL)/football/?met=Leagues&APIkey=\(API_KEY)"
-            static let liveScore = "\(apiURL)/football/?met=Livescore&APIkey=\(API_KEY)"
-            static let standings = "\(apiURL)/football/?met=Standings&APIkey=\(API_KEY)"
-            static let h2h = "\(apiURL)/football/?met=H2H&APIkey=\(API_KEY)"
-            static let liveOdds = "\(apiURL)/football/?met=OddsLive&APIkey=\(API_KEY)"
+            static let fixtures = "\(apiURL)/football/?met=Fixtures&APIkey=\(API_KEY)&lang=\(language)"
+            static let allLeagues = "\(apiURL)/football/?met=Leagues&APIkey=\(API_KEY)&lang=\(language)"
+            static let liveScore = "\(apiURL)/football/?met=Livescore&APIkey=\(API_KEY)&lang=\(language)"
+            static let standings = "\(apiURL)/football/?met=Standings&APIkey=\(API_KEY)&lang=\(language)"
+            static let h2h = "\(apiURL)/football/?met=H2H&APIkey=\(API_KEY)&lang=\(language)"
+            static let liveOdds = "\(apiURL)/football/?met=OddsLive&APIkey=\(API_KEY)&lang=\(language)"
         }
 
         struct Baseball {

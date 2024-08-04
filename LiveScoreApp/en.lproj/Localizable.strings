@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  LiveScoreApp
+
+  Created by Ahmad Rafiq on 04/08/2024.
+  
+*/
+
+
+"hot_matches" = "Hot Matches";
+"finished" = "finished";
+"live" = "live";
+"upcoming" = "upcoming";
+"top_leagues" = "Top Leagues";
+"leagues_by_country" = "Leagues by country";
+"about_us" = "about us";
+"tell_a_friend" = "Tell a friend";
+"share_feedback" = "Share Feedback";
+"rate_on_appstore" = "Rate on Appstore";
+"news" = "news";
+"leagues" = "leagues";
+"profile" = "profile";
+"search" = "search";

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  LiveScoreApp
+
+  Created by Ahmad Rafiq on 04/08/2024.
+  
+*/
+
+
+"hot_matches" = "Trận đấu hấp dẫn";
+"finished" = "hoàn thành";
+"live" = "sống";
+"upcoming" = "sắp tới";
+"top_leagues" = "giải đấu hàng đầu";
+"leagues_by_country" = "Giải đấu theo quốc gia";
+"about_us" = "về chúng tôi";
+"tell_a_friend" = "Nói với một người bạn";
+"share_feedback" = "Chia sẻ phản hồi";
+"rate_on_appstore" = "Đánh giá trên Appstore";
+"news" = "Tin tức";
+"leagues" = "giải đấu";
+"profile" = "hồ sơ";
+"search" = "tìm kiếm";

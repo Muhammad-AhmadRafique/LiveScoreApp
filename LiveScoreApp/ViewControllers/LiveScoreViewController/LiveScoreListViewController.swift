@@ -118,7 +118,7 @@ extension LiveScoreListViewController {
                         let liveScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() != "finished"})
                         self.liveScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: liveScoreLeagueList)
                         self.filteredList = self.liveScoreLeagueList
-                        self.delegate?.updateButtonTitle(title: "Live (\(self.filteredList.count))", type: .live)
+                        self.delegate?.updateButtonTitle(title: "\("live".localizedString()) (\(self.filteredList.count))", type: .live)
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -153,7 +153,7 @@ extension LiveScoreListViewController : LiveScoreViewControllerDelegate {
             filteredList = list
         }
         
-        self.delegate?.updateButtonTitle(title: "Live (\(filteredList.count))", type: .live)
+        self.delegate?.updateButtonTitle(title: "\("live".localizedString()) (\(filteredList.count))", type: .live)
         tableView.reloadData()
     }
 }

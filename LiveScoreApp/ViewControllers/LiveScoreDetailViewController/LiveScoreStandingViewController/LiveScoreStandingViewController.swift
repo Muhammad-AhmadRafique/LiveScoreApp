@@ -88,8 +88,6 @@ extension LiveScoreStandingViewController : UITableViewDelegate, UITableViewData
             cell.configureCell(model: homeStandingList[indexPath.row])
         case .away:
             cell.configureCell(model: awayStandingList[indexPath.row])
-        default:
-            break
         }
         return cell
     }

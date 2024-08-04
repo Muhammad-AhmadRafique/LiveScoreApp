@@ -37,6 +37,7 @@ class LeaguesViewController: UIViewController, UITextFieldDelegate {
         footballLineView.roundedCorners(radius: 2)
         basketballLineView.roundedCorners(radius: 2)
         updateTopButtons(footballSelected: true)
+        searchField.placeholder = "search".localizedString().capitalized
     }
     
     override func viewWillAppear(_ animated: Bool) {

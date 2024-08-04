@@ -13,7 +13,7 @@ class Helper {
         
         for match in list {
             guard let leagueKey = match.leagueKey,
-                  let leagueName = match.leagueName else {
+                  let leagueName = match.leagueName, leagueKey != 0 else {
                 continue
             }
             
@@ -26,7 +26,9 @@ class Helper {
             }
         }
         
-        return Array(leagueDict.values)
+        var resultLeagues = Array(leagueDict.values)
+        resultLeagues.sort { $0.leagueName?.localizedCompare($1.leagueName ?? "") == .orderedAscending }
+        return resultLeagues
     }
     
     static func groupH2HScoreMatchesByLeagues(list: [H2HModel]) -> [LiveScoreH2HLeagueModel] {
@@ -34,7 +36,7 @@ class Helper {
         
         for match in list {
             guard let leagueKey = match.leagueKey,
-                  let leagueName = match.leagueName else {
+                  let leagueName = match.leagueName, leagueKey != 0 else {
                 continue
             }
             
@@ -47,7 +49,9 @@ class Helper {
             }
         }
         
-        return Array(leagueDict.values)
+        var resultLeagues = Array(leagueDict.values)
+        resultLeagues.sort { $0.leagueName?.localizedCompare($1.leagueName ?? "") == .orderedAscending }
+        return resultLeagues
     }
     
     static func groupOddsScoreMatchesByMatch(list: [LiveOddModel]) -> [LiveScoreOddsMatchModel] {

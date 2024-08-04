@@ -9,11 +9,13 @@ import UIKit
 
 class TopLeaguesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     private var leagueList = [LeagueModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.text = "top_leagues".localizedString().capitalized
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.register(UINib(nibName: TopLeaguesCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: TopLeaguesCollectionViewCell.className)
     }

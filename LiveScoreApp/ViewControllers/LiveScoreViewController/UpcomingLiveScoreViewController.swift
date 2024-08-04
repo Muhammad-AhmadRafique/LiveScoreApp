@@ -110,7 +110,7 @@ extension UpcomingLiveScoreViewController {
                         let upcomingScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() == ""})
                         self.upcomingScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: upcomingScoreLeagueList)
                         self.filteredList = self.upcomingScoreLeagueList
-                        self.delegate?.updateButtonTitle(title: "Upcoming (\(self.filteredList.count))", type: .upcoming)
+                        self.delegate?.updateButtonTitle(title: "\("upcoming".localizedString()) (\(self.filteredList.count))", type: .upcoming)
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -146,7 +146,7 @@ extension UpcomingLiveScoreViewController : LiveScoreViewControllerDelegate {
             filteredList = list
         }
         
-        self.delegate?.updateButtonTitle(title: "Upcoming (\(filteredList.count))", type: .upcoming)
+        self.delegate?.updateButtonTitle(title: "\("upcoming".localizedString()) (\(filteredList.count))", type: .upcoming)
         tableView.reloadData()
     }
 }

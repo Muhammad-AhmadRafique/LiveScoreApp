@@ -1,0 +1,135 @@
+
+/* Class = "UILabel"; text = "No Data Available"; ObjectID = "0cL-RB-g4h"; */
+"0cL-RB-g4h.text" = "No Data Available";
+
+/* Class = "UIButton"; normalTitle = "07/17"; ObjectID = "184-NW-TOT"; */
+"184-NW-TOT.normalTitle" = "07/17";
+
+/* Class = "UIButton"; normalTitle = "Football"; ObjectID = "3h5-4a-1DP"; */
+"3h5-4a-1DP.normalTitle" = "Football";
+
+/* Class = "UILabel"; text = "No Data Available"; ObjectID = "83P-J9-ZTF"; */
+"83P-J9-ZTF.text" = "No Data Available";
+
+/* Class = "UILabel"; text = "No Data Available"; ObjectID = "9LT-71-sk0"; */
+"9LT-71-sk0.text" = "No Data Available";
+
+/* Class = "UIButton"; normalTitle = "07/17"; ObjectID = "9b9-Ie-erW"; */
+"9b9-Ie-erW.normalTitle" = "07/17";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "AYw-dN-Uv2"; */
+"AYw-dN-Uv2.placeholder" = "Search";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "Bb0-gh-Lhn"; */
+"Bb0-gh-Lhn.title" = "Profile";
+
+/* Class = "UIButton"; normalTitle = "07/17"; ObjectID = "Dr9-hv-K82"; */
+"Dr9-hv-K82.normalTitle" = "07/17";
+
+/* Class = "UIButton"; normalTitle = "Live"; ObjectID = "J7x-UJ-XhC"; */
+"J7x-UJ-XhC.normalTitle" = "Live";
+
+/* Class = "UILabel"; text = "Korean K League 1"; ObjectID = "KEM-ee-1Ht"; */
+"KEM-ee-1Ht.text" = "Korean K League 1";
+
+/* Class = "UITabBarItem"; title = "Live"; ObjectID = "NAQ-de-B8P"; */
+"NAQ-de-B8P.title" = "Live";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "OUp-Tk-Led"; */
+"OUp-Tk-Led.text" = "About Us";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PSt-VY-T0w"; */
+"PSt-VY-T0w.text" = "Label";
+
+/* Class = "UISegmentedControl"; SAW-Ku-sdN.segmentTitles[0] = "H2H"; ObjectID = "SAW-Ku-sdN"; */
+"SAW-Ku-sdN.segmentTitles[0]" = "H2H";
+
+/* Class = "UISegmentedControl"; SAW-Ku-sdN.segmentTitles[1] = "Home"; ObjectID = "SAW-Ku-sdN"; */
+"SAW-Ku-sdN.segmentTitles[1]" = "Home";
+
+/* Class = "UISegmentedControl"; SAW-Ku-sdN.segmentTitles[2] = "Away"; ObjectID = "SAW-Ku-sdN"; */
+"SAW-Ku-sdN.segmentTitles[2]" = "Away";
+
+/* Class = "UILabel"; text = "No Data Available"; ObjectID = "SDh-pH-dR3"; */
+"SDh-pH-dR3.text" = "No Data Available";
+
+/* Class = "UISegmentedControl"; UHL-oj-bc0.segmentTitles[0] = "Barcelona"; ObjectID = "UHL-oj-bc0"; */
+"UHL-oj-bc0.segmentTitles[0]" = "Barcelona";
+
+/* Class = "UISegmentedControl"; UHL-oj-bc0.segmentTitles[1] = "Real Madrid"; ObjectID = "UHL-oj-bc0"; */
+"UHL-oj-bc0.segmentTitles[1]" = "Real Madrid";
+
+/* Class = "UILabel"; text = "No Data Available"; ObjectID = "XUj-Lt-zLU"; */
+"XUj-Lt-zLU.text" = "No Data Available";
+
+/* Class = "UILabel"; text = "Football"; ObjectID = "aaJ-tM-bgL"; */
+"aaJ-tM-bgL.text" = "Football";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "bB2-dx-jUS"; */
+"bB2-dx-jUS.text" = "1";
+
+/* Class = "UILabel"; text = "ChangWon"; ObjectID = "bcb-xp-93s"; */
+"bcb-xp-93s.text" = "ChangWon";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "dSi-5n-cbT"; */
+"dSi-5n-cbT.text" = ":";
+
+/* Class = "UILabel"; text = "Share feedback"; ObjectID = "dYa-Gr-LlW"; */
+"dYa-Gr-LlW.text" = "Share feedback";
+
+/* Class = "UILabel"; text = "Tell a friend"; ObjectID = "i1s-wV-x7c"; */
+"i1s-wV-x7c.text" = "Tell a friend";
+
+/* Class = "UISegmentedControl"; kj0-sd-pW2.segmentTitles[0] = "All"; ObjectID = "kj0-sd-pW2"; */
+"kj0-sd-pW2.segmentTitles[0]" = "All";
+
+/* Class = "UISegmentedControl"; kj0-sd-pW2.segmentTitles[1] = "Home"; ObjectID = "kj0-sd-pW2"; */
+"kj0-sd-pW2.segmentTitles[1]" = "Home";
+
+/* Class = "UISegmentedControl"; kj0-sd-pW2.segmentTitles[2] = "Away"; ObjectID = "kj0-sd-pW2"; */
+"kj0-sd-pW2.segmentTitles[2]" = "Away";
+
+/* Class = "UIButton"; normalTitle = "07/17"; ObjectID = "lUg-ps-S6p"; */
+"lUg-ps-S6p.normalTitle" = "07/17";
+
+/* Class = "UIButton"; normalTitle = "Basketball"; ObjectID = "lfV-Kc-wOj"; */
+"lfV-Kc-wOj.normalTitle" = "Basketball";
+
+/* Class = "UILabel"; text = "Basketball"; ObjectID = "mGO-nd-hAP"; */
+"mGO-nd-hAP.text" = "Basketball";
+
+/* Class = "UILabel"; text = "LiveScoreHub"; ObjectID = "nPu-9b-143"; */
+"nPu-9b-143.text" = "LiveScoreHub";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "q50-cv-9nJ"; */
+"q50-cv-9nJ.title" = "Profile";
+
+/* Class = "UIButton"; normalTitle = "Finished"; ObjectID = "sfs-dM-Eiy"; */
+"sfs-dM-Eiy.normalTitle" = "Finished";
+
+/* Class = "UILabel"; text = "ChangWon"; ObjectID = "sxd-if-F1W"; */
+"sxd-if-F1W.text" = "ChangWon";
+
+/* Class = "UILabel"; text = "Rate on Appstore"; ObjectID = "tS8-nG-flY"; */
+"tS8-nG-flY.text" = "Rate on Appstore";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "tcG-Tt-7Y0"; */
+"tcG-Tt-7Y0.title" = "News";
+
+/* Class = "UIButton"; normalTitle = "Upcoming"; ObjectID = "uzO-L8-Lt0"; */
+"uzO-L8-Lt0.normalTitle" = "Upcoming";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "wWd-PQ-OKK"; */
+"wWd-PQ-OKK.text" = "2";
+
+/* Class = "UISegmentedControl"; wqu-T2-reR.segmentTitles[0] = "Tai'an Tuankuang"; ObjectID = "wqu-T2-reR"; */
+"wqu-T2-reR.segmentTitles[0]" = "Tai'an Tuankuang";
+
+/* Class = "UISegmentedControl"; wqu-T2-reR.segmentTitles[1] = "Dalli'an Kun city"; ObjectID = "wqu-T2-reR"; */
+"wqu-T2-reR.segmentTitles[1]" = "Dalli'an Kun city";
+
+/* Class = "UITabBarItem"; title = "Leagues"; ObjectID = "xWU-83-D2A"; */
+"xWU-83-D2A.title" = "Leagues";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "yPI-c7-k7i"; */
+"yPI-c7-k7i.placeholder" = "Search";

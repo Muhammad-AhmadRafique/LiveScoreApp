@@ -47,7 +47,7 @@ extension NewsUpdatedViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = NewsHeaderView.view()
-        view.configure(title: "Hot Matches", font: .systemFont(ofSize: 20, weight: .bold))
+        view.configure(title: "hot_matches".localizedString(), font: .systemFont(ofSize: 20, weight: .bold))
         return view
     }
     

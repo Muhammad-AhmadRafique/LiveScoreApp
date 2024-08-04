@@ -27,6 +27,7 @@ class LeaguesTableViewCell: UITableViewCell {
     }
     
     func configure(section: Int, countryLeague: LeagueCountryModel?) {
+        headingLabel.text = "leagues_by_country".localizedString()
         headingLabel.isHidden = section != 0
         guard let countryLeague = countryLeague else { return }
         

@@ -42,6 +42,7 @@ class NetworkService {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+//        request.addValue("ja", forHTTPHeaderField: "Accept-Language")
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             var statusCode : Int?

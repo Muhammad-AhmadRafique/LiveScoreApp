@@ -63,6 +63,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="y6a-lc-xbH" id="8Kt-Fh-yqN"/>
+                <outlet property="titleLabel" destination="QfI-Sb-K1K" id="YW5-Qx-qYT"/>
             </connections>
             <point key="canvasLocation" x="151.90839694656489" y="68.661971830985919"/>
         </tableViewCell>

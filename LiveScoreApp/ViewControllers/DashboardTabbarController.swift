@@ -13,6 +13,13 @@ class DashboardTabbarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let viewControllers = viewControllers {
+            // Assuming you have two tabs: Home and Profile
+            viewControllers[0].tabBarItem.title = "news".localizedString().capitalized
+            viewControllers[1].tabBarItem.title = "live".localizedString().capitalized
+            viewControllers[2].tabBarItem.title = "leagues".localizedString().capitalized
+            viewControllers[3].tabBarItem.title = "profile".localizedString().capitalized
+        }
     }
     
 

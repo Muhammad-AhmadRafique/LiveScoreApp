@@ -16,6 +16,12 @@ class ProfileViewController: UITableViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBOutlet weak var aboutUsLabel: UILabel!
+    @IBOutlet weak var tellFriendLabel: UILabel!
+    @IBOutlet weak var shareFeedbackLabel: UILabel!
+    @IBOutlet weak var rateAppstoreLabel: UILabel!
+    
     private let imageList = [UIImage(named: "football"), UIImage(named: "basketball")]
     private var timer: Timer?
     
@@ -27,6 +33,11 @@ class ProfileViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 0.0, height: CGFloat.leastNormalMagnitude)))
+        
+        aboutUsLabel.text = "about_us".localizedString()
+        tellFriendLabel.text = "tell_a_friend".localizedString()
+        shareFeedbackLabel.text = "share_feedback".localizedString()
+        rateAppstoreLabel.text = "rate_on_appstore".localizedString()
         setupTimer()
     }
     

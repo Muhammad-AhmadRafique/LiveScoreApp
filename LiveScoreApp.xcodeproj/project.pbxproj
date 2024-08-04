@@ -11,6 +11,7 @@
 		E011FDC82C4819520099B113 /* LiveScoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */; };
 		E011FDCA2C48195F0099B113 /* LiveScoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */; };
 		E01D01682C5FBC830058DA63 /* NewsUpdatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D01672C5FBC830058DA63 /* NewsUpdatedViewController.swift */; };
+		E01D016B2C5FF5EB0058DA63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E01D01692C5FF5EB0058DA63 /* Localizable.strings */; };
 		E01E0A012C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */; };
 		E01E0A042C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */; };
 		E01E0A072C567E39008E91A4 /* LiveOddsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */; };
@@ -120,6 +121,10 @@
 		E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreHeaderView.xib; sourceTree = "<group>"; };
 		E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreHeaderView.swift; sourceTree = "<group>"; };
 		E01D01672C5FBC830058DA63 /* NewsUpdatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUpdatedViewController.swift; sourceTree = "<group>"; };
+		E01D016A2C5FF5EB0058DA63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E01D016C2C5FF65F0058DA63 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		E01D016D2C5FF65F0058DA63 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E01D016E2C5FF65F0058DA63 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreStandingResponseModel.swift; sourceTree = "<group>"; };
 		E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreH2HResponseModel.swift; sourceTree = "<group>"; };
 		E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveOddsResponseModel.swift; sourceTree = "<group>"; };
@@ -429,6 +434,7 @@
 				E0D674CE2C46786600426D40 /* Resources */,
 				E0B371592C35A70F009EB405 /* AppDelegate.swift */,
 				E0B3715B2C35A70F009EB405 /* SceneDelegate.swift */,
+				E01D01692C5FF5EB0058DA63 /* Localizable.strings */,
 			);
 			path = LiveScoreApp;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = E0B3714D2C35A70F009EB405;
 			productRefGroup = E0B371572C35A70F009EB405 /* Products */;
@@ -739,6 +746,7 @@
 				E0DE549F2C4699A500546745 /* NewsTableViewCell.xib in Resources */,
 				E08A84822C54EDF200FEDBAF /* LeaguesTableHeaderView.xib in Resources */,
 				E0B1A1302C46E88E00C250DB /* LeaguesTableViewCell.xib in Resources */,
+				E01D016B2C5FF5EB0058DA63 /* Localizable.strings in Resources */,
 				E04D06EF2C47BF9900293B37 /* TopLeaguesTableViewCell.xib in Resources */,
 				E04D06E72C47AADC00293B37 /* LeagueMatchTableViewCell.xib in Resources */,
 				E0EBC5A62C4D19A300700B54 /* LiveScoreLinupHeaderView.xib in Resources */,
@@ -883,10 +891,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E01D01692C5FF5EB0058DA63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E01D016A2C5FF5EB0058DA63 /* en */,
+				E01D016E2C5FF65F0058DA63 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E0B3715F2C35A70F009EB405 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E0B371602C35A70F009EB405 /* Base */,
+				E01D016C2C5FF65F0058DA63 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -895,6 +913,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0B371652C35A710009EB405 /* Base */,
+				E01D016D2C5FF65F0058DA63 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -907,6 +926,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -970,6 +990,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

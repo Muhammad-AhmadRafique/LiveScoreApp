@@ -48,6 +48,11 @@ class LiveScoreViewController: UIViewController, UITextFieldDelegate {
         liveLineView.roundedCorners(radius: 2)
         upcomingLineView.roundedCorners(radius: 2)
 
+        searchField.placeholder = "search".localizedString().capitalized
+        updateButtonTitle(title: "finished".localizedString().capitalized, type: .finished)
+        updateButtonTitle(title: "live".localizedString().capitalized, type: .live)
+        updateButtonTitle(title: "upcoming".localizedString().capitalized, type: .upcoming)
+        
         updateTopButtons()
     }
     
@@ -224,11 +229,11 @@ extension LiveScoreViewController : LiveScoreChildViewControllerDelegate {
     func updateButtonTitle(title: String, type: LiveScoreChildType) {
         switch type {
         case .finished:
-            finishButton.setTitle(title, for: .normal)
+            finishButton.setTitle(title.capitalized, for: .normal)
         case .live:
-            liveButton.setTitle(title, for: .normal)
+            liveButton.setTitle(title.capitalized, for: .normal)
         case .upcoming:
-            upcomingButton.setTitle(title, for: .normal)
+            upcomingButton.setTitle(title.capitalized, for: .normal)
         }
     }
 
