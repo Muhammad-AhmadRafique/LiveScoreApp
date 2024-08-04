@@ -5,23 +5,22 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsHotMatchesTableViewCell" rowHeight="149" id="KGk-i7-Jjw" userLabel="NewsHotMatchesTableViewCell" customClass="NewsHotMatchesTableViewCell" customModule="LiveScoreApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsHotMatchesTableViewCell" rowHeight="501" id="KGk-i7-Jjw" userLabel="NewsHotMatchesTableViewCell" customClass="NewsHotMatchesTableViewCell" customModule="LiveScoreApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vre-ha-6EX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="TaO-ki-Tqd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TaO-ki-Tqd">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,24 +31,29 @@
                             <outlet property="delegate" destination="KGk-i7-Jjw" id="s1o-zd-4CH"/>
                         </connections>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg7-zr-xne">
+                        <rect key="frame" x="93.333333333333329" y="240" width="133.33333333333337" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Vre-ha-6EX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8JE-nS-mrf"/>
                     <constraint firstAttribute="trailing" secondItem="Vre-ha-6EX" secondAttribute="trailing" id="8Xf-Bf-Lep"/>
+                    <constraint firstItem="Dg7-zr-xne" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="F5E-66-muf"/>
+                    <constraint firstItem="Dg7-zr-xne" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FEu-Ka-fpc"/>
                     <constraint firstItem="Vre-ha-6EX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UsW-t3-k71"/>
                     <constraint firstAttribute="bottom" secondItem="Vre-ha-6EX" secondAttribute="bottom" id="ViM-be-M9A"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="collectionView" destination="Vre-ha-6EX" id="eDW-Cn-Z5b"/>
+                <outlet property="noDataLabel" destination="Dg7-zr-xne" id="UWH-sc-fhh"/>
             </connections>
-            <point key="canvasLocation" x="103.81679389312977" y="35.563380281690144"/>
+            <point key="canvasLocation" x="103.81679389312977" y="159.50704225352112"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

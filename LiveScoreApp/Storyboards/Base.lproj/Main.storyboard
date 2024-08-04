@@ -54,7 +54,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0mf-oU-oaF" kind="relationship" relationship="rootViewController" id="7B1-3l-fjM"/>
+                        <segue destination="ktg-24-KI4" kind="relationship" relationship="rootViewController" id="Rnd-3Q-avD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ogc-8q-xXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5F-2O-DwD">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="0mf-oU-oaF" id="Ni9-qK-aJX"/>
@@ -95,18 +95,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfc-yT-5vc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3556.4885496183206" y="1841.549295774648"/>
+            <point key="canvasLocation" x="-4621" y="1851"/>
+        </scene>
+        <!--News Updated View Controller-->
+        <scene sceneID="zKv-00-mRh">
+            <objects>
+                <viewController storyboardIdentifier="NewsUpdatedViewController" id="ktg-24-KI4" customClass="NewsUpdatedViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bad-vl-K6F">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXF-oq-0Ba">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ktg-24-KI4" id="S47-MA-dp6"/>
+                                    <outlet property="delegate" destination="ktg-24-KI4" id="SS8-my-i1j"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WvQ-9u-84e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WvQ-9u-84e" firstAttribute="bottom" secondItem="PXF-oq-0Ba" secondAttribute="bottom" id="HtY-OP-Hpm"/>
+                            <constraint firstItem="PXF-oq-0Ba" firstAttribute="leading" secondItem="bad-vl-K6F" secondAttribute="leading" id="JYf-ad-jJf"/>
+                            <constraint firstItem="WvQ-9u-84e" firstAttribute="trailing" secondItem="PXF-oq-0Ba" secondAttribute="trailing" id="aB8-PA-FcK"/>
+                            <constraint firstItem="PXF-oq-0Ba" firstAttribute="top" secondItem="bad-vl-K6F" secondAttribute="top" id="vrF-yx-pau"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="23a-Px-RX5"/>
+                    <connections>
+                        <outlet property="tableView" destination="PXF-oq-0Ba" id="n2U-0d-qyP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nx7-kC-2PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3527.480916030534" y="1833.8028169014085"/>
         </scene>
         <!--News Detail View Controller-->
         <scene sceneID="S0Q-ja-PP8">
             <objects>
                 <viewController storyboardIdentifier="NewsDetailViewController" id="BHh-qx-Ytl" customClass="NewsDetailViewController" customModule="LiveScoreApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ynr-3c-ocu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jcd-UM-Z6v">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BHh-qx-Ytl" id="dKF-0t-Qhg"/>

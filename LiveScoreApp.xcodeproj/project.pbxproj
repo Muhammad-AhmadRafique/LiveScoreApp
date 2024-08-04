@@ -10,6 +10,7 @@
 		B10493DD23C0721A81562CB9 /* Pods_LiveScoreApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B869D2C5E70EBE2A7106EF /* Pods_LiveScoreApp.framework */; };
 		E011FDC82C4819520099B113 /* LiveScoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */; };
 		E011FDCA2C48195F0099B113 /* LiveScoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */; };
+		E01D01682C5FBC830058DA63 /* NewsUpdatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D01672C5FBC830058DA63 /* NewsUpdatedViewController.swift */; };
 		E01E0A012C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */; };
 		E01E0A042C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */; };
 		E01E0A072C567E39008E91A4 /* LiveOddsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */; };
@@ -118,6 +119,7 @@
 		BD202F35B8DE01C27D1F1BDB /* Pods-LiveScoreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScoreApp.release.xcconfig"; path = "Target Support Files/Pods-LiveScoreApp/Pods-LiveScoreApp.release.xcconfig"; sourceTree = "<group>"; };
 		E011FDC72C4819520099B113 /* LiveScoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveScoreHeaderView.xib; sourceTree = "<group>"; };
 		E011FDC92C48195F0099B113 /* LiveScoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreHeaderView.swift; sourceTree = "<group>"; };
+		E01D01672C5FBC830058DA63 /* NewsUpdatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUpdatedViewController.swift; sourceTree = "<group>"; };
 		E01E0A002C5664F1008E91A4 /* LiveScoreStandingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreStandingResponseModel.swift; sourceTree = "<group>"; };
 		E01E0A032C566BBA008E91A4 /* LiveScoreH2HResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreH2HResponseModel.swift; sourceTree = "<group>"; };
 		E01E0A062C567E39008E91A4 /* LiveOddsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveOddsResponseModel.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 			children = (
 				E0D674CF2C46788600426D40 /* NewsViewController.swift */,
 				E0F037772C46973C003ED0BA /* Cells */,
+				E01D01672C5FBC830058DA63 /* NewsUpdatedViewController.swift */,
 			);
 			path = NewsViewController;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				E0D46BD52C4D7257000CC677 /* ModeSelection.swift in Sources */,
 				E0EBC58F2C4CECE300700B54 /* LiveScoreStandingTableViewCell.swift in Sources */,
 				E0DE549E2C4699A500546745 /* NewsTableViewCell.swift in Sources */,
+				E01D01682C5FBC830058DA63 /* NewsUpdatedViewController.swift in Sources */,
 				E08A84842C54F4AC00FEDBAF /* UIImageView+Extension.swift in Sources */,
 				E05EDC8E2C48070A007B750F /* LiveScoreListViewController.swift in Sources */,
 				E01E0A072C567E39008E91A4 /* LiveOddsResponseModel.swift in Sources */,
