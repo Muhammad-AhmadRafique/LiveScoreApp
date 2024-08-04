@@ -10,24 +10,20 @@ import UIKit
 class TopLeaguesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     private var leagueList = [LeagueModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.register(UINib(nibName: TopLeaguesCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: TopLeaguesCollectionViewCell.className)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    func setup() {
+//        self.frame = CGRect(x: 0, y: 0, width: frame.width, height: 350)
+        
     }
     
-    func configureCell(leagues: [LeagueModel]) {
+    func configure(leagues: [LeagueModel]) {
+        
         leagueList = leagues
         collectionView.reloadData()
     }

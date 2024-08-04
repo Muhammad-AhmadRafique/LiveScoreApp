@@ -51,9 +51,9 @@ class FootballLeaguesViewController: UIViewController, PageItem {
         tableView.register(UINib(nibName: LeagueMatchTableViewCell.className, bundle: nil), forCellReuseIdentifier: LeagueMatchTableViewCell.className)
         
         tableView.sectionFooterHeight = 0
-        headerView = LeaguesTableHeaderView.view()
-        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 220)
-        tableView.tableHeaderView = headerView
+//        headerView = LeaguesTableHeaderView.view()
+//        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 220)
+//        tableView.tableHeaderView = headerView
         getFootballLeagues()
     }
 }
@@ -61,46 +61,57 @@ class FootballLeaguesViewController: UIViewController, PageItem {
 extension FootballLeaguesViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return countryLeagueList.count
-    }
-    
-    func heightForHeader(inSection section: Int) -> CGFloat {
-        return tableView.delegate?.tableView?(tableView, heightForHeaderInSection: section) ?? 0
+        return countryLeagueList.count + 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let isOpen = countryLeagueList[section].isOpen
-        let leaguesCount = countryLeagueList[section].leagueList?.count ?? 0
-        return isOpen ? leaguesCount + 1 : 1
+        if section == 0 {
+            return 1
+        } else {
+            let isOpen = countryLeagueList[section - 1].isOpen
+            let leaguesCount = countryLeagueList[section - 1].leagueList?.count ?? 0
+            return isOpen ? leaguesCount + 1 : 1
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            return 90
+        if indexPath.section == 0 {
+            return 230
+        } else {
+            if indexPath.section == 1 && indexPath.row == 0 {
+                return 90
+            }
+            return 45
         }
-        return 45
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LeaguesTableViewCell.className, for: indexPath) as! LeaguesTableViewCell
-            cell.separatorInset = tableView.separatorInset
-            cell.configure(section: indexPath.section, countryLeague: countryLeagueList[indexPath.section])
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TopLeaguesTableViewCell.className, for: indexPath) as! TopLeaguesTableViewCell
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            cell.configure(leagues: topLeagueList)
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LeagueMatchTableViewCell.className, for: indexPath) as! LeagueMatchTableViewCell
-            cell.separatorInset = tableView.separatorInset
-            let league = countryLeagueList[indexPath.section].leagueList?[indexPath.row - 1]
-            cell.configureCell(league: league)
-            return cell
+        default:
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: LeaguesTableViewCell.className, for: indexPath) as! LeaguesTableViewCell
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                cell.configure(section: indexPath.section - 1, countryLeague: countryLeagueList[indexPath.section - 1])
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: LeagueMatchTableViewCell.className, for: indexPath) as! LeagueMatchTableViewCell
+                cell.separatorInset = tableView.separatorInset
+                let league = countryLeagueList[indexPath.section - 1].leagueList?[indexPath.row - 1]
+                cell.configureCell(league: league)
+                return cell
+            }
         }
-       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        if indexPath.row == 0 {
-            self.countryLeagueList[indexPath.section].isOpen = !self.countryLeagueList[indexPath.section].isOpen
+        if indexPath.section > 0 && indexPath.row == 0 {
+            self.countryLeagueList[indexPath.section - 1].isOpen = !self.countryLeagueList[indexPath.section - 1].isOpen
             tableView.reloadData()
         }
     }
