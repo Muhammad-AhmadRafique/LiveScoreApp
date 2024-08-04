@@ -30,10 +30,6 @@ class DataService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
 
-        if let profile = ProfileDetails.instance.getProfileDetails(){
-            request.addValue("\(profile.accessToken)", forHTTPHeaderField: "auth")
-        }
-
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
             if let error = error{
@@ -68,9 +64,6 @@ class DataService {
 
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        if let profile = ProfileDetails.instance.getProfileDetails(){
-            request.addValue("\(profile.accessToken)", forHTTPHeaderField: "auth")
-        }
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
             if let error = error{

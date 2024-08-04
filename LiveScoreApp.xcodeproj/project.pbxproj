@@ -39,7 +39,6 @@
 		E06AD60D2C5176F500A278E9 /* HooleyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6042C5176F500A278E9 /* HooleyPostApi.swift */; };
 		E06AD60E2C5176F500A278E9 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6052C5176F500A278E9 /* Media.swift */; };
 		E06AD60F2C5176F500A278E9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6062C5176F500A278E9 /* NetworkService.swift */; };
-		E06AD6102C5176F500A278E9 /* ProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6072C5176F500A278E9 /* ProfileDetails.swift */; };
 		E06AD6112C5176F500A278E9 /* ReachabilityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6082C5176F500A278E9 /* ReachabilityTest.swift */; };
 		E06AD6122C5176F500A278E9 /* WebAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6092C5176F500A278E9 /* WebAPIs.swift */; };
 		E06AD6152C5177A400A278E9 /* GeneralModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AD6142C5177A400A278E9 /* GeneralModels.swift */; };
@@ -148,7 +147,6 @@
 		E06AD6042C5176F500A278E9 /* HooleyPostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HooleyPostApi.swift; sourceTree = "<group>"; };
 		E06AD6052C5176F500A278E9 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		E06AD6062C5176F500A278E9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		E06AD6072C5176F500A278E9 /* ProfileDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetails.swift; sourceTree = "<group>"; };
 		E06AD6082C5176F500A278E9 /* ReachabilityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityTest.swift; sourceTree = "<group>"; };
 		E06AD6092C5176F500A278E9 /* WebAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIs.swift; sourceTree = "<group>"; };
 		E06AD6142C5177A400A278E9 /* GeneralModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModels.swift; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 				E06AD6042C5176F500A278E9 /* HooleyPostApi.swift */,
 				E06AD6052C5176F500A278E9 /* Media.swift */,
 				E06AD6062C5176F500A278E9 /* NetworkService.swift */,
-				E06AD6072C5176F500A278E9 /* ProfileDetails.swift */,
 				E06AD6082C5176F500A278E9 /* ReachabilityTest.swift */,
 				E06AD6092C5176F500A278E9 /* WebAPIs.swift */,
 			);
@@ -829,7 +826,6 @@
 				E0B1A1222C46A9A500C250DB /* UIView+Extension.swift in Sources */,
 				E0D46BD52C4D7257000CC677 /* ModeSelection.swift in Sources */,
 				E0EBC58F2C4CECE300700B54 /* LiveScoreStandingTableViewCell.swift in Sources */,
-				E06AD6102C5176F500A278E9 /* ProfileDetails.swift in Sources */,
 				E0DE549E2C4699A500546745 /* NewsTableViewCell.swift in Sources */,
 				E08A84842C54F4AC00FEDBAF /* UIImageView+Extension.swift in Sources */,
 				E05EDC8E2C48070A007B750F /* LiveScoreListViewController.swift in Sources */,

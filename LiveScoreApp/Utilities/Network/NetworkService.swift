@@ -43,11 +43,6 @@ class NetworkService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        if let profile = ProfileDetails.instance.getProfileDetails(){
-            print(profile.accessToken)
-            request.addValue("Bearer \(profile.accessToken)", forHTTPHeaderField: "Authorization")
-        }
-        
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             var statusCode : Int?
 

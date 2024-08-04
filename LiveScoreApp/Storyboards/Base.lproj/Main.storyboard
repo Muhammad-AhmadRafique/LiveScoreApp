@@ -599,10 +599,14 @@
                                                         <rect key="frame" x="0.0" y="0.99999999999999822" width="20.333333333333332" height="22.333333333333336"/>
                                                         <color key="tintColor" name="black"/>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-dN-Uv2">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-dN-Uv2">
                                                         <rect key="frame" x="30.333333333333343" y="0.0" width="306.66666666666663" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="searchFieldDidChange:" destination="rEz-4Q-6ZM" eventType="editingChanged" id="beN-rh-zbG"/>
+                                                            <outlet property="delegate" destination="rEz-4Q-6ZM" id="onj-Dt-11b"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -712,6 +716,7 @@
                         <outlet property="footballButton" destination="3h5-4a-1DP" id="YnQ-qA-Atx"/>
                         <outlet property="footballLineView" destination="iiH-9l-5tP" id="Q21-Fj-VKJ"/>
                         <outlet property="mainView" destination="SKa-eL-CdU" id="8LZ-fX-SVI"/>
+                        <outlet property="searchField" destination="AYw-dN-Uv2" id="RWu-Vo-og9"/>
                         <outlet property="searchView" destination="chu-ur-f79" id="UvM-Nr-OGV"/>
                         <outlet property="topStackView" destination="OMf-gC-mNl" id="hIA-yL-Cvh"/>
                         <segue destination="AFw-Iu-nzU" kind="show" id="67V-M6-gTz"/>

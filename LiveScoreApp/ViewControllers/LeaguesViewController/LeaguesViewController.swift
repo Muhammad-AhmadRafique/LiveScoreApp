@@ -7,10 +7,15 @@
 
 import UIKit
 
-class LeaguesViewController: UIViewController {
+protocol LeaguesViewControllerDelegate : UIViewController {
+    func searchFieldDidChange(str: String)
+}
+
+class LeaguesViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var topStackView: UIStackView!
     
     @IBOutlet weak var footballButton: UIButton!
@@ -22,7 +27,7 @@ class LeaguesViewController: UIViewController {
     private var pageController: UIPageViewController?
     private var currentIndex: Int = 0
     private var viewControllerList = [UIViewController]()
-    
+        
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +74,7 @@ class LeaguesViewController: UIViewController {
         pageController?.view.rightAnchor.constraint(equalTo: mainView.rightAnchor).isActive = true
         
         let control1 = Storyboards.MAIN.instantiateViewController(withIdentifier: FootballLeaguesViewController.className) as! FootballLeaguesViewController
+        control1.delegate = self
 //        let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: BasketballLeaguesViewController.className) as! BasketballLeaguesViewController
 
         self.viewControllerList.append(control1)
@@ -95,6 +101,17 @@ class LeaguesViewController: UIViewController {
         let previousVC = viewControllerList[previousIndex]
         self.pageController?.setViewControllers([previousVC], direction: .reverse, animated: true, completion: nil)
         updateTopButtons(footballSelected: true)
+    }
+    
+    @IBAction func searchFieldDidChange(_ sender: UITextField) {
+        if let vc = pageController?.viewControllers?.first as? LeaguesViewControllerDelegate {
+            vc.searchFieldDidChange(str: sender.text ?? "")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchField.resignFirstResponder()
+        return true
     }
     
 }
@@ -145,5 +162,11 @@ extension LeaguesViewController: UIPageViewControllerDataSource, UIPageViewContr
                 updateTopButtons(footballSelected: true)
             }
         }
+    }
+}
+
+extension LeaguesViewController : FootballLeaguesViewControllerDelegate {
+    func hideKeyboard() {
+        searchField.resignFirstResponder()
     }
 }

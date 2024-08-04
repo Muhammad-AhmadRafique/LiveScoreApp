@@ -70,6 +70,10 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
         delegate?.hideKeyboard()
         Router.shared.openLiveScoreDetailViewController(model: filteredList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.hideKeyboard()
+    }
 }
 
 extension FinishedLiveScoreViewController {

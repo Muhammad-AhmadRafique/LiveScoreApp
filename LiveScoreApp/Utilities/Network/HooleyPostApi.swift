@@ -19,8 +19,7 @@ class APIGeneric<response: Codable> {
                 onCompletion(.failure(errr))
             }else{
                 do {
-                    let jsonResponse = try JSONSerialization.jsonObject(with: jsonData!, options: [])
-                    print(jsonResponse)
+//                    let jsonResponse = try JSONSerialization.jsonObject(with: jsonData!, options: [])
 
                     if statusCode == 200 {
                         let responseModel = try JSONDecoder().decode(response.self, from: jsonData!)
@@ -52,8 +51,7 @@ class PostAPIGeneric<request: Codable,response: Codable> {
                 onCompletion(.failure(errr))
             }else{
                 do {
-                    let jsonResponse = try JSONSerialization.jsonObject(with: jsonData!, options: [])
-                    print(jsonResponse)
+//                    let jsonResponse = try JSONSerialization.jsonObject(with: jsonData!, options: [])
                     
                     if statusCode == 200 {
                         let responseModel = try JSONDecoder().decode(response.self, from: jsonData!)

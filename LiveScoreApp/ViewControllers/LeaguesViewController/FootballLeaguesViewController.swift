@@ -29,6 +29,10 @@ struct LeagueCountryModel : Hashable {
     var isOpen: Bool
 }
 
+protocol FootballLeaguesViewControllerDelegate : NSObject {
+    func hideKeyboard()
+}
+
 class FootballLeaguesViewController: UIViewController, PageItem {
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,10 +41,10 @@ class FootballLeaguesViewController: UIViewController, PageItem {
     private var allLeagueList = [LeagueModel]()
     private var topLeagueList = [LeagueModel]()
     private var countryLeagueList = [LeagueCountryModel]()
+    private var filteredList = [LeagueCountryModel]()
     private var headerView : LeaguesTableHeaderView?
     
-    private var dataSource: UITableViewDiffableDataSource<LeagueCountryModel, LeagueModel>! = nil
-    private var currentSnapshot: NSDiffableDataSourceSnapshot<LeagueCountryModel, LeagueModel>! = nil
+    weak var delegate : FootballLeaguesViewControllerDelegate? = nil
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -51,9 +55,6 @@ class FootballLeaguesViewController: UIViewController, PageItem {
         tableView.register(UINib(nibName: LeagueMatchTableViewCell.className, bundle: nil), forCellReuseIdentifier: LeagueMatchTableViewCell.className)
         
         tableView.sectionFooterHeight = 0
-//        headerView = LeaguesTableHeaderView.view()
-//        headerView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 220)
-//        tableView.tableHeaderView = headerView
         getFootballLeagues()
     }
 }
@@ -61,15 +62,15 @@ class FootballLeaguesViewController: UIViewController, PageItem {
 extension FootballLeaguesViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return countryLeagueList.count + 1
+        return filteredList.count + 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            let isOpen = countryLeagueList[section - 1].isOpen
-            let leaguesCount = countryLeagueList[section - 1].leagueList?.count ?? 0
+            let isOpen = filteredList[section - 1].isOpen
+            let leaguesCount = filteredList[section - 1].leagueList?.count ?? 0
             return isOpen ? leaguesCount + 1 : 1
         }
     }
@@ -96,12 +97,12 @@ extension FootballLeaguesViewController : UITableViewDelegate, UITableViewDataSo
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: LeaguesTableViewCell.className, for: indexPath) as! LeaguesTableViewCell
                 cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                cell.configure(section: indexPath.section - 1, countryLeague: countryLeagueList[indexPath.section - 1])
+                cell.configure(section: indexPath.section - 1, countryLeague: filteredList[indexPath.section - 1])
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: LeagueMatchTableViewCell.className, for: indexPath) as! LeagueMatchTableViewCell
                 cell.separatorInset = tableView.separatorInset
-                let league = countryLeagueList[indexPath.section - 1].leagueList?[indexPath.row - 1]
+                let league = filteredList[indexPath.section - 1].leagueList?[indexPath.row - 1]
                 cell.configureCell(league: league)
                 return cell
             }
@@ -111,9 +112,13 @@ extension FootballLeaguesViewController : UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
         if indexPath.section > 0 && indexPath.row == 0 {
-            self.countryLeagueList[indexPath.section - 1].isOpen = !self.countryLeagueList[indexPath.section - 1].isOpen
+            self.filteredList[indexPath.section - 1].isOpen = !self.filteredList[indexPath.section - 1].isOpen
             tableView.reloadData()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.hideKeyboard()
     }
     
     private func setupHeader() {
@@ -140,7 +145,8 @@ extension FootballLeaguesViewController {
                         self.allLeagueList = leagues
                         self.getTopFiveLeagues()
                         self.setupHeader()
-                        self.countryLeagueList =  self.groupLeaguesByCountry()
+                        self.countryLeagueList = self.groupLeaguesByCountry()
+                        self.filteredList = self.countryLeagueList
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -188,5 +194,29 @@ extension FootballLeaguesViewController {
         var resultLeagues = Array(countryDict.values)
         resultLeagues.sort { $0.countryName?.localizedCompare($1.countryName ?? "") == .orderedAscending }
         return resultLeagues
+    }
+}
+
+extension FootballLeaguesViewController : LeaguesViewControllerDelegate {
+    
+    func searchFieldDidChange(str: String) {
+        if str.isEmpty {
+            filteredList = countryLeagueList
+        } else {
+            let list = countryLeagueList.filter({
+                if $0.countryName?.lowercased().contains(str) ?? false {
+                    return true
+                } else {
+                    var matchList = $0.leagueList ?? []
+                    matchList = matchList.filter({
+                        $0.leagueName?.lowercased().contains(str) ?? false
+                    })
+                    return matchList.count > 0
+                }
+            })
+            filteredList = list
+        }
+        
+        tableView.reloadData()
     }
 }
