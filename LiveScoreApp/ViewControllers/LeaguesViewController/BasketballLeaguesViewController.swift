@@ -95,7 +95,11 @@ extension BasketballLeaguesViewController : UITableViewDelegate {
         view.configure(section: section, countryLeague: countryLeagueList[section])
         view.leagueHeaderButtonTapped = {
             self.countryLeagueList[section].isOpen = !self.countryLeagueList[section].isOpen
-            self.reloadContentSection(section: section)
+//            self.reloadContentSection(section: section)
+            tableView.reloadData()
+            tableView.layoutIfNeeded()
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
         return view
         
