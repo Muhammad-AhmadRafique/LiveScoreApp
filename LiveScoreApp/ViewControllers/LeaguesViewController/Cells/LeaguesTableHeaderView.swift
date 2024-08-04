@@ -40,7 +40,7 @@ class LeaguesTableHeaderView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: 130, height: 170)
+        let size = CGSize(width: 130, height: collectionView.frame.height)
         return size
     }
     

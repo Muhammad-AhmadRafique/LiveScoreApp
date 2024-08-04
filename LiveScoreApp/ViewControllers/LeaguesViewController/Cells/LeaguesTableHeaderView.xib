@@ -29,6 +29,9 @@
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-Nd-dIr">
                             <rect key="frame" x="0.0" y="50" width="442" height="170"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="170" id="3CQ-PQ-wRI"/>
+                            </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wbz-XE-vcR">
                                 <size key="itemSize" width="128" height="170"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>

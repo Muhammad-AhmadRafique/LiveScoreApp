@@ -69,10 +69,10 @@ class LeaguesViewController: UIViewController {
         pageController?.view.rightAnchor.constraint(equalTo: mainView.rightAnchor).isActive = true
         
         let control1 = Storyboards.MAIN.instantiateViewController(withIdentifier: FootballLeaguesViewController.className) as! FootballLeaguesViewController
-        let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: BasketballLeaguesViewController.className) as! BasketballLeaguesViewController
+//        let control2 = Storyboards.MAIN.instantiateViewController(withIdentifier: BasketballLeaguesViewController.className) as! BasketballLeaguesViewController
 
         self.viewControllerList.append(control1)
-        self.viewControllerList.append(control2)
+//        self.viewControllerList.append(control2)
         if let firstVC = viewControllerList.first as? FootballLeaguesViewController {
             self.pageController?.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
