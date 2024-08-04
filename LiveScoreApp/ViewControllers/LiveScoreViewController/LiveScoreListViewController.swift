@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol LiveScoreListViewControllerDelegate: AnyObject {
-    func updateLiveButtonTitle(title: String)
-}
-
 struct LiveScoreLeagueModel : Hashable {
     static func == (lhs: LiveScoreLeagueModel, rhs: LiveScoreLeagueModel) -> Bool {
         return lhs.leagueKey == rhs.leagueKey
@@ -37,13 +33,15 @@ struct LiveScoreLeagueModel : Hashable {
 class LiveScoreListViewController: UIViewController, PageItem {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var pageIndex: Int = 1
     weak var parentNavigationController: UINavigationController? = nil
-    var liveScoreLeagueList = [LiveScoreLeagueModel]()
-    
-    weak var delegate : LiveScoreListViewControllerDelegate? = nil
-    let refreshControl = UIRefreshControl()
+    weak var delegate : LiveScoreChildViewControllerDelegate? = nil
 
+    let refreshControl = UIRefreshControl()
+    var liveScoreLeagueList = [LiveScoreLeagueModel]()
+    private var filteredList = [LiveScoreLeagueModel]()
+    
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +61,12 @@ class LiveScoreListViewController: UIViewController, PageItem {
 extension LiveScoreListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return liveScoreLeagueList.count
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = LiveScoreHeaderView.view()
-        let leagueInfo = liveScoreLeagueList[section]
+        let leagueInfo = filteredList[section]
         view.configure(leagueLogo: leagueInfo.leagueLogo, leagueName: leagueInfo.leagueName)
         return view
     }
@@ -78,12 +76,12 @@ extension LiveScoreListViewController : UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return liveScoreLeagueList[section].matchList?.count ?? 0
+        return filteredList[section].matchList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreTableViewCell.className, for: indexPath) as! LiveScoreTableViewCell
-        cell.configureCell(model: liveScoreLeagueList[indexPath.section].matchList?[indexPath.row], isLive: true)
+        cell.configureCell(model: filteredList[indexPath.section].matchList?[indexPath.row], isLive: true)
         return cell
     }
     
@@ -93,7 +91,8 @@ extension LiveScoreListViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(model: liveScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
+        delegate?.hideKeyboard()
+        Router.shared.openLiveScoreDetailViewController(model: filteredList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 
@@ -114,7 +113,8 @@ extension LiveScoreListViewController {
                     case .success:
                         let liveScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() != "finished"})
                         self.liveScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: liveScoreLeagueList)
-                        self.delegate?.updateLiveButtonTitle(title: "Live (\(liveScoreLeagueList.count))")
+                        self.filteredList = self.liveScoreLeagueList
+                        self.delegate?.updateButtonTitle(title: "Live (\(self.filteredList.count))", type: .live)
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -126,5 +126,30 @@ extension LiveScoreListViewController {
                 }
             }
         }
+    }
+}
+
+extension LiveScoreListViewController : LiveScoreViewControllerDelegate {
+    func searchFieldDidChange(str: String) {
+        if str.isEmpty {
+            filteredList = liveScoreLeagueList
+        } else {
+            let list = liveScoreLeagueList.filter({
+                if $0.leagueName?.lowercased().contains(str) ?? false {
+                    return true
+                } else {
+                    var matchList = $0.matchList ?? []
+                    matchList = matchList.filter({
+                        ($0.eventHomeTeam?.lowercased().contains(str) ?? false) ||
+                        ($0.eventAwayTeam?.lowercased().contains(str) ?? false)
+                    })
+                    return matchList.count > 0
+                }
+            })
+            filteredList = list
+        }
+        
+        self.delegate?.updateButtonTitle(title: "Live (\(filteredList.count))", type: .live)
+        tableView.reloadData()
     }
 }

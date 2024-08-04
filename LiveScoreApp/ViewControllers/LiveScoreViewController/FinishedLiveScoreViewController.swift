@@ -7,18 +7,16 @@
 
 import UIKit
 
-protocol FinishedLiveScoreViewControllerDelegate: AnyObject {
-    func updateFinishedButtonTitle(title: String)
-}
-
 class FinishedLiveScoreViewController: UIViewController, PageItem {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var pageIndex: Int = 0
     weak var parentNavigationController: UINavigationController? = nil
-    var finishedScoreLeagueList = [LiveScoreLeagueModel]()
-    
-    weak var delegate: FinishedLiveScoreViewControllerDelegate? = nil
+    weak var delegate : LiveScoreChildViewControllerDelegate? = nil
+
+    private var finishedScoreLeagueList = [LiveScoreLeagueModel]()
+    private var filteredList = [LiveScoreLeagueModel]()
     let refreshControl = UIRefreshControl()
 
     //MARK: - View life cycle
@@ -40,12 +38,12 @@ class FinishedLiveScoreViewController: UIViewController, PageItem {
 extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return finishedScoreLeagueList.count
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = LiveScoreHeaderView.view()
-        view.configure(leagueLogo: finishedScoreLeagueList[section].leagueLogo, leagueName: finishedScoreLeagueList[section].leagueName)
+        view.configure(leagueLogo: filteredList[section].leagueLogo, leagueName: filteredList[section].leagueName)
         return view
     }
     
@@ -54,12 +52,12 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finishedScoreLeagueList[section].matchList?.count ?? 0
+        return filteredList[section].matchList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreTableViewCell.className, for: indexPath) as! LiveScoreTableViewCell
-        cell.configureCell(model: finishedScoreLeagueList[indexPath.section].matchList?[indexPath.row], isLive: false)
+        cell.configureCell(model: filteredList[indexPath.section].matchList?[indexPath.row], isLive: false)
         return cell
     }
     
@@ -69,7 +67,8 @@ extension FinishedLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(model: finishedScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
+        delegate?.hideKeyboard()
+        Router.shared.openLiveScoreDetailViewController(model: filteredList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 
@@ -96,7 +95,8 @@ extension FinishedLiveScoreViewController {
                     case .success:
                         let finishedScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() == "finished"})
                         self.finishedScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: finishedScoreLeagueList)
-                        self.delegate?.updateFinishedButtonTitle(title: "Finished (\(finishedScoreLeagueList.count))")
+                        self.filteredList = self.finishedScoreLeagueList
+                        self.delegate?.updateButtonTitle(title: "Finished (\(self.filteredList.count))", type: .finished)
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -110,4 +110,29 @@ extension FinishedLiveScoreViewController {
         }
     }
     
+}
+
+extension FinishedLiveScoreViewController : LiveScoreViewControllerDelegate {
+    func searchFieldDidChange(str: String) {
+        if str.isEmpty {
+            filteredList = finishedScoreLeagueList
+        } else {
+            let list = finishedScoreLeagueList.filter({
+                if $0.leagueName?.lowercased().contains(str) ?? false {
+                    return true
+                } else {
+                    var matchList = $0.matchList ?? []
+                    matchList = matchList.filter({
+                        ($0.eventHomeTeam?.lowercased().contains(str) ?? false) ||
+                        ($0.eventAwayTeam?.lowercased().contains(str) ?? false)
+                    })
+                    return matchList.count > 0
+                }
+            })
+            filteredList = list
+        }
+        
+        self.delegate?.updateButtonTitle(title: "Finished (\(filteredList.count))", type: .finished)
+        tableView.reloadData()
+    }
 }

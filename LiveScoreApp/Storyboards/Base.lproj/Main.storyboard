@@ -275,10 +275,14 @@
                                                                         <rect key="frame" x="0.0" y="0.99999999999999822" width="20.333333333333332" height="22.333333333333336"/>
                                                                         <color key="tintColor" name="black"/>
                                                                     </imageView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-c7-k7i">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-c7-k7i">
                                                                         <rect key="frame" x="30.333333333333343" y="0.0" width="306.66666666666663" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <action selector="searchFieldDidChange:" destination="uOc-TP-CdW" eventType="editingChanged" id="pFS-0h-c7S"/>
+                                                                            <outlet property="delegate" destination="uOc-TP-CdW" id="aXr-lD-f4C"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -559,6 +563,7 @@
                         <outlet property="liveButton" destination="J7x-UJ-XhC" id="DhD-bS-8oM"/>
                         <outlet property="liveLineView" destination="JQu-ST-Yz6" id="n0g-k1-Kch"/>
                         <outlet property="mainView" destination="mVm-NW-Zuj" id="MjX-JD-QGm"/>
+                        <outlet property="searchField" destination="yPI-c7-k7i" id="rUq-ZT-Whv"/>
                         <outlet property="searchView" destination="wRz-UR-IHJ" id="s5E-n8-DPW"/>
                         <outlet property="topStackView" destination="IM7-RX-P5t" id="0hf-M7-hDg"/>
                         <outlet property="upcomingButton" destination="uzO-L8-Lt0" id="hfq-qq-1Fo"/>

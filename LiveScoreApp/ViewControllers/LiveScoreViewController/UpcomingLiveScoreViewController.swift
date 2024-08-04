@@ -7,18 +7,27 @@
 
 import UIKit
 
-protocol UpcomingLiveScoreViewControllerDelegate: AnyObject {
-    func updateUpcomingButtonTitle(title: String)
+enum LiveScoreChildType {
+    case finished
+    case live
+    case upcoming
+}
+
+protocol LiveScoreChildViewControllerDelegate: AnyObject {
+    func updateButtonTitle(title: String, type : LiveScoreChildType)
+    func hideKeyboard()
 }
 
 class UpcomingLiveScoreViewController: UIViewController, PageItem {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var pageIndex: Int = 2
     weak var parentNavigationController: UINavigationController? = nil
-    var upcomingScoreLeagueList = [LiveScoreLeagueModel]()
+    weak var delegate : LiveScoreChildViewControllerDelegate? = nil
     
-    weak var delegate : UpcomingLiveScoreViewControllerDelegate? = nil
+    var upcomingScoreLeagueList = [LiveScoreLeagueModel]()
+    private var filteredList = [LiveScoreLeagueModel]()
     let refreshControl = UIRefreshControl()
     
     //MARK: - View life cycle
@@ -40,12 +49,12 @@ class UpcomingLiveScoreViewController: UIViewController, PageItem {
 extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return upcomingScoreLeagueList.count
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = LiveScoreHeaderView.view()
-        view.configure(leagueLogo: upcomingScoreLeagueList[section].leagueLogo, leagueName: upcomingScoreLeagueList[section].leagueName)
+        view.configure(leagueLogo: filteredList[section].leagueLogo, leagueName: filteredList[section].leagueName)
         return view
     }
     
@@ -54,12 +63,12 @@ extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return upcomingScoreLeagueList[section].matchList?.count ?? 0
+        return filteredList[section].matchList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LiveScoreTableViewCell.className, for: indexPath) as! LiveScoreTableViewCell
-        cell.configureCell(model: upcomingScoreLeagueList[indexPath.section].matchList?[indexPath.row], isLive: false)
+        cell.configureCell(model: filteredList[indexPath.section].matchList?[indexPath.row], isLive: false)
         return cell
     }
     
@@ -69,7 +78,8 @@ extension UpcomingLiveScoreViewController : UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.removeSelection()
-        Router.shared.openLiveScoreDetailViewController(model: upcomingScoreLeagueList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
+        delegate?.hideKeyboard()
+        Router.shared.openLiveScoreDetailViewController(model: filteredList[indexPath.section].matchList?[indexPath.row], controller: parentNavigationController)
     }
 }
 
@@ -95,7 +105,8 @@ extension UpcomingLiveScoreViewController {
                     case .success:
                         let upcomingScoreLeagueList = (result.result ?? []).filter({$0.eventStatus?.lowercased() == ""})
                         self.upcomingScoreLeagueList = Helper.groupLiveScoreMatchesByLeagues(list: upcomingScoreLeagueList)
-                        self.delegate?.updateUpcomingButtonTitle(title: "Upcoming (\(upcomingScoreLeagueList.count))")
+                        self.filteredList = self.upcomingScoreLeagueList
+                        self.delegate?.updateButtonTitle(title: "Upcoming (\(self.filteredList.count))", type: .upcoming)
                         self.tableView.reloadData()
                     default:
                         let err = CustomError(description: "Something went wrong, please try again")
@@ -109,4 +120,29 @@ extension UpcomingLiveScoreViewController {
         }
     }
     
+}
+
+extension UpcomingLiveScoreViewController : LiveScoreViewControllerDelegate {
+    func searchFieldDidChange(str: String) {
+        if str.isEmpty {
+            filteredList = upcomingScoreLeagueList
+        } else {
+            let list = upcomingScoreLeagueList.filter({
+                if $0.leagueName?.lowercased().contains(str) ?? false {
+                    return true
+                } else {
+                    var matchList = $0.matchList ?? []
+                    matchList = matchList.filter({
+                        ($0.eventHomeTeam?.lowercased().contains(str) ?? false) ||
+                        ($0.eventAwayTeam?.lowercased().contains(str) ?? false)
+                    })
+                    return matchList.count > 0
+                }
+            })
+            filteredList = list
+        }
+        
+        self.delegate?.updateButtonTitle(title: "Upcoming (\(filteredList.count))", type: .upcoming)
+        tableView.reloadData()
+    }
 }

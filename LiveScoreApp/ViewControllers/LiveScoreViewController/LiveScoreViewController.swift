@@ -7,12 +7,17 @@
 
 import UIKit
 
-class LiveScoreViewController: UIViewController {
+protocol LiveScoreViewControllerDelegate : UIViewController {
+    func searchFieldDidChange(str: String)
+}
+
+class LiveScoreViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var topStackView: UIStackView!
     
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var footballImageView: UIImageView!
     @IBOutlet weak var footballLabel: UILabel!
     @IBOutlet weak var basketballImageView: UIImageView!
@@ -31,7 +36,7 @@ class LiveScoreViewController: UIViewController {
     private var currentIndex: Int = 0
     private var viewControllerList = [UIViewController]()
     private var selectedIndex = 0
-    
+        
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +107,17 @@ class LiveScoreViewController: UIViewController {
     }
     
     //MARK: - IBActions
+    @IBAction func searchFieldDidChange(_ sender: UITextField) {
+        if let vc = pageController?.viewControllers?.first as? LiveScoreViewControllerDelegate {
+            vc.searchFieldDidChange(str: sender.text ?? "")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func footballButtonWasPressed(_ sender: Any) {
         footballLabel.textColor = Colors.yellow
         footballImageView.tintColor = Colors.yellow
@@ -203,16 +219,20 @@ extension LiveScoreViewController: UIPageViewControllerDataSource, UIPageViewCon
     }
 }
 
-extension LiveScoreViewController : FinishedLiveScoreViewControllerDelegate, LiveScoreListViewControllerDelegate, UpcomingLiveScoreViewControllerDelegate {
-    func updateFinishedButtonTitle(title: String) {
-        finishButton.setTitle(title, for: .normal)
-    }
+extension LiveScoreViewController : LiveScoreChildViewControllerDelegate {
     
-    func updateLiveButtonTitle(title: String) {
-        liveButton.setTitle(title, for: .normal)
+    func updateButtonTitle(title: String, type: LiveScoreChildType) {
+        switch type {
+        case .finished:
+            finishButton.setTitle(title, for: .normal)
+        case .live:
+            liveButton.setTitle(title, for: .normal)
+        case .upcoming:
+            upcomingButton.setTitle(title, for: .normal)
+        }
     }
-    
-    func updateUpcomingButtonTitle(title: String) {
-        upcomingButton.setTitle(title, for: .normal)
+
+    func hideKeyboard() {
+        view.endEditing(true)
     }
 }
