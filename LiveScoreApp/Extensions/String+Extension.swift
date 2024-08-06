@@ -62,7 +62,7 @@ extension String {
         
         // Output date format
         let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "dd MMMM yyyy"
+        outputDateFormatter.dateFormat = "dd MMM yyyy"
         
         // Convert string to Date
         guard let date = inputDateFormatter.date(from: self) else {

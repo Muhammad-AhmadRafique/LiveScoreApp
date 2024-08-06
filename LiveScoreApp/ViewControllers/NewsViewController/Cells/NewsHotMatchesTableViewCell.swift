@@ -20,6 +20,7 @@ class NewsHotMatchesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         // Initialization code
         collectionView.register(UINib(nibName: NewsHotMatchesCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: NewsHotMatchesCollectionViewCell.className)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        noDataLabel.text = "no_data_available".localizedString().capitalized
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -29,6 +29,10 @@ class LiveScoreStandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreStandingTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreStandingTableViewCell.className)
+        noDataLabel.text = "no_data_available".localizedString().capitalized
+        segmentControl.setTitle("all".localizedString().capitalized, forSegmentAt: 0)
+        segmentControl.setTitle("home".localizedString().capitalized, forSegmentAt: 1)
+        segmentControl.setTitle("away".localizedString().capitalized, forSegmentAt: 2)
         selectedItem = .all
     }
     

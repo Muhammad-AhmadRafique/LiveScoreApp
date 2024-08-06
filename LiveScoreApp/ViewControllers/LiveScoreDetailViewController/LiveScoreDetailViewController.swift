@@ -24,11 +24,11 @@ class LiveScoreDetailCollectionViewCell : UICollectionViewCell {
 }
 
 enum LiveScoreItem: String {
-    case odds = "Odds"
-    case stats = "Stats"
-    case lineup = "Lineup"
-    case H2H = "H2H"
-    case standings = "Standings"
+    case odds = "odds"
+    case stats = "stats"
+    case lineup = "lineup"
+    case H2H = "h2h"
+    case standings = "standings"
 }
 
 class LiveScoreDetailViewController: UIViewController {
@@ -172,12 +172,27 @@ extension LiveScoreDetailViewController : UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveScoreDetailCollectionViewCell.className, for: indexPath) as! LiveScoreDetailCollectionViewCell
         let item = list[indexPath.row]
-        cell.configureCell(name: item.rawValue, isSelected: selectedItem == item)
+        cell.configureCell(name: item.rawValue.localizedString().capitalized, isSelected: selectedItem == item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: 80, height: collectionView.frame.height)
+        var width : CGFloat = 0.0
+        switch indexPath.item {
+        case 0:
+            width = 100
+        case 1:
+            width = 120
+        case 2:
+            width = 80
+        case 3:
+            width = 60
+        case 4:
+            width = 120
+        default:
+            width = 0
+        }
+        let size = CGSize(width: width, height: collectionView.frame.height)
         return size
     }
     

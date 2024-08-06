@@ -16,10 +16,8 @@ class CustomLaunchViewController: UIViewController {
     }
     
     func setupTimer() {
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [weak self] t in
-            guard let `self` = self else { return }
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
             DispatchQueue.main.async {
-//                Router.shared.openDashboardTabbarController(controller: self)
                 ModeSelection.instance.loginMode()
             }
         }

@@ -21,3 +21,12 @@
 "leagues" = "giải đấu";
 "profile" = "hồ sơ";
 "search" = "tìm kiếm";
+"odds" = "tỷ lệ cược";
+"stats" = "số liệu thống kê";
+"lineup" = "xếp hàng";
+"h2h" = "h2h";
+"standings" = "bảng xếp hạng";
+"no_data_available" = "không có dữ liệu";
+"all" = "tất cả";
+"home" = "trang chủ";
+"away" = "xa";

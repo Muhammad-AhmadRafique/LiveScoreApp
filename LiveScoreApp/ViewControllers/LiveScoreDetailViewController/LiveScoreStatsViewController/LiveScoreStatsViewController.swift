@@ -27,6 +27,7 @@ class LiveScoreStatsViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: LiveScoreStatsTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreStatsTableViewCell.className)
         segmentControl.selectedSegmentIndex = 0
+        noDataLabel.text = "no_data_available".localizedString().capitalized
         selectedTeam = .home
     }
 

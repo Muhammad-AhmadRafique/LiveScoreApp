@@ -21,3 +21,12 @@
 "leagues" = "leagues";
 "profile" = "profile";
 "search" = "search";
+"odds" = "odds";
+"stats" = "stats";
+"lineup" = "lineup";
+"h2h" = "h2h";
+"standings" = "standings";
+"no_data_available" = "No Data Available";
+"all" = "all";
+"home" = "home";
+"away" = "away";

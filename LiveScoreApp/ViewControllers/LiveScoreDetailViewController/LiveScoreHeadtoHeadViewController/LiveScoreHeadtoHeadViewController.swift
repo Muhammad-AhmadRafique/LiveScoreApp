@@ -51,6 +51,10 @@ class LiveScoreHeadtoHeadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreHeadToHeadTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreHeadToHeadTableViewCell.className)
+        noDataLabel.text = "no_data_available".localizedString().capitalized
+        segmentControl.setTitle("h2h".localizedString().capitalized, forSegmentAt: 0)
+        segmentControl.setTitle("home".localizedString().capitalized, forSegmentAt: 1)
+        segmentControl.setTitle("away".localizedString().capitalized, forSegmentAt: 2)
         selectedType = .h2h
     }
     

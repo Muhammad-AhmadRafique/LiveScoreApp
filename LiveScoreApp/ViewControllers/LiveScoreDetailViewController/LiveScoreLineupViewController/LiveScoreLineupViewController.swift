@@ -33,6 +33,7 @@ class LiveScoreLineupViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: LiveScoreLinupTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreLinupTableViewCell.className)
         selectedTeam = .home
+        noDataLabel.text = "no_data_available".localizedString().capitalized
         segmentControl.selectedSegmentIndex = 0
     }
 

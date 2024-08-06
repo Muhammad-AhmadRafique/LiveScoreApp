@@ -69,8 +69,15 @@ extension NewsUpdatedViewController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let perRowItems = liveScoreLeagueList.count / 2
-        return CGFloat(202 * perRowItems)
+        let count = liveScoreLeagueList.count
+        if count % 2 == 0 {
+            let perRowItems = count / 2
+            return CGFloat(202 * perRowItems)
+        } else {
+            let perRowItems = (count / 2) + 1
+            return CGFloat(202 * perRowItems)
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

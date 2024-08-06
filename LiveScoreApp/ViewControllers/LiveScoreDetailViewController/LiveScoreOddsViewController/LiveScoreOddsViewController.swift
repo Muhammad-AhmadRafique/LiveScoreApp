@@ -45,6 +45,7 @@ class LiveScoreOddsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: LiveScoreOddsTableViewCell.className, bundle: nil), forCellReuseIdentifier: LiveScoreOddsTableViewCell.className)
+        noDataLabel.text = "no_data_available".localizedString().capitalized
         setupData()
     }
     
