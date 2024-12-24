@@ -64,7 +64,10 @@ class LiveScoreDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "Match Details"
+        navigationItem.title = "match_details".localizedString().capitalized
+        let backButton = UIBarButtonItem()
+        backButton.title = "back".localizedString().capitalized
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         selectedItem = list.first
         setupPageController()
         getLiveScoreDetail()

@@ -1432,7 +1432,9 @@
                             <constraint firstItem="IEH-Fe-BE7" firstAttribute="trailing" secondItem="hAw-r0-Obr" secondAttribute="trailing" id="u6J-dc-3gl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="teW-Hm-VeE"/>
+                    <navigationItem key="navigationItem" id="teW-Hm-VeE">
+                        <barButtonItem key="backBarButtonItem" title="jkhjkh" id="rod-tV-d8l"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="awayTeamGoalsLabel" destination="wWd-PQ-OKK" id="iAw-8L-KU1"/>
                         <outlet property="awayTeamIcon" destination="K0r-jI-Qbg" id="COf-q6-4QZ"/>
@@ -1780,7 +1782,7 @@
                                             <constraint firstAttribute="height" constant="250" id="TMm-xK-zQX"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiveScoreHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPu-9b-143">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun88score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPu-9b-143">
                                         <rect key="frame" x="0.0" y="269.99999999999994" width="377" height="37"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
                                         <color key="textColor" name="black"/>

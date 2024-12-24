@@ -8,13 +8,11 @@
 import Foundation
 //BASE_URL = "http://ec2-54-221-37-200.compute-1.amazonaws.com/api/"
 struct BaseUrl {
-    static var Testing = "http://ec2-54-221-37-200.compute-1.amazonaws.com"
-    static var DEV = "https://devappapi.movo.cash"
     static var STAGING = ""
     static var LIVE = "https://apiv2.allsportsapi.com"
 }
 
-let API_KEY = "cce63d8e7b3fcebf028147b708ad6dc3c608a98b85d0b33018acefbab4a53739"
+let API_KEY = "your_api_key"
 
 var apiURL : String {
     return "\(BaseUrl.LIVE)"

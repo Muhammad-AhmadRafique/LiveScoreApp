@@ -9,6 +9,9 @@ import UIKit
 
 class LiveScoreStandingHeaderView: UIView {
 
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var teamLabel: UILabel!
+    
     static func view() -> LiveScoreStandingHeaderView {
         let v = Bundle.main.loadNibNamed(LiveScoreStandingHeaderView.className, owner: nil, options: nil)?.first as! LiveScoreStandingHeaderView
         v.setup()
@@ -16,7 +19,8 @@ class LiveScoreStandingHeaderView: UIView {
     }
     
     func setup() {
-        
+//        numberLabel.text = "no".localizedString().capitalized
+        teamLabel.text = "team".localizedString().capitalized
     }
 
 }

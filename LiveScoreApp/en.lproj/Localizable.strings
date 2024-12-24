@@ -30,3 +30,13 @@
 "all" = "all";
 "home" = "home";
 "away" = "away";
+"starting_lineups" = "Starting Lineups";
+"substitutes" = "Substitutes";
+"coaches" = "coaches";
+"no" = "No.";
+"team" = "team";
+"suspended" = "Suspended";
+"value" = "value";
+"type" = "Type";
+"match_details" = "Match Details";
+"back" = "back";

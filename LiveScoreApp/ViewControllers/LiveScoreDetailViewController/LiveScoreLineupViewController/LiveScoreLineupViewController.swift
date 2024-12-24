@@ -85,7 +85,7 @@ class LiveScoreLineupViewController: UIViewController {
                 nameNumberList.append(NameNumberModel(name: lineup.player, number: "\(lineup.playerNumber ?? 0)"))
             }
             if nameNumberList.count > 0 {
-                resultList.append(LineupModel(sectionTitle: "Starting Lineups", list: nameNumberList))
+                resultList.append(LineupModel(sectionTitle: "starting_lineups".localizedString().capitalized, list: nameNumberList))
             }
             
             nameNumberList.removeAll()
@@ -93,7 +93,7 @@ class LiveScoreLineupViewController: UIViewController {
                 nameNumberList.append(NameNumberModel(name: substitute.player, number: "\(substitute.playerNumber ?? 0)"))
             }
             if nameNumberList.count > 0 {
-                resultList.append(LineupModel(sectionTitle: "Substitutes", list: nameNumberList))
+                resultList.append(LineupModel(sectionTitle: "substitutes".localizedString().capitalized, list: nameNumberList))
             }
             
             nameNumberList.removeAll()
@@ -101,7 +101,7 @@ class LiveScoreLineupViewController: UIViewController {
                 nameNumberList.append(NameNumberModel(name: coach.coache, number: ""))
             }
             if nameNumberList.count > 0 {
-                resultList.append(LineupModel(sectionTitle: "Coaches", list: nameNumberList))
+                resultList.append(LineupModel(sectionTitle: "coaches".localizedString().capitalized, list: nameNumberList))
             }
             
             

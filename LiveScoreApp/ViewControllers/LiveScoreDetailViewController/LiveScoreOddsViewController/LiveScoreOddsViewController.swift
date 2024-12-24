@@ -50,7 +50,7 @@ class LiveScoreOddsViewController: UIViewController {
     }
     
     private func setupData() {
-        let titleList = ["Type", "Value", "Suspended"]
+        let titleList = ["type".localizedString().capitalized, "value".localizedString().capitalized, "suspended".localizedString().capitalized]
         let valueList = ["Home", "501", "Yes"]
         let sectionTitle = "1x2 - 20 minutes"
         

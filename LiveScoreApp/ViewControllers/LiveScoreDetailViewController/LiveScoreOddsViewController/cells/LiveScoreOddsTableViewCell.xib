@@ -121,8 +121,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="suspendedLabel" destination="RCb-g4-eOD" id="4W0-8j-Qcg"/>
+                <outlet property="suspendedTitleLabel" destination="sKi-Mk-fdt" id="KgK-pF-zg1"/>
                 <outlet property="typeLabel" destination="o3d-Fe-B4G" id="zgw-eK-fLc"/>
+                <outlet property="typeTitleLabel" destination="ZQa-rx-Dhf" id="INz-0a-0aQ"/>
                 <outlet property="valueLabel" destination="fcL-1M-BaZ" id="HSg-pw-gcO"/>
+                <outlet property="valueTitleLabel" destination="3on-yX-0IR" id="qlA-ek-ozQ"/>
             </connections>
             <point key="canvasLocation" x="114.50381679389312" y="10.563380281690142"/>
         </tableViewCell>
