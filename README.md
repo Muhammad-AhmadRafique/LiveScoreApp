@@ -1,6 +1,6 @@
 ## Live Score App
 
-**Live Score App** is a feature-rich mobile application that provides real-time scores and detailed statistics for football and baseball games. Users can explore player and team stats, view rankings, and analyze performance trends through interactive graphs.
+**Live Score App** is a feature-rich mobile application that provides real-time scores and detailed statistics for football and baseball games. Users can explore player and team stats, view rankings, and analyze performance trends through Stats.
 
 ---
 
@@ -10,7 +10,7 @@
 - **Player Stats**: Access detailed performance metrics for individual players.  
 - **Team Insights**: View comprehensive team statistics, including rankings and match history.  
 - **Rankings**: Check the latest rankings for teams and players in various leagues.  
-- **Graphs and Analytics**: Visualize player and team performance trends with interactive graphs.  
+- **Analytics**: Visualize player and team performance trends with Analytics and Stats.  
 
 ---
 
@@ -48,7 +48,7 @@
 1. Launch the app on your device or emulator.  
 2. Browse through the live scores tab to see real-time game updates.  
 3. Explore detailed stats for players and teams in the respective sections.  
-4. Use the graphs to analyze performance trends over time.  
+4. Use the Analytics and stats to analyze performance trends over time.  
 
 ---
 
