@@ -80,5 +80,4 @@ We welcome contributions to improve the app! Please follow these steps to contri
 For any questions or feedback, feel free to contact me:  
 
 **Name**: Ahmad Rafiq  
-**Email**: [ahmadrafiqbscs@gmail.com](mailto:ahmadrafiqbscs@gmail.com)  
-**LinkedIn**: [Ahmad Rafiq](https://www.linkedin.com/in/ahmad-rafiq-6aa45b119/)  
+**Email**: [ahmadrafiqbscs@gmail.com](mailto:ahmadrafiqbscs@gmail.com)
